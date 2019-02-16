@@ -13,6 +13,9 @@ import { CoursesListComponent } from './courses/courses-list/courses-list.compon
 import { UsersComponent } from './users/users.component';
 import { TeachersComponent } from './users/teachers/teachers.component';
 import { StudentsComponent } from './users/students/students.component';
+import { ClassesComponent } from './classes/classes.component';
+import { ClassesListComponent } from './classes/classes-list/classes-list.component';
+import { ClassesDetailComponent } from './classes/classes-detail/classes-detail.component';
 
 
 @NgModule({
@@ -27,6 +30,9 @@ import { StudentsComponent } from './users/students/students.component';
     UsersComponent,
     TeachersComponent,
     StudentsComponent,
+    ClassesComponent,
+    ClassesListComponent,
+    ClassesDetailComponent,
     
   ],
   imports: [
