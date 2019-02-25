@@ -10,9 +10,6 @@ import { MaterialsDetailComponent } from './materials/materials-detail/materials
 import { CoursesComponent } from './courses/courses.component';
 import { CoursesDetailComponent } from './courses/courses-detail/courses-detail.component';
 import { CoursesListComponent } from './courses/courses-list/courses-list.component';
-import { UsersComponent } from './users/users.component';
-import { TeachersComponent } from './users/teachers/teachers.component';
-import { StudentsComponent } from './users/students/students.component';
 import { ClassesComponent } from './classes/classes.component';
 import { ClassesListComponent } from './classes/classes-list/classes-list.component';
 import { ClassesDetailComponent } from './classes/classes-detail/classes-detail.component';
@@ -27,13 +24,9 @@ import { ClassesDetailComponent } from './classes/classes-detail/classes-detail.
     CoursesComponent,
     CoursesDetailComponent,
     CoursesListComponent,
-    UsersComponent,
-    TeachersComponent,
-    StudentsComponent,
     ClassesComponent,
     ClassesListComponent,
     ClassesDetailComponent,
-    
   ],
   imports: [
     BrowserModule,

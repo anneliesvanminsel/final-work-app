@@ -1,0 +1,13 @@
+.class-list {
+    display: inline-block;
+}
+
+.class-list button {
+    width: 200px;
+    height: 100px;
+    margin: 5px;
+    border: none;
+    background-color: #9CC552;
+    border-radius: 10px;
+    font-size: 30px;
+}

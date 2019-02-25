@@ -1,0 +1,17 @@
+.courses-list {
+    display: inline-block;
+}
+
+.courses-list button {
+    padding: 5px 10px;
+    margin: 5px 10px;
+    border: 1px solid #C8599D;
+    background-color: transparent;
+    border-radius: 50px;
+    font-size: 13px;
+}
+
+.courses-list button.is-active {
+    background-color: #C8599D;
+    color: white;
+}

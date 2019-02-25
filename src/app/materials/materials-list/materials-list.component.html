@@ -1,9 +1,17 @@
+<div class="material-list">
+  <table>
+    <tr class="table-head">
+      <th> fav </th>
+      <th> soort </th>
+      <th> titel </th>
+      <th>gemaakt op</th>
+    </tr>
+    <tr class="table-body" *ngFor="let material of materials">
+      <td></td>
+      <td></td>
+      <td><a href="#"> <h4>{{material.name}}</h4> </a></td>
+      <td><p>{{material.date}}</p></td>
+    </tr>
+  </table>
+</div>
 
-<ul>
-  <li *ngFor="let material of materials">
-    <a href="">
-        <h4>{{material.name}}</h4> 
-        <p>{{material.date}}</p>
-    </a>
-  </li>
-</ul>

@@ -1,0 +1,49 @@
+/*
+
+$dark-red: #D12C42;
+$light-red: #E63B51;
+
+$dark-blue: #3174BA;
+$light-blue: #4988C8;
+
+$dark-yellow: #F6AB2C;
+$light-yellow: #FFC23E;
+
+$dark-orange: #E43E2D;
+$light-orange: #ED5540;
+
+$dark-purple: #7368AC;
+$light-purple: #8C7FBA;
+
+$dark-green: #87B63C;
+$light-green: #9CC552;
+
+$white: #ffffff;
+$white-grey: #E1E7ED;
+$light-grey: #C1C7D2;
+$medium-grey: #99A3B0;
+$dark-grey: #525B65;
+$black: #333943;
+
+$dark-pink: #C8599D;
+$light-pink: #DD73AA;
+
+$dark-green-blue: #3AAF89;
+$light-green-blue: #53B697;
+
+*/
+
+.material-list .table-body:nth-child(odd) {
+  background-color: #E1E7ED;
+}
+
+.material-list table {
+  width: 80%;
+  margin: 10px;
+}
+
+.material-list td,
+.material-list th {
+  width: 25%;
+}
+

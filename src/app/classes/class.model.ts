@@ -1,4 +1,4 @@
-export class Course {
+export class Class {
   public class_id: number;
   public name: string;
   public date: string;
