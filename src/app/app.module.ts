@@ -13,6 +13,10 @@ import { CoursesListComponent } from './courses/courses-list/courses-list.compon
 import { ClassesComponent } from './classes/classes.component';
 import { ClassesListComponent } from './classes/classes-list/classes-list.component';
 import { ClassesDetailComponent } from './classes/classes-detail/classes-detail.component';
+import { HeaderTeacherComponent } from './header/header-teacher/header-teacher.component';
+import { HeaderStudentComponent } from './header/header-student/header-student.component';
+import { FooterTeacherComponent } from './footer/footer-teacher/footer-teacher.component';
+import { FooterStudentComponent } from './footer/footer-student/footer-student.component';
 
 
 @NgModule({
@@ -27,6 +31,10 @@ import { ClassesDetailComponent } from './classes/classes-detail/classes-detail.
     ClassesComponent,
     ClassesListComponent,
     ClassesDetailComponent,
+    HeaderTeacherComponent,
+    HeaderStudentComponent,
+    FooterTeacherComponent,
+    FooterStudentComponent,
   ],
   imports: [
     BrowserModule,
