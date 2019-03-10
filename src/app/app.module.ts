@@ -20,15 +20,15 @@ import { FooterStudentComponent } from './footer/footer-student/footer-student.c
 
 const appRoutes: Routes = [
   {
-    path: 'classes',
+    path: 'teacher/classes',
     component: ClassesComponent
   },
   {
-    path: 'courses',
+    path: 'teacher/courses',
     component: CoursesComponent
   },
   {
-    path: 'materials',
+    path: 'teacher/materials',
     component: MaterialsComponent
   },
   {
