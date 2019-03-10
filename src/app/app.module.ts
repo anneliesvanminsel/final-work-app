@@ -18,6 +18,25 @@ import { HeaderStudentComponent } from './header/header-student/header-student.c
 import { FooterTeacherComponent } from './footer/footer-teacher/footer-teacher.component';
 import { FooterStudentComponent } from './footer/footer-student/footer-student.component';
 
+const appRoutes: Routes = [
+  {
+    path: 'classes',
+    component: ClassesComponent
+  },
+  {
+    path: 'courses',
+    component: CoursesComponent
+  },
+  {
+    path: 'materials',
+    component: MaterialsComponent
+  },
+  {
+    path: '',
+    redirectTo: 'index',
+    pathMatch: 'full'
+  }
+];
 
 @NgModule({
   declarations: [
@@ -37,6 +56,10 @@ import { FooterStudentComponent } from './footer/footer-student/footer-student.c
     FooterStudentComponent,
   ],
   imports: [
+    RouterModule.forRoot(
+        appRoutes,
+        { enableTracing: true } // <-- debugging purposes only
+    ),
     BrowserModule,
     FormsModule
   ],
