@@ -132,5 +132,10 @@
       }
     }
   },
-  "defaultProject": "final-work-app"
+  "defaultProject": "final-work-app",
+  "schematics": {
+    "@schematics/angular:component": {
+      "styleext": "scss"
+    }
+  }
 }

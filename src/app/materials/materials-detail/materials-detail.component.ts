@@ -4,7 +4,7 @@ import { Material } from '../material.model';
 @Component({
   selector: 'app-materials-detail',
   templateUrl: './materials-detail.component.html',
-  styleUrls: ['./materials-detail.component.css']
+  styleUrls: ['./materials-detail.component.scss']
 })
 
 export class MaterialsDetailComponent implements OnInit {

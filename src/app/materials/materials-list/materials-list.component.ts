@@ -4,7 +4,7 @@ import { Material } from '../material.model';
 @Component({
   selector: 'app-materials-list',
   templateUrl: './materials-list.component.html',
-  styleUrls: ['./materials-list.component.css']
+  styleUrls: ['./materials-list.component.scss']
 })
 export class MaterialsListComponent implements OnInit {
   materials: Material[] = [
