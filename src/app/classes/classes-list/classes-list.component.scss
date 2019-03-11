@@ -1,13 +1,33 @@
-.class-list {
-    display: inline-block;
-}
+@import "../../../assets/config/variables";
+@import "../../../assets/config/base";
+@import "../../../assets/config/typography";
+@import "../../../assets/config/button";
 
-.class-list button {
-    width: 200px;
-    height: 100px;
-    margin: 5px;
-    border: none;
-    background-color: #9CC552;
-    border-radius: 10px;
-    font-size: 30px;
+.section {
+    &__content {
+        /* Positioning */
+        /* Display & Box Model */
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+        /* Color */
+        /* Text */
+        /* other */
+    }
+}
+.image-teaser {
+    /* Positioning */
+    /* Display & Box Model */
+    width: calc(20% - 10px);
+    margin: $spacing-s;
+    /* Color */
+    background-color: $ui-medium-grey;
+    /* Text */
+    text-align: center;
+    /* other */
+
+    &__title {
+        color: $ui-white;
+    }
 }

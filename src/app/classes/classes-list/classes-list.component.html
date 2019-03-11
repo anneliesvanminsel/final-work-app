@@ -1,4 +1,10 @@
-<h1>Klassen</h1>
-<div class="class-list" *ngFor="let class of classes">
-  <button>{{class.name}}</button>
+<div class="section">
+  <h1 class="section__title">Klassen</h1>
+  <div class="section__content">
+    <div class="image-teaser" *ngFor="let class of classes">
+      <a class="button image-teaser__title">{{class.name}}</a>
+    </div>
+  </div>
+
 </div>
+
