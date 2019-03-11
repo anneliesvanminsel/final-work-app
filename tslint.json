@@ -1,8 +1,11 @@
 {
   "rulesDirectory": [
     "node_modules/codelyzer"
-  ],
-  "rules": {
+  ]
+}
+ /* TODO: ESLINT RULES */
+/*
+"rules": {
     "arrow-return-shorthand": true,
     "callable-types": true,
     "class-name": true,
@@ -128,4 +131,4 @@
     "component-class-suffix": true,
     "directive-class-suffix": true
   }
-}
+*/
