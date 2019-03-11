@@ -1,3 +1,4 @@
+/* BREAKPOINTS */
 $breakpoint-mobile: 420px;
 $breakpoint-tablet-small: 640px;
 $breakpoint-tablet: 768px;
@@ -6,11 +7,40 @@ $breakpoint-desktop: 1280px;
 $breakpoint-desktop-large: 1440px;
 $breakpoint-desktop-extra-large: 1600px;
 
+/* UI COLORS */
 $ui-white: #ffffff;
-$ui-black: #000000;
-$dark-color: #11255f;
-$light-color: #218bc5;
+$ui-white-grey: #E1E7ED;
+$ui-light-grey: #C1C7D2;
+$ui-medium-grey: #99A3B0;
+$ui-dark-grey: #525B65;
+$ui-black: #333943;
 
+/* TODO: welke kleuren gaan we gebruiken ??*/
+$dark-red: #D12C42;
+$light-red: #E63B51;
+
+$dark-blue: #3174BA;
+$light-blue: #4988C8;
+
+$dark-yellow: #F6AB2C;
+$light-yellow: #FFC23E;
+
+$dark-orange: #E43E2D;
+$light-orange: #ED5540;
+
+$dark-purple: #7368AC;
+$light-purple: #8C7FBA;
+
+$dark-green: #87B63C;
+$light-green: #9CC552;
+
+$dark-pink: #C8599D;
+$light-pink: #DD73AA;
+
+$dark-green-blue: #3AAF89;
+$light-green-blue: #53B697;
+
+/*SPACING */
 $spacing-s: .5rem;
 $spacing-m: 1rem;
 $spacing-l: 1.5rem;
