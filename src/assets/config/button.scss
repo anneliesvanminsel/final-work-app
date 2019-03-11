@@ -1,0 +1,17 @@
+@import "variables";
+@import "base";
+
+.button {
+    /* Positioning */
+    /* Display & Box Model */
+    display: inline-block;
+    padding: $spacing-s $spacing-s;
+    margin: $spacing-s;
+    /* Color */
+    background-color: transparent;
+    /* Text */
+    text-align: center;
+    text-decoration: none;
+    /* other */
+    border: none;
+}
