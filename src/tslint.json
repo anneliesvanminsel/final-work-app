@@ -5,20 +5,13 @@
             true,
             "attribute",
             "app",
-            "camelCase",
+            "camelCase"
         ],
         "component-selector": [
             true,
             "element",
             "app",
-            "kebab-case",
-        ],
-        "indent": [
-            "error",
-            4,
-            {
-                "SwitchCase": 1,
-            }
-        ],
+            "kebab-case"
+        ]
     }
 }
