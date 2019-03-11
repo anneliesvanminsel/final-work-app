@@ -1,49 +1,29 @@
-/*
+@import "../../../assets/config/variables";
+@import "../../../assets/config/base";
+@import "../../../assets/config/typography";
+@import "../../../assets/config/button";
 
-$dark-red: #D12C42;
-$light-red: #E63B51;
+.text-teaser {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
-$dark-blue: #3174BA;
-$light-blue: #4988C8;
+    &__heading {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        border-bottom: 1px solid $ui-light-grey;
+    }
 
-$dark-yellow: #F6AB2C;
-$light-yellow: #FFC23E;
+    &__title {
+        padding: $spacing-m;
+    }
 
-$dark-orange: #E43E2D;
-$light-orange: #ED5540;
+    &__date {
+        padding: $spacing-m;
+    }
 
-$dark-purple: #7368AC;
-$light-purple: #8C7FBA;
-
-$dark-green: #87B63C;
-$light-green: #9CC552;
-
-$white: #ffffff;
-$white-grey: #E1E7ED;
-$light-grey: #C1C7D2;
-$medium-grey: #99A3B0;
-$dark-grey: #525B65;
-$black: #333943;
-
-$dark-pink: #C8599D;
-$light-pink: #DD73AA;
-
-$dark-green-blue: #3AAF89;
-$light-green-blue: #53B697;
-
-*/
-
-.material-list .table-body:nth-child(odd) {
-  background-color: #E1E7ED;
+    &__link {
+        color: $ui-black;
+    }
 }
-
-.material-list table {
-  width: 80%;
-  margin: 10px;
-}
-
-.material-list td,
-.material-list th {
-  width: 25%;
-}
-
