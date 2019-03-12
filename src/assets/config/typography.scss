@@ -1,0 +1,24 @@
+@mixin font-base {
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+@mixin font-base--light {
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+}
+
+@mixin font-base--medium {
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+}
+
+@mixin font-base--bold {
+  font-family: 'Lato', sans-serif;
+  font-weight: 900;
+}
+
+@mixin font-heading {
+  font-family: 'Bangers', cursive;
+  font-weight: 400;
+}
