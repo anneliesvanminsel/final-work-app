@@ -3,19 +3,32 @@
 @import "../../../assets/config/typography";
 @import "../../../assets/config/button";
 
-.courses-list {
-    display: inline-block;
-}
+.grid {
+    display: flex;
+    flex-flow: row wrap;
 
-.courses-list button {
-    padding: 5px 10px;
-    margin: 5px 10px;
-    border: 1px solid #C8599D;
-    background-color: transparent;
-    border-radius: 50px;
-}
+    &__item {
 
-.courses-list button.is-active {
-    background-color: #C8599D;
-    color: white;
+    }
+
+    &__image {
+
+    }
+
+    &__link {
+
+    }
+
+    &__content {
+
+    }
+
+    &__title {
+
+    }
+
+    &__actions {
+
+    }
+
 }
