@@ -33,11 +33,11 @@ body {
     width: $spacing-l;
 }
 
-.l-main {
-    max-width: 1200px;
-    margin: auto;
-}
-
 h1 {
     @include font-heading;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
 }
