@@ -1,9 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files
+
+layout =  grid, page, containers
+config: colors, animations, typography, spacing, breakpoints
+components: alert/alert +  buttons, breadcrumbs, cards, cta, formas, heading,
+navigation, header, footer ALLES; maar alles telmkens in mooie mapjes.*/
 
 @import "./resources/config/base";
 @import "./resources/config/variables";
 @import "./resources/config/colors";
+@import "./resources/config/typography";
+@import "./resources/config/animations";
 
-@import "./resources/text/typography";
-
-@import "./resources/components/button";
+@import "./resources/components/button/button";
+@import "./resources/components/card/card";
+@import "./resources/components/header/header";
