@@ -3,7 +3,7 @@
 layout =  grid, page, containers
 config: colors, animations, typography, spacing, breakpoints
 components: alert/alert +  buttons, breadcrumbs, cards, cta, formas, heading,
-navigation, header, footer ALLES; maar alles telmkens in mooie mapjes.*/
+navigation, header, footer ALLES; maar alles telmkens in mooie mapjes.
 
 @import "./resources/config/base";
 @import "./resources/config/variables";
@@ -14,3 +14,4 @@ navigation, header, footer ALLES; maar alles telmkens in mooie mapjes.*/
 @import "./resources/components/button/button";
 @import "./resources/components/card/card";
 @import "./resources/components/header/header";
+*/

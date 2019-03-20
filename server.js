@@ -1,4 +1,12 @@
 import express from 'express';
+
+const app = express();
+app.get('/', (req, res) => res.send('Hello World! Annelies heeft een server!'));
+app.listen(4000, () => console.log(`Express server running on port 4000`));
+
+/*
+import express from 'express';
+
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
@@ -73,6 +81,8 @@ router.route('/issues/delete/:id').get((req, res) => {
             res.json('Removed successfully');
     });
 });
-
+*/
+/*
 app.use('/', router);
 app.listen(4000, () => console.log(`Express server running on port 4000`));
+*/
