@@ -1,3 +1,9 @@
 <app-header-teacher></app-header-teacher>
 
 <router-outlet></router-outlet>
+
+<ul>
+    <li *ngFor="let item of items | async">
+        <pre>{{ item | json }}</pre>
+    </li>
+</ul>

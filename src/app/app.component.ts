@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+
+import { AngularFirestore } from 'angularfire2/firestore';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Final Work';
+  public items: Observable<any[]>;
+
+  constructor(db: AngularFirestore) {
+    this.items = db.collection('/issue').valueChanges();
+  }
 }

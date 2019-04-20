@@ -2,6 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireModule } from 'angularfire2';
+
+import { environment } from '../environments/environment';
+
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { MaterialsComponent } from './materials/materials.component';
@@ -61,7 +66,9 @@ const appRoutes: Routes = [
         { enableTracing: true } // <-- debugging purposes only
     ),
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
