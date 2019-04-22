@@ -22,6 +22,8 @@ import { HeaderTeacherComponent } from './header/header-teacher/header-teacher.c
 import { HeaderStudentComponent } from './header/header-student/header-student.component';
 import { FooterTeacherComponent } from './footer/footer-teacher/footer-teacher.component';
 import { FooterStudentComponent } from './footer/footer-student/footer-student.component';
+import { AddclassComponent } from './classes/addclass/addclass.component';
+import { EditclassComponent } from './classes/editclass/editclass.component';
 
 const appRoutes: Routes = [
   {
@@ -35,6 +37,13 @@ const appRoutes: Routes = [
   {
     path: 'teacher/materials',
     component: MaterialsComponent
+  },
+  { path: 'teacher/classes/createclass',
+    component: AddclassComponent
+  },
+  {
+    path: 'teacher/classes/editclass/:id',
+    component: EditclassComponent
   },
   {
     path: '',
@@ -59,6 +68,8 @@ const appRoutes: Routes = [
     HeaderStudentComponent,
     FooterTeacherComponent,
     FooterStudentComponent,
+    AddclassComponent,
+    EditclassComponent,
   ],
   imports: [
     RouterModule.forRoot(
