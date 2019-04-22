@@ -1,17 +1,64 @@
 @import "../../config/variables";
+@import "../../config/colors";
 @import "../../config/base";
 
 .button {
     /* Positioning */
     /* Display & Box Model */
-    display: inline-block;
-    padding: $spacing-s $spacing-s;
+    display: block;
+    padding: $spacing-s $spacing-l;
     margin: $spacing-s;
+    width: auto;
     /* Color */
     background-color: transparent;
+    color: $ui-dark-grey;
     /* Text */
     text-align: center;
     text-decoration: none;
     /* other */
     border: none;
+    border-radius: 200px;
+
+    &.has-icon {
+        display: flex;
+
+        fa-icon {
+            margin-right: 10px;
+        }
+    }
+
+    &.is-bordeaux {
+        background-color: $c-bordeaux;
+        color: white;
+    }
+
+    &.is-green {
+        background-color: $c-green;
+        color: white;
+    }
+
+    &.is-pink {
+        background-color: $c-pink;
+        color: white;
+    }
+
+    &.is-orange {
+        background-color: $c-orange;
+        color: white;
+    }
+
+    &.is-darkgreen {
+        background-color: $c-darkgreen;
+        color: white;
+    }
+
+    &.is-blue {
+        background-color: $c-blue;
+        color: white;
+    }
+
+    &.is-purple {
+        background-color: $c-purple;
+        color: white;
+    }
 }

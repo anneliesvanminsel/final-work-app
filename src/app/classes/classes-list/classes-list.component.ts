@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Class} from '../../classes/class.model';
+import {Observable} from "rxjs";
+
+import { AngularFirestore } from 'angularfire2/firestore';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-classes-list',
@@ -7,17 +10,15 @@ import {Class} from '../../classes/class.model';
   styleUrls: ['./classes-list.component.scss']
 })
 export class ClassesListComponent implements OnInit {
-  classes: Class[] = [
-    new Class(1,'4A', '10/1/2019'),
-    new Class(2, '3B', '30/12/2018'),
-    new Class(3,'2D', '25/12/2018'),
-    new Class(4, '3D', '10/1/2019'),
-    new Class(5, '1G', '30/12/2018')
-  ];
 
-  constructor() { }
+  public classgroups: Observable<any[]>;
+  faPlus = faPlus;
 
-  ngOnInit() {
+  constructor(db: AngularFirestore) {
+    this.classgroups = db.collection('/classgroup').valueChanges();
   }
 
+  ngOnInit() {
+
+  }
 }

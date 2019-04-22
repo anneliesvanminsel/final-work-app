@@ -1,16 +1,17 @@
 <div class="container">
     <div class="section">
         <div class="section__heading">
-            <h1 class="section__title">
-                Klassen
+            <h1 class="section__title title">
+                klassen
             </h1>
-            <a routerLink="createclass">
-                Voeg een class toe
+            <a class="button is-blue has-icon" routerLink="createclass">
+                <fa-icon [icon]="faPlus"></fa-icon>
+                <div>voeg een class toe</div>
             </a>
         </div>
         <div class="section__content">
-            <div class="image-teaser" *ngFor="let class of classes">
-                <a class="button image-teaser__title">{{class.name}}</a>
+            <div class="image-teaser" *ngFor="let classgroup of classgroups | async">
+                <a class="button image-teaser__title">{{ classgroup.name | json }}</a>
             </div>
         </div>
     </div>

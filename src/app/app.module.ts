@@ -5,6 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireModule } from 'angularfire2';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
@@ -79,7 +81,8 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
