@@ -8,10 +8,9 @@
     /* Positioning */
     position: relative;
     /* Display & Box Model */
-    padding: $spacing-m;
+    padding: $spacing-m 100px;
     /* Color */
-    background-color: $ui-black;
-    color: $ui-white;
+    color: $c-purple;
     /* Text */
     /* other */
 }
@@ -25,6 +24,8 @@
 
     /* Color */
     /* Text */
+    font-size: 30px;
+    text-transform: lowercase;
     /* other */
 
 
@@ -36,8 +37,8 @@
         /* Text */
         /* other */
 
-        @media (min-width: $breakpoint-tablet) {
-            flex-grow: 0;
+        svg {
+            width: 20%;
         }
     }
 
@@ -75,11 +76,20 @@
     &__link {
         /* Positioning */
         /* Display & Box Model */
+        padding-bottom: 5px;
+        height: 45px;
         /* Color */
-        color: $ui-white;
+        color: $c-blue;
         /* Text */
         text-decoration: none;
         /* other */
+        border-bottom: 2px solid transparent;
+        transition: border .4s ease-in-out;
+
+        &:hover,
+        &:focus {
+            border-bottom: 2px solid $c-blue;
+        }
     }
 
     &__icon {

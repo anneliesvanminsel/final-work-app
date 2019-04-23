@@ -37,4 +37,8 @@ h1 {
     @include font-heading;
 }
 
-
+.ctn-svg {
+    svg {
+        width: 100%;
+    }
+}
