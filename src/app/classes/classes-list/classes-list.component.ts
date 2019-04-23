@@ -1,24 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable} from "rxjs";
-
-import { AngularFirestore } from 'angularfire2/firestore';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import {ClassgroupService} from "../../services/classgroup.service";
 
 @Component({
   selector: 'app-classes-list',
   templateUrl: './classes-list.component.html',
-  styleUrls: ['./classes-list.component.scss']
+  styleUrls: ['./classes-list.component.scss'],
+  providers: ClassgroupService,
 })
 export class ClassesListComponent implements OnInit {
 
-  public classgroups: Observable<any[]>;
+  public classgroups: {name: string, year: string}[] = [];
   faPlus = faPlus;
 
-  constructor(db: AngularFirestore) {
-    this.classgroups = db.collection('/classgroup').valueChanges();
+  constructor(private classgroupService: ClassgroupService){
+
   }
 
   ngOnInit() {
-
+    this.classgroups = this.classgroupService.classgroups;
   }
 }

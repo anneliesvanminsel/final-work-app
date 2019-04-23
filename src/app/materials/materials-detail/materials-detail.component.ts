@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Material } from '../material.model';
+import { Material } from '../../models/material.model';
 
 @Component({
   selector: 'app-materials-detail',
