@@ -12,6 +12,10 @@ export class ClassgroupService {
     constructor(db: AngularFirestore) {
         //this.classgroupCollection = db.collection('/classgroup').valueChanges();
     }
+    
+    getClassgroups() {
+        return this.classgroupCollection;
+    }
 
     addClassgroup(name: string, date: string) {
         const newClassgroup = new Classgroup(name, date);
