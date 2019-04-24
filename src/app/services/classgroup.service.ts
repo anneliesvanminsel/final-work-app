@@ -1,7 +1,7 @@
 import {
     AngularFirestore,
     AngularFirestoreCollection,
-    AngularFirestoreDocument
+    AngularFirestoreDocument,
 } from "angularfire2/firestore";
 import { Observable } from 'RxJS';
 import { Classgroup} from '../models/classgroup.model';
