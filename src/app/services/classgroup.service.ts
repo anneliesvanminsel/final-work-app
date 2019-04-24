@@ -7,7 +7,7 @@ import { Observable } from 'RxJS';
 import { Classgroup} from '../models/classgroup.model';
 
 export class ClassgroupService {
-    classgroupCollection: AngularFirestoreCollection<Classgroup>;
+    public classgroupCollection: AngularFirestoreCollection<Classgroup[]>;
     public classgroups: Observable<Classgroup[]>;
 
     constructor(db: AngularFirestore) {
@@ -16,10 +16,10 @@ export class ClassgroupService {
 
     addClassgroup(name: string, date: string) {
         const newClassgroup = new Classgroup(name, date);
-        this.classgroups.push(newClassgroup);
+        this.classgroupCollection.add(newClassgroup);
     }
 
     updateClassgroup(id: string, name: string) {
-        this.classgroups[id].name = name;
+        this.classgroupCollection[id].name = name;
     }
 }
