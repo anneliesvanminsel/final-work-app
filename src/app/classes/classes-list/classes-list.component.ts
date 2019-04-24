@@ -18,6 +18,6 @@ export class ClassesListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.classgroups = this.classgroupService.classgroups;
+    this.classgroups = this.classgroupService.classgroupCollection;
   }
 }
