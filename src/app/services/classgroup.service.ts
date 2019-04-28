@@ -34,10 +34,12 @@ export class ClassgroupService {
         return this.classgroups;
     }
 
+    /*
     addClassgroup(name: string, date: string) {
         const newClassgroup = new Classgroup(name, date);
         this.classgroupCollection.add(newClassgroup);
     }
+    */
 
     updateClassgroup(id: string, name: string) {
         this.classgroupCollection[id].name = name;

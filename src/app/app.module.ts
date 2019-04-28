@@ -1,14 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { environment } from '../environments/environment';
 
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireModule } from 'angularfire2';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ClassgroupService} from './services/classgroup.service';
-
-import { environment } from '../environments/environment';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
@@ -29,6 +27,7 @@ import { AddclassComponent } from './classes/addclass/addclass.component';
 import { EditclassComponent } from './classes/editclass/editclass.component';
 import { HeaderIndexComponent } from './header/header-index/header-index.component';
 import { ClassItemComponent } from './classes/classes-list/class-item/class-item.component';
+import { CourseItemComponent } from './courses/courses-list/course-item/course-item.component';
 
 
 const appRoutes: Routes = [
@@ -78,6 +77,7 @@ const appRoutes: Routes = [
     EditclassComponent,
     HeaderIndexComponent,
     ClassItemComponent,
+    CourseItemComponent,
   ],
   imports: [
     RouterModule.forRoot(
@@ -90,9 +90,7 @@ const appRoutes: Routes = [
     AngularFirestoreModule,
     FontAwesomeModule,
   ],
-  providers: [
-      ClassgroupService,
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

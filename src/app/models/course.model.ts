@@ -1,10 +1,10 @@
 export class Course {
-    public course_id: number;
+    public id: string;
     public name: string;
     public date: string;
 
-    constructor (course_id: number, name: string, date: string) {
-        this.course_id = course_id;
+    constructor (id: string, name: string, date: string) {
+        this.id = id;
         this.name = name;
         this.date = date;
   }
