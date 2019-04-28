@@ -10,9 +10,9 @@ import { AngularFirestore } from 'angularfire2/firestore';
 })
 export class AppComponent {
   title = 'Final Work';
-  public items: Observable<any[]>;
 
-  constructor(db: AngularFirestore) {
-    this.items = db.collection('/issue').valueChanges();
+
+  constructor() {
+
   }
 }

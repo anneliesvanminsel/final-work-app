@@ -10,9 +10,10 @@
             </a>
         </div>
         <div class="section__content">
-            <div class="image-teaser" *ngFor="let classgroup of classgroups | async">
-                <a class="button image-teaser__title">{{ classgroup.name | json }}</a>
-            </div>
+            <app-class-item
+                *ngFor="let classgroupItem of classgroups"
+                [classgroup]="classgroupItem"
+            ></app-class-item>
         </div>
     </div>
 </div>
