@@ -1,3 +1,18 @@
-<p>
-  editclass works!
-</p>
+<form (ngSubmit)="onAddClass()">
+    <div class="form__group">
+        <label for="name">Name</label>
+        <input
+                type="text"
+                id="name"
+                class="form-control"
+                #nameInput>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-success" type="submit" (click)="onAddClass()">Add</button>
+            <button class="btn btn-danger" type="button">Delete</button>
+            <button class="btn btn-primary" type="button">Clear</button>
+        </div>
+    </div>
+</form>
