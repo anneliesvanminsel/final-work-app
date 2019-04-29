@@ -1,6 +1,21 @@
+@keyframes pulse {
+	from {
+		border: 1px solid #9E1779;
+	}
+
+	50% {
+		border: 2px solid #3D2F82;
+	}
+
+	to {
+		border: 1px solid #9E1779;
+	}
+}
+
 .class-teaser {
 	display: block;
 	border: 1px solid #9E1779;
+	border-radius: 10px;
 	color: #9E1779;
 	margin: 10px;
 
@@ -12,5 +27,11 @@
 	&__text {
 		text-align: center;
 		padding: 15px;
+	}
+
+	&.is-animated {
+		animation: pulse;
+		animation-delay: 2s;
+		animation-duration: .5s;
 	}
 }
