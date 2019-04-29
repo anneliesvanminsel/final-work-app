@@ -4,8 +4,10 @@ import {
   ElementRef,
   ViewChild
 } from '@angular/core';
+
 import {ClassgroupService} from '../../services/classgroup.service';
 import {Classgroup} from '../../models/classgroup.model';
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-editclass',
@@ -25,9 +27,9 @@ export class EditclassComponent implements OnInit {
   ngOnInit() {
   }
 
-  onAddItem() {
+  onAddClass() {
     const updateName = this.nameInputRef.nativeElement.value;
-    const newClass = new Classgroup(updateName);
-    this.classgroupService.addClassgroup(newClass);
+    this.classgroup.name = updateName;
+    this.classgroupService.addClassgroup(this.classgroup);
   }
 }

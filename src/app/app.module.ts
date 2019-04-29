@@ -43,7 +43,7 @@ const appRoutes: Routes = [
     path: 'teacher/materials',
     component: MaterialsComponent
   },
-  { path: 'teacher/classes/createclass',
+  { path: 'addclass',
     component: AddclassComponent
   },
   {
