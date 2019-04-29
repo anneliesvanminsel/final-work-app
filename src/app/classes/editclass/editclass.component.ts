@@ -14,7 +14,7 @@ import { Router } from "@angular/router";
   templateUrl: './editclass.component.html',
   styleUrls: ['./editclass.component.scss']
 })
-export class EditclassComponent implements OnInit {
+export class EditClassComponent implements OnInit {
   @ViewChild('nameInput') nameInputRef: ElementRef;
 
   classgroup: Classgroup ={

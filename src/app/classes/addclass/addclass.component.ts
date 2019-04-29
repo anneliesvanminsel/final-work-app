@@ -14,13 +14,13 @@ import { Router } from "@angular/router";
   templateUrl: './addclass.component.html',
   styleUrls: ['./addclass.component.scss']
 })
-export class AddclassComponent implements OnInit {
+export class AddClassComponent implements OnInit {
 
   @ViewChild('nameInput') nameInputRef: ElementRef;
 
   classgroup: Classgroup ={
     id: '',
-    name: '',
+    name: this.nameInputRef.nativeElement.value,
     date: '',
   };
   constructor(private router: Router, private classgroupService: ClassgroupService) { }
@@ -29,10 +29,7 @@ export class AddclassComponent implements OnInit {
   }
 
   onAddClass() {
-    const updateName = this.nameInputRef.nativeElement.value;
-    this.classgroup.name = updateName;
     this.classgroupService.addClassgroup(this.classgroup);
-    this.router.navigate(['/teacher/classes']);
   }
 }
 

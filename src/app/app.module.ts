@@ -23,8 +23,8 @@ import { HeaderTeacherComponent } from './header/header-teacher/header-teacher.c
 import { HeaderStudentComponent } from './header/header-student/header-student.component';
 import { FooterTeacherComponent } from './footer/footer-teacher/footer-teacher.component';
 import { FooterStudentComponent } from './footer/footer-student/footer-student.component';
-import { AddclassComponent } from './classes/addclass/addclass.component';
-import { EditclassComponent } from './classes/editclass/editclass.component';
+import { AddClassComponent } from './classes/addclass/addclass.component';
+import { EditClassComponent } from './classes/editclass/editclass.component';
 import { HeaderIndexComponent } from './header/header-index/header-index.component';
 import { ClassItemComponent } from './classes/classes-list/class-item/class-item.component';
 import { CourseItemComponent } from './courses/courses-list/course-item/course-item.component';
@@ -44,11 +44,11 @@ const appRoutes: Routes = [
     component: MaterialsComponent
   },
   { path: 'addclass',
-    component: AddclassComponent
+    component: AddClassComponent
   },
   {
     path: 'teacher/classes/editclass/:id',
-    component: EditclassComponent
+    component: EditClassComponent
   },
   {
     path: '',
@@ -73,8 +73,8 @@ const appRoutes: Routes = [
     HeaderStudentComponent,
     FooterTeacherComponent,
     FooterStudentComponent,
-    AddclassComponent,
-    EditclassComponent,
+    AddClassComponent,
+    EditClassComponent,
     HeaderIndexComponent,
     ClassItemComponent,
     CourseItemComponent,
