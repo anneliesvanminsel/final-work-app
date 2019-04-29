@@ -1,14 +1,23 @@
-<div>
-  test
-</div>
+
 <form (ngSubmit)="onAddClass()">
   <div class="form__group">
     <label for="name">Name</label>
     <input
             type="text"
             id="name"
-            class="form-control"
+            name="name"
+            class="form__input"
             #nameInput>
+  </div>
+
+  <div class="form__group">
+    <label for="date">Name</label>
+    <input
+            type="text"
+            id="date"
+            name="date"
+            class="form__input"
+            #dateInput>
   </div>
 
   <div class="row">

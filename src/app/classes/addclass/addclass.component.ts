@@ -17,10 +17,11 @@ import { Router } from "@angular/router";
 export class AddClassComponent implements OnInit {
 
   @ViewChild('nameInput') nameInputRef: ElementRef;
+  @ViewChild('dateInput') dateInputRef: ElementRef;
 
   classgroup: Classgroup ={
     id: '',
-    name: this.nameInputRef.nativeElement.value,
+    name: '',
     date: '',
   };
   constructor(private router: Router, private classgroupService: ClassgroupService) { }
@@ -29,7 +30,10 @@ export class AddClassComponent implements OnInit {
   }
 
   onAddClass() {
+    this.classgroup.name = this.nameInputRef.nativeElement.value;
+    this.classgroup.date = this.dateInputRef.nativeElement.value;
     this.classgroupService.addClassgroup(this.classgroup);
+
   }
 }
 

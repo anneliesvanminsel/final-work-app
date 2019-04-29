@@ -10,7 +10,7 @@ import { Classgroup} from '../models/classgroup.model';
 export class ClassgroupService {
     classgroupCollection: AngularFirestoreCollection<Classgroup>;
     classgroups: Observable<Classgroup[]>;
-    classgrouDoc: AngularFirestoreDocument<Classgroup>;
+    classgroupDoc: AngularFirestoreDocument<Classgroup>;
 
     constructor(db: AngularFirestore) {
         //this.classgroups = db.collection('/classgroup').valueChanges();

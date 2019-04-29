@@ -28,6 +28,8 @@ import { EditClassComponent } from './classes/editclass/editclass.component';
 import { HeaderIndexComponent } from './header/header-index/header-index.component';
 import { ClassItemComponent } from './classes/classes-list/class-item/class-item.component';
 import { CourseItemComponent } from './courses/courses-list/course-item/course-item.component';
+import {ClassgroupService} from './services/classgroup.service';
+import {CourseService} from './services/course.service';
 
 
 const appRoutes: Routes = [
@@ -90,7 +92,7 @@ const appRoutes: Routes = [
     AngularFirestoreModule,
     FontAwesomeModule,
   ],
-  providers: [],
+  providers: [ClassgroupService, CourseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
