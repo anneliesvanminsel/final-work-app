@@ -26,14 +26,13 @@ export class AddClassComponent implements OnInit {
   };
   constructor(private router: Router, private classgroupService: ClassgroupService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onAddClass() {
     this.classgroup.name = this.nameInputRef.nativeElement.value;
     this.classgroup.date = this.dateInputRef.nativeElement.value;
     this.classgroupService.addClassgroup(this.classgroup);
-
+    this.router.navigate(['/teacher/classes']);
   }
 }
 

@@ -49,7 +49,7 @@ const appRoutes: Routes = [
     component: AddClassComponent
   },
   {
-    path: 'teacher/classes/editclass/:id',
+    path: 'editclass/:id',
     component: EditClassComponent
   },
   {
