@@ -3,6 +3,7 @@
 
 .pricing {
     background-color: lightgrey;
+    padding: 50px 100px;
 
     &__wrapper {
         width: 100%;
@@ -10,6 +11,13 @@
         align-items: stretch;
         justify-content: center;
 
+    }
+
+    &__title {
+        @include font-heading;
+
+        text-align: center;
+        margin-bottom: 50px;
     }
 
     &__item {
