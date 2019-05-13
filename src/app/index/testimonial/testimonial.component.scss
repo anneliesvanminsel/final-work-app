@@ -4,7 +4,17 @@
 .testimonial {
     @include font-base;
 
+    display: flex;
+    align-items: stretch;
+
     padding: 50px 100px;
+
+    &__title {
+        @include font-heading;
+
+        text-align: center;
+        margin-bottom: 50px;
+    }
 
     &__item {
         display: flex;
@@ -13,7 +23,6 @@
 
         text-decoration: none;
         color: $ui-black;
-        cursor: pointer;
 
         font-weight: 100;
         width: 30%;
@@ -43,16 +52,18 @@
     }
 
     &__user {
-
+        text-align: center;
     }
 }
 
 .user {
     &__name {
         text-transform: uppercase;
+        margin-top: 20px;
     }
 
     &__function {
         text-transform: uppercase;
+        margin-top: 10px;
     }
 }
