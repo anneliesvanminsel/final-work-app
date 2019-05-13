@@ -31,6 +31,7 @@ import { ClassgroupService } from './services/classgroup.service';
 import { CourseService } from './services/course.service';
 import { IndexComponent } from './index/index.component';
 import { PricingComponent } from './index/pricing/pricing.component';
+import { TestimonialComponent } from './index/testimonial/testimonial.component';
 
 
 const appRoutes: Routes = [
@@ -82,6 +83,7 @@ const appRoutes: Routes = [
     CourseItemComponent,
     IndexComponent,
     PricingComponent,
+    TestimonialComponent,
   ],
   imports: [
     RouterModule.forRoot(
