@@ -1,0 +1,49 @@
+@import "../../../resources/config/colors";
+@import "../../../resources/config/typography";
+
+.pricing {
+    background-color: lightgrey;
+
+    &__wrapper {
+        width: 100%;
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        text-decoration: none;
+        @include font-base;
+        color: $ui-black;
+        cursor: pointer;
+
+        font-weight: 100;
+        width: 30%;
+        padding: 20px;
+        margin: 10px;
+
+        transition: box-shadow .2s ease-in-out, transform .2s ease-in-out;
+
+        &:hover,
+        &:focus {
+            background-color: $ui-white;
+            box-shadow: 0 5px 10px 0 rgba(#000000, .1);
+            transform: translateY(-1px);
+        }
+    }
+
+    &__label {
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+
+    &__price {
+        font-size: 100px;
+        color: $c-blue;
+    }
+}

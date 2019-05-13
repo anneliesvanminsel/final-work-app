@@ -25,11 +25,12 @@ import { FooterTeacherComponent } from './footer/footer-teacher/footer-teacher.c
 import { FooterStudentComponent } from './footer/footer-student/footer-student.component';
 import { AddClassComponent } from './classes/addclass/addclass.component';
 import { EditClassComponent } from './classes/editclass/editclass.component';
-import { HeaderIndexComponent } from './header/header-index/header-index.component';
 import { ClassItemComponent } from './classes/classes-list/class-item/class-item.component';
 import { CourseItemComponent } from './courses/courses-list/course-item/course-item.component';
-import {ClassgroupService} from './services/classgroup.service';
-import {CourseService} from './services/course.service';
+import { ClassgroupService } from './services/classgroup.service';
+import { CourseService } from './services/course.service';
+import { IndexComponent } from './index/index.component';
+import { PricingComponent } from './index/pricing/pricing.component';
 
 
 const appRoutes: Routes = [
@@ -77,9 +78,10 @@ const appRoutes: Routes = [
     FooterStudentComponent,
     AddClassComponent,
     EditClassComponent,
-    HeaderIndexComponent,
     ClassItemComponent,
     CourseItemComponent,
+    IndexComponent,
+    PricingComponent,
   ],
   imports: [
     RouterModule.forRoot(
