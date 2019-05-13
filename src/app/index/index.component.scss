@@ -7,10 +7,14 @@
     display: flex;
     align-items: stretch;
 
-    margin: 30px 50px;
+    margin: 50px 50px;
+
+    &__title {
+        margin-top: 0;
+    }
 
     &__item {
-        padding: 20px 30px;
+        padding: 40px 30px;
         position: relative;
 
 
