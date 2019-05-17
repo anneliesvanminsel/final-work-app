@@ -32,6 +32,9 @@ import { CourseService } from './services/course.service';
 import { IndexComponent } from './index/index.component';
 import { PricingComponent } from './index/pricing/pricing.component';
 import { TestimonialComponent } from './index/testimonial/testimonial.component';
+import { FormsComponent } from './forms/forms.component';
+import { RegisterComponent } from './forms/register/register.component';
+import { LoginComponent } from './forms/login/login.component';
 
 
 const appRoutes: Routes = [
@@ -84,6 +87,9 @@ const appRoutes: Routes = [
     IndexComponent,
     PricingComponent,
     TestimonialComponent,
+    FormsComponent,
+    RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     RouterModule.forRoot(

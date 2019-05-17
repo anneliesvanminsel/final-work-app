@@ -1,0 +1,21 @@
+@import "../../config/colors";
+
+.form {
+    &__input {
+        max-width: 100%;
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 20px;
+        font-size: inherit;
+        font-family: inherit;
+        border: 1px solid $c-green;
+
+        transition: border-color .5s ease-in-out;
+
+        &:focus {
+            outline: none;
+            border-color: $c-dark-green;
+        }
+    }
+
+}
