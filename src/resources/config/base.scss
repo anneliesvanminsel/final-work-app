@@ -1,4 +1,5 @@
 @import "typography";
+@import "variables";
 
 * {
     margin: 0;
@@ -17,6 +18,9 @@ html {
 }
 
 body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     font-size: 1.6rem;
     @include font-base;
 }
