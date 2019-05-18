@@ -1,5 +1,33 @@
 @import "../../resources/config/colors";
 @import "../../resources/config/typography";
+@import "../../resources/layout/container";
+@import "../../resources/components/accent/multicolor-line";
+@import "../../resources/components/footer/footer";
+
+.header {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
+
+    &__logo {
+        width: 750px;
+        position: absolute;
+        right: 100px;
+        top: calc(100vh - 600px);
+    }
+
+    &__text {
+        max-width: 750px;
+        text-align: right;
+        position: absolute;
+        right: 100px;
+        top: calc(100vh - 470px);
+        @include font-heading;
+        font-size: 30px;
+        text-transform: lowercase;
+        color: $c-bordeaux;
+    }
+}
 
 .card {
     @include font-heading;
@@ -7,7 +35,8 @@
     display: flex;
     align-items: stretch;
 
-    margin: 50px 50px;
+    margin: calc(100vh - 200px) auto 0;
+    max-width: 1200px;
 
     &__title {
         margin-top: 0;
@@ -16,7 +45,7 @@
     &__item {
         padding: 40px 30px;
         position: relative;
-
+        width: calc(100% / 4);
 
         &.is-orange {
             background-color: rgba($c-orange, .3);
@@ -62,6 +91,13 @@
             height: 20px;
 
             background-color: transparent;
+            transition: height .2s ease-in-out;
+        }
+
+        &:hover {
+            &::after {
+                height: 25px;
+            }
         }
     }
 }

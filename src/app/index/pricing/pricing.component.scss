@@ -2,7 +2,6 @@
 @import "../../../resources/config/typography";
 
 .pricing {
-    background-color: lightgrey;
     padding: 50px 100px;
 
     &__wrapper {
@@ -33,7 +32,7 @@
         font-weight: 100;
         text-align: center;
         width: 30%;
-        padding: 20px;
+        padding: 50px 60px;
         margin: 10px;
 
         transition: box-shadow .2s ease-in-out, transform .2s ease-in-out;
@@ -52,7 +51,12 @@
     }
 
     &__price {
-        font-size: 100px;
+        font-size: 80px;
         color: $c-blue;
+        @include font-heading;
+    }
+
+    &__description {
+        font-size: 18px;
     }
 }

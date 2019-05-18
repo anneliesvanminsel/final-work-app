@@ -23,6 +23,7 @@ body {
     flex-direction: column;
     font-size: 1.6rem;
     @include font-base;
+    background-color: #FCFCFC;
 }
 
 .ctn-image {

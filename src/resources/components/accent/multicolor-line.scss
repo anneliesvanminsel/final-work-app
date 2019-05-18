@@ -1,0 +1,53 @@
+.accent {
+
+  &.multicolor {
+    position: relative;
+    margin: 0 auto;
+    max-width: 1200px;
+
+    .is-blue, .is-pink, .is-green, .is-orange {
+        content: "";
+
+        position: absolute;
+
+        width: calc(100% / 4);
+        height: 10px;
+
+        background-color: transparent;
+    }
+
+    &.bottom {
+      top: -10px;
+    }
+
+    &.top {
+      top: 0;
+      bottom: -10px;
+    }
+
+    .is-blue {
+        left: 0;
+        right: 0;
+        background-color: $c-blue;
+    }
+    .is-orange {
+        left: calc(100% / 4);
+        right: 0;
+        background-color: $c-orange;
+    }
+
+    .is-pink {
+        left: calc((100% / 4) * 2);
+        right: 0;
+        background-color: $c-pink;
+    }
+
+    .is-green {
+        left: calc((100% / 4) * 3);
+        right: 0;
+        background-color: $c-green;
+    }
+  }
+
+
+}
