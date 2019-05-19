@@ -1,2 +1,51 @@
 @import "../../../resources/components/forms/forms";
 @import "../../../resources/config/base";
+@import "../../../resources/config/colors";
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	width: 100%;
+	height: 100vh;
+}
+
+.pattern {
+	&__top {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 700px;
+
+
+		svg {
+			width: 100%;
+		}
+	}
+
+	&__bottom {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		width: 700px;
+
+
+		svg {
+			width: 100%;
+		}
+	}
+}
+
+.panel {
+	position:relative;
+	z-index: 12;
+	background-color: $ui-white;
+	width: 80%;
+	padding: 100px 100px;
+
+	&__heading {
+		margin-bottom: 40px;
+	}
+}
