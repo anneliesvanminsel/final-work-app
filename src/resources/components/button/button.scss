@@ -5,7 +5,7 @@
 .button {
     /* Positioning */
     /* Display & Box Model */
-    display: block;
+    display: inline-block;
     padding: $spacing-s $spacing-l;
     margin: $spacing-s;
     width: auto;
@@ -34,31 +34,46 @@
 
     &.is-green {
         background-color: $c-green;
-        color: white;
+        color: $ui-white;
     }
 
     &.is-pink {
         background-color: $c-pink;
-        color: white;
+        color: $ui-white;
     }
 
     &.is-orange {
         background-color: $c-orange;
-        color: white;
+        color: $ui-white;
     }
 
     &.is-darkgreen {
         background-color: $c-darkgreen;
-        color: white;
+        color: $ui-white;
     }
 
     &.is-blue {
         background-color: $c-blue;
-        color: white;
+        color: $ui-white;
     }
 
     &.is-purple {
         background-color: $c-purple;
-        color: white;
+        color: $ui-white;
+    }
+
+    &.is-cancel {
+        border: 1px solid $c-pink;
+        color: $c-pink;
+
+        &:hover {
+            color: $ui-white;
+            background-color: $c-pink;
+        }
+    }
+
+    &.is-submit {
+        background-color: $c-green;
+        color: $ui-white;
     }
 }

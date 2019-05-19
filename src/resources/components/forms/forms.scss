@@ -5,18 +5,24 @@
     &__input {
         max-width: 100%;
         width: 100%;
-        padding: 8px;
-        margin-bottom: 20px;
+        padding: 15px 20px;
+        margin-bottom: 50px;
         font-size: inherit;
         font-family: inherit;
-        border: 1px solid $c-green;
+        border: 1px solid $ui-white;
+        border-bottom: 1px solid $c-green;
+        border-radius: 20px;
 
         transition: border-color .5s ease-in-out;
 
         &:focus {
             outline: none;
-            border-color: $c-darkgreen;
+            border-bottom-color: $c-darkgreen;
         }
+    }
+
+    &__actions {
+        text-align: right;
     }
 
 }
