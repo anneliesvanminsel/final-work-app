@@ -5,8 +5,14 @@ import { environment } from '../environments/environment';
 
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+import { AuthService } from "./services/authservice.service";
+import { ClassgroupService } from './services/classgroup.service';
+import { CourseService } from './services/course.service';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
@@ -27,8 +33,6 @@ import { AddClassComponent } from './classes/addclass/addclass.component';
 import { EditClassComponent } from './classes/editclass/editclass.component';
 import { ClassItemComponent } from './classes/classes-list/class-item/class-item.component';
 import { CourseItemComponent } from './courses/courses-list/course-item/course-item.component';
-import { ClassgroupService } from './services/classgroup.service';
-import { CourseService } from './services/course.service';
 import { IndexComponent } from './index/index.component';
 import { PricingComponent } from './index/pricing/pricing.component';
 import { TestimonialComponent } from './index/testimonial/testimonial.component';
@@ -113,8 +117,9 @@ const appRoutes: Routes = [
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     FontAwesomeModule,
+    AngularFireAuthModule,
   ],
-  providers: [ClassgroupService, CourseService],
+  providers: [ClassgroupService, CourseService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

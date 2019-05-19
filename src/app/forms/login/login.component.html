@@ -1,5 +1,5 @@
 <main class="container">
-  <form class="form">
+  <form class="form" (ngSubmit)="onLogin()">
     <div class="form__group">
       <label for="name">Email</label>
       <input
@@ -8,17 +8,20 @@
               name="name"
               class="form__input"
               #mailInput
+              required
+              autofocus
       >
     </div>
 
     <div class="form__group">
       <label for="date">Wachtwoord</label>
       <input
-              type="text"
+              type="password"
               id="date"
               name="date"
               class="form__input"
               #passwordInput
+              required
       >
     </div>
 
