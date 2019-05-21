@@ -18,12 +18,12 @@ html {
 }
 
 body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    font-size: 1.6rem;
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    font-size: 1.6rem !important;
     @include font-base;
-    background-color: #FDFDFD;
+    background-color: #FDFDFD !important;
 }
 
 .ctn-image {
