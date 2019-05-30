@@ -16,13 +16,10 @@ import { CourseService } from './services/course.service';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { MaterialsComponent } from './materials/materials.component';
 import { MaterialsListComponent } from './materials/materials-list/materials-list.component';
 import { MaterialsDetailComponent } from './materials/materials-detail/materials-detail.component';
-import { CoursesComponent } from './courses/courses.component';
 import { CoursesDetailComponent } from './courses/courses-detail/courses-detail.component';
 import { CoursesListComponent } from './courses/courses-list/courses-list.component';
-import { ClassesComponent } from './classes/classes.component';
 import { ClassesListComponent } from './classes/classes-list/classes-list.component';
 import { ClassesDetailComponent } from './classes/classes-detail/classes-detail.component';
 import { HeaderTeacherComponent } from './header/header-teacher/header-teacher.component';
@@ -40,19 +37,18 @@ import { FormsComponent } from './forms/forms.component';
 import { RegisterComponent } from './forms/register/register.component';
 import { LoginComponent } from './forms/login/login.component';
 
-
 const appRoutes: Routes = [
   {
     path: 'teacher/classes',
-    component: ClassesComponent
+    component: ClassesListComponent
   },
   {
     path: 'teacher/courses',
-    component: CoursesComponent
+    component: CoursesListComponent
   },
   {
     path: 'teacher/materials',
-    component: MaterialsComponent
+    component: MaterialsListComponent
   },
   { path: 'addclass',
     component: AddClassComponent
@@ -83,13 +79,10 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    MaterialsComponent,
     MaterialsListComponent,
     MaterialsDetailComponent,
-    CoursesComponent,
     CoursesDetailComponent,
     CoursesListComponent,
-    ClassesComponent,
     ClassesListComponent,
     ClassesDetailComponent,
     HeaderTeacherComponent,

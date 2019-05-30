@@ -5,15 +5,16 @@
 @import "../../../resources/components/button/button";
 @import "../../../resources/layout/section";
 @import "../../../resources/layout/container";
-
+.container {
+    margin-left: 320px;
+    padding-top: 30px;
+    width: calc(100vw - 320px);
+}
 .section {
     &__content {
         /* Positioning */
         /* Display & Box Model */
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
-        align-items: center;
+        width: 100%;
         /* Color */
         /* Text */
         /* other */

@@ -33,7 +33,7 @@
         text-align: center;
         width: calc(100% / 3);
         padding: 20px 30px;
-        margin: 10px;
+        margin: 5px;
 
         transition: box-shadow .2s ease-in-out, transform .2s ease-in-out;
 
@@ -51,7 +51,7 @@
     }
 
     &__price {
-        font-size: 80px;
+        font-size: 55px;
         color: $c-blue;
         @include font-heading;
     }

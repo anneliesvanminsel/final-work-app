@@ -4,18 +4,25 @@
 @import "../../../resources/config/typography";
 @import "../../../resources/components/button/button";
 
-.header {
+.sidebar {
     /* Positioning */
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 300px;
     /* Display & Box Model */
-    padding: $spacing-s;
+    display: flex;
+    flex-flow: column nowrap;
     /* Color */
-    color: $c-purple;
     /* Text */
     /* other */
+    background-color: $c-bordeaux;
 
-    @media (min-width: $breakpoint-tablet) {
-        padding: $spacing-m 100px;
+    @each $theme, $color in $c-themes {
+        .theme-#{$theme} & {
+            background-color: rgba($color, 1);
+        }
     }
 }
 
@@ -32,40 +39,14 @@
     text-transform: lowercase;
     /* other */
 
-    &__logo {
-        /* Positioning */
-        /* Display & Box Model */
-        flex-grow: 1;
-        /* Color */
-        /* Text */
-        /* other */
-
-        svg {
-            width: 50%;
-            margin-left: 1rem;
-            margin-top: .5rem;
-
-            @media (min-width: $breakpoint-tablet) {
-                width: 20%;
-                margin-left: 0;
-            }
-        }
-    }
-
     &__bar {
         /* Positioning */
         /* Display & Box Model */
-        display: none;
+        display: block;
         /* Color */
         /* Text */
         /* other */
         list-style: none;
-
-        @media (min-width: $breakpoint-tablet) {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
     }
 
     &__item {
@@ -75,12 +56,6 @@
         /* Color */
         /* Text */
         /* other */
-
-        @media (min-width: $breakpoint-tablet) {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
     }
 
     &__link {
@@ -100,38 +75,5 @@
         &:focus {
             border-bottom: 2px solid $c-blue;
         }
-    }
-
-    &__icon {
-        display: block;
-        margin: 0 $spacing-m 0 0;
-
-        @media (min-width: $breakpoint-tablet) {
-            display: none;
-        }
-    }
-}
-
-.show {
-    /* Positioning */
-    position: absolute;
-    top: 4.5rem;
-    left: 0;
-    right: 0;
-    /* Display & Box Model */
-    display: flex;
-    flex-direction: column;
-    /* Color */
-    /* Text */
-    /* other */
-
-    .navigation__item {
-        /* Positioning */
-        /* Display & Box Model */
-        /* Color */
-        background-color: $ui-white;
-        /* Text */
-        /* other */
-        border-bottom: 1px solid $c-blue;
     }
 }

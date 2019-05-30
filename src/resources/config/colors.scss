@@ -15,3 +15,11 @@ $c-blue: #2AB9CB;
 $c-yellow:  #FFEF00;
 $c-purple:  #3D2F82;
 $c-bordeaux: #9E1779;
+
+$c-themes: (
+		"green": $c-darkgreen,
+		"purple": $c-purple,
+		"red": $c-bordeaux,
+		"yellow": $c-yellow,
+		"orange": $c-orange,
+);

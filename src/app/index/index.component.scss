@@ -10,10 +10,14 @@
     max-width: 1200px;
 
     &__logo {
-        width: 750px;
+        width: calc(80% - 100px);
         position: absolute;
         right: 100px;
         top: calc(100vh - 600px);
+
+        svg {
+            width: 100%;
+        }
     }
 
     &__text {

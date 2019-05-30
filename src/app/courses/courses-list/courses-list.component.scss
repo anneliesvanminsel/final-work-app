@@ -4,6 +4,9 @@
 @import "../../../resources/components/button/button";
 @import "../../../resources/layout/section";
 @import "../../../resources/layout/container";
+.container {
+    margin-left: 320px;
+}
 
 .grid {
     display: flex;
