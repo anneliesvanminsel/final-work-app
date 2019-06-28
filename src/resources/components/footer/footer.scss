@@ -31,4 +31,20 @@
       color: $c-purple;
     }
   }
+
+  &__closure {
+    display: flex;
+    justify-content: end;
+  }
+
+  &__primary {
+    flex-grow: 1;
+  }
+  &__secondary {
+    &.link {
+      color: $ui-black;
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  }
 }

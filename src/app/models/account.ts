@@ -1,5 +1,5 @@
 
-export class User {
+export class Account {
     email: string;
     name: string;
     first_name: string;

@@ -13,7 +13,8 @@ export class HeaderTeacherComponent implements OnInit {
   constructor(private  authService:  AuthService) {}
 
   ngOnInit() {
-    this.user = this.authService.getUser();
+    this.authService.getUser();
+    this.user = JSON.parse(localStorage.getItem('dba'));
   }
 
   onLogout() {

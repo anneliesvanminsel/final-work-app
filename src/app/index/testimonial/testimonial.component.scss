@@ -32,15 +32,6 @@
         width: calc(100% / 3);
         padding: 20px;
         margin: 10px;
-
-        transition: box-shadow .2s ease-in-out, transform .2s ease-in-out;
-
-        &:hover,
-        &:focus {
-            background-color: $ui-white;
-            box-shadow: 0 5px 10px 0 rgba(#000000, .1);
-            transform: translateY(-1px);
-        }
     }
 
     &__icon {
@@ -53,6 +44,8 @@
 
     &__text {
         text-align: center;
+        font-size: 16px;
+        flex-grow: 1;
     }
 
     &__user {
@@ -64,10 +57,12 @@
     &__name {
         text-transform: uppercase;
         margin-top: 20px;
+        @include font-base--medium;
     }
 
     &__function {
         text-transform: uppercase;
         margin-top: 10px;
+        @include font-heading;
     }
 }

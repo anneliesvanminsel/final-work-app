@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from '../services/authservice.service';
 
 @Component({
   selector: 'app-index',
@@ -6,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
+  user;
 
-  constructor() { }
+  constructor(private  authService:  AuthService) {}
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.user = JSON.parse(localStorage.getItem('dba'));
+  }
 
 }

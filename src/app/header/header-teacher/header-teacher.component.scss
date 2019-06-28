@@ -4,6 +4,32 @@
 @import "../../../resources/config/typography";
 @import "../../../resources/components/button/button";
 
+.header {
+    padding: 30px;
+    &__content {
+        margin: 30px 0;
+        padding: 30px 0;
+        border-bottom: 1px solid $ui-light-grey;
+    }
+    &__text {
+        color: $ui-white;
+        @include font-heading;
+        font-size: 20px;
+        text-align: center;
+    }
+    &__image {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
+
+        img {
+            width: 70%;
+            margin: 0 auto;
+            border-radius: 50%;
+        }
+    }
+}
+
 .sidebar {
     /* Positioning */
     position: fixed;
@@ -17,7 +43,7 @@
     /* Color */
     /* Text */
     /* other */
-    background-color: $c-bordeaux;
+    background-color: $ui-medium-grey;
 
     @each $theme, $color in $c-themes {
         .theme-#{$theme} & {
@@ -47,12 +73,14 @@
         /* Text */
         /* other */
         list-style: none;
+        width: 100%;
     }
 
     &__item {
         /* Positioning */
         /* Display & Box Model */
         padding: $spacing-m;
+        @include font-heading;
         /* Color */
         /* Text */
         /* other */
@@ -62,18 +90,34 @@
         /* Positioning */
         /* Display & Box Model */
         padding-bottom: 5px;
-        height: 28px;
+        min-width: 100%;
         /* Color */
-        color: $c-blue;
+        color: $ui-black;
         /* Text */
         text-decoration: none;
         /* other */
-        border-bottom: 2px solid transparent;
+        border-bottom: 1px solid transparent;
         transition: border .4s ease-in-out;
 
         &:hover,
         &:focus {
-            border-bottom: 2px solid $c-blue;
+            border-bottom: 1px solid $ui-white;
         }
+    }
+
+    &.is-active {
+        border-bottom: 1px solid $ui-white;
+    }
+}
+
+.button {
+    padding: 0;
+    margin: 0;
+    color: $ui-black;
+    border-radius: 0;
+    text-align: left;
+    &:hover,
+    &:focus {
+        border-bottom: 1px solid $ui-white;
     }
 }

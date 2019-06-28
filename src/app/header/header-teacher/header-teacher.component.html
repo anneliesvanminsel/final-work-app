@@ -1,13 +1,15 @@
 <header class="header sidebar theme-red">
-    <div>
-        <img src="" alt="">
-        <div>
-            {{user.email}}
+    <div class="header__content">
+        <div class="header__image">
+            <img src="http://www.buckinghamandcompany.com.au/wp-content/uploads/2016/03/profile-placeholder.png" alt="">
+        </div>
+        <div class="header__text">
+            {{user.first_name}} {{user.name}}
         </div>
     </div>
 
     <nav class="navigation is-dark">
-        <ul class="navigation__bar collapse">
+        <ul class="navigation__bar">
             <li class="navigation__item">
                 <a class="navigation__link" routerLink="/teacher/courses" routerLinkActive="active">Vakken</a>
             </li>
@@ -17,9 +19,9 @@
             <li class="navigation__item">
                 <a class="navigation__link" routerLink="/teacher/billing" routerLinkActive="active">Abonnement</a>
             </li>
-            <li>
-                <button (click)="onLogout()">
-                    Afmelden
+            <li class="navigation__item">
+                <button (click)="onLogout()" class="button is-link">
+                    afmelden
                 </button>
             </li>
         </ul>
