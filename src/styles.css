@@ -1,17 +1,35 @@
-/* You can add global styles to this file, and also import other style files
+* {
+    margin: 0;
+    padding: 0;
+}
 
-layout =  grid, page, containers
-config: colors, animations, typography, spacing, breakpoints
-components: alert/alert +  buttons, breadcrumbs, cards, cta, formas, heading,
-navigation, header, footer ALLES; maar alles telmkens in mooie mapjes.
+html {
+    box-sizing: border-box;
+    font-size: 10px;
+}
 
-@import "./resources/config/base";
-@import "./resources/config/variables";
-@import "./resources/config/colors";
-@import "./resources/config/typography";
-@import "./resources/config/animations";
+*,
+*:after,
+*:before {
+    box-sizing: inherit;
+}
 
-@import "./resources/components/button/button";
-@import "./resources/components/card/card";
-@import "./resources/components/header/header";
-*/
+body {
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    font-size: 1.6rem !important;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    background-color: #FDFDFD !important;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+h1 {
+    font-family: 'Nunito', sans-serif;
+    font-weight: 400;
+}
