@@ -1,9 +1,4 @@
-<div class="accent multicolor container top">
-    <div class="is-blue"></div>
-    <div class="is-orange"></div>
-    <div class="is-pink"></div>
-    <div class="is-green"></div>
-</div>
+
 
 <header class="header">
     <div class="ctn-image header__logo">
@@ -16,50 +11,33 @@
     </div>
 </header>
 
-<main>
-    <div class="card container">
-        <div class="card__item is-blue">
-            <h3 class="card__title">
-                create
-            </h3>
-            <div class="card__content">
-                Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec,
-                imperdiet iaculis, ipsum. Sed aliquam ultrices mauris.
-            </div>
-        </div>
+<main class="container">
+    <div class="row-of--4">
+        <app-card
+                [cardTitle]="'ontdek'"
+                [cardMessage]="'Ontdek meer dan 40 verschillende soorten oefeningen. Geef je leerlingen een leuke les.'"
+                [cardColor]="'blue'"
+        ></app-card>
 
-        <div class="card__item is-orange">
-            <h3 class="card__title">
-                create
-            </h3>
-            <div class="card__content">
-                Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec,
-                imperdiet iaculis, ipsum. Sed aliquam ultrices mauris.
-            </div>
-        </div>
+        <app-card
+                [cardTitle]="'maak'"
+                [cardMessage]="'Maak werkbladen, toetsen en taken allemaal vanuit één platform.  '"
+                [cardColor]="'orange'"
+        ></app-card>
 
-        <div class="card__item is-pink">
-            <h3 class="card__title">
-                edit
-            </h3>
+        <app-card
+                [cardTitle]="'create'"
+                [cardMessage]="'lalala'"
+                [cardColor]="'pink'"
+        ></app-card>
 
-            <div class="card__content">
-                Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec,
-                imperdiet iaculis, ipsum. Sed aliquam ultrices mauris.
-            </div>
-        </div>
-
-        <div class="card__item is-green">
-            <h3 class="card__title">
-                create
-            </h3>
-            <div class="card__content">
-                Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec,
-                imperdiet iaculis, ipsum. Sed aliquam ultrices mauris.
-            </div>
-        </div>
-
+        <app-card
+                [cardTitle]="'leer'"
+                [cardMessage]="'Leer wat we allemaal moeten kunnen.'"
+                [cardColor]="'green'"
+        ></app-card>
     </div>
+
     <app-testimonial></app-testimonial>
     <app-pricing></app-pricing>
 
@@ -125,6 +103,7 @@
             </a>
         </div>
     </footer>
+
     <div class="accent multicolor container bottom">
         <div class="is-blue"></div>
         <div class="is-orange"></div>

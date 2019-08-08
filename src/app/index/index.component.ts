@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../services/authservice.service';
+import { Account } from  '../models/account';
 
 @Component({
   selector: 'app-index',
@@ -7,12 +8,14 @@ import {AuthService} from '../services/authservice.service';
   styleUrls: ['./index.component.scss']
 })
 export class IndexComponent implements OnInit {
-  user;
+  user: Account;
 
   constructor(private  authService:  AuthService) {}
 
   ngOnInit() {
-    this.user = JSON.parse(localStorage.getItem('dba'));
+    this.authService.isLoggedIn.subscribe((isLoggedIn) => {
+      isLoggedIn && (this.user = this.authService.account);
+    });
   }
 
 }
