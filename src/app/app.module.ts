@@ -82,16 +82,37 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    MaterialsListComponent,
-    MaterialsDetailComponent,
-    CoursesDetailComponent,
-    CoursesListComponent,
-    ClassesListComponent,
-    ClassesDetailComponent,
+
+    // General Components
+    IndexComponent,
+    PricingComponent,
+    TestimonialComponent,
+
+    // All Authentication Components
+    FormsComponent,
+    RegisterComponent,
+    LoginComponent,
+
+    // All Header Components
     HeaderTeacherComponent,
     HeaderStudentComponent,
+
+    // All Footer Components
     FooterTeacherComponent,
     FooterStudentComponent,
+
+    // All components for materials
+    MaterialsListComponent,
+    MaterialsDetailComponent,
+
+    // All components for courses
+    CoursesDetailComponent,
+    CoursesListComponent,
+    CourseItemComponent,
+
+    // All components for Classes
+    ClassesListComponent,
+    ClassesDetailComponent,
     AddClassComponent,
     EditClassComponent,
     ClassItemComponent,
@@ -118,7 +139,13 @@ const appRoutes: Routes = [
     FontAwesomeModule,
     AngularFireAuthModule,
   ],
-  providers: [ClassgroupService, CourseService, AuthService],
-  bootstrap: [AppComponent]
+  providers: [
+    ClassgroupService,
+    CourseService,
+    AuthService
+  ],
+  bootstrap: [
+      AppComponent
+  ]
 })
 export class AppModule { }
