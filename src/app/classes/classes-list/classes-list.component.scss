@@ -6,10 +6,10 @@
 @import "../../../resources/layout/section";
 @import "../../../resources/layout/container";
 .container {
-    margin-left: 320px;
     padding-top: 30px;
-    width: calc(100vw - 320px);
+    width: 100%;
 }
+
 .section {
     &__content {
         /* Positioning */
@@ -20,6 +20,7 @@
         /* other */
     }
 }
+
 .image-teaser {
     /* Positioning */
     /* Display & Box Model */
