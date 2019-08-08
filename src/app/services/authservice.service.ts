@@ -6,22 +6,20 @@ import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument 
 import { AngularFireAuth } from 'angularfire2/auth';
 import { User } from  'firebase';
 import { Account } from  '../models/account';
+import {BehaviorSubject, Observable, Subscription} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class AuthService {
-  user: User;
-  account: Account;
+  private _account: Account;
+  isLoggedIn : BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   constructor(public  afAuth:  AngularFireAuth, public  router:  Router, private db: AngularFirestore) {
     this.afAuth.authState.subscribe(user => {
       if (user) {
-        this.user = user;
-        localStorage.setItem('user', JSON.stringify(this.user));
-        this.getUser();
-        this.account = JSON.parse(localStorage.getItem('dba'));
+        this.getAccountFromDb(user).then(() => this.isLoggedIn.next(true));
       } else {
         localStorage.setItem('user', null);
       }
@@ -30,49 +28,29 @@ export class AuthService {
 
   async  login(email:  string, password:  string) {
     try {
-      await  this.afAuth.auth.signInWithEmailAndPassword(email, password);
-
-      this.router.navigate(['/index']);
+      await this.afAuth.auth.signInWithEmailAndPassword(email, password);
     } catch (e) {
       alert("Error!"  +  e.message);
     }
   }
 
-  /*
-  googleLogin() {
-    const provider = new firebase.auth.GoogleAuthProvider();
-    return this.afAuth.auth.signInWithPopup(provider)
-        .then(credential =>  {
-          this.login(credential.user)
-        })
-  }
-  */
-
   async logout(){
-    await this.afAuth.auth.signOut();
-    localStorage.removeItem('user');
-    localStorage.removeItem('dba-id');
-    localStorage.removeItem('dba');
+    await this.afAuth.auth.signOut().then(() => this.isLoggedIn.next(false));
     this.router.navigate(['/index']);
   }
 
-  get isLoggedIn(): boolean {
-    const  user  =  JSON.parse(localStorage.getItem('user'));
-    return  user  !==  null;
+  async getAccountFromDb(user: User) {
+    await this.db.collection("user", ref => ref.where("user_id", '==', user.uid)).get().subscribe((querySnapshot) => {
+      console.log(querySnapshot);
+      querySnapshot.forEach((doc) => {
+        this._account = <Account> doc.data();
+        console.log(this._account);
+      });
+    });
   }
 
-  async getUser() {
-    const  userStorage  =  JSON.parse(localStorage.getItem('user'));
-    const usersRef = await this.db.collection("user", ref => ref.where("user_id", '==', userStorage.uid));
-
-    await usersRef
-        .get()
-        .subscribe(function (querySnapshot) {
-          querySnapshot.forEach(function (doc) {
-            localStorage.setItem('dba', JSON.stringify(doc.data()));
-            localStorage.setItem('dba-id', JSON.stringify(doc.id));
-          });
-        });
+   get account() : Account {
+    return this._account;
   }
 
   get isTeacher(): boolean {
@@ -86,7 +64,7 @@ export class AuthService {
   }
 
   private matchingRole(allowedRoles): boolean {
-    const roles = this.account.roles;
+    const roles = this._account.roles;
     return !_.isEmpty(_.intersection(allowedRoles, roles ))
   }
 }
