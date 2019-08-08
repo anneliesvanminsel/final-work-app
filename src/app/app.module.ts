@@ -36,6 +36,9 @@ import { TestimonialComponent } from './index/testimonial/testimonial.component'
 import { FormsComponent } from './forms/forms.component';
 import { RegisterComponent } from './forms/register/register.component';
 import { LoginComponent } from './forms/login/login.component';
+import { CardComponent } from './components/card/card.component';
+import { ColorrowComponent } from './components/colorrow/colorrow.component';
+import { NavigationTeacherComponent } from './header/navigation-teacher/navigation-teacher.component';
 
 const appRoutes: Routes = [
   {
@@ -99,6 +102,9 @@ const appRoutes: Routes = [
     FormsComponent,
     RegisterComponent,
     LoginComponent,
+    CardComponent,
+    ColorrowComponent,
+    NavigationTeacherComponent,
   ],
   imports: [
     RouterModule.forRoot(

@@ -9,7 +9,7 @@ import { AngularFirestore } from 'angularfire2/firestore';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Final Work';
+  title = 'digibooks';
 
 
   constructor() {
