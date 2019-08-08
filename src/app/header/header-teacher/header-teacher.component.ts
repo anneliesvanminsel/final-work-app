@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from  '../../services/authservice.service';
-
+import { Account } from  '../../models/account';
 
 @Component({
   selector: 'app-header-teacher',
@@ -8,13 +8,14 @@ import { AuthService } from  '../../services/authservice.service';
   styleUrls: ['./header-teacher.component.scss']
 })
 export class HeaderTeacherComponent implements OnInit {
-  user;
+  account: Account;
 
   constructor(private  authService:  AuthService) {}
 
   ngOnInit() {
-    this.authService.getUser();
-    this.user = JSON.parse(localStorage.getItem('dba'));
+    this.authService.isLoggedIn.subscribe((isLoggedIn) => {
+      isLoggedIn && (this.account = this.authService.account);
+    });
   }
 
   onLogout() {

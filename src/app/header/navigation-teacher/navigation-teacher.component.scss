@@ -1,0 +1,108 @@
+@import "../../../resources/config/variables";
+@import "../../../resources/config/colors";
+@import "../../../resources/config/base";
+@import "../../../resources/config/typography";
+
+.navigation {
+	/* Positioning */
+	width: 100%;
+	position: fixed;
+	bottom: 0;
+	z-index: 999;
+
+	/* Color */
+	background-color: $ui-white;
+	/* Text */
+	font-size: 20px;
+	text-transform: lowercase;
+	/* other */
+	border-top: 1px solid $c-purple;
+	overflow: hidden;
+
+	&__bar {
+		/* Positioning */
+		/* Display & Box Model */
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+		/* Color */
+		/* Text */
+		/* other */
+		list-style: none;
+		width: 100%;
+	}
+
+	&__item {
+		/* Positioning */
+		/* Display & Box Model */
+		padding: $spacing-m;
+		margin-top: $spacing-m;
+		@include font-heading;
+		/* Color */
+		/* Text */
+		/* other */
+
+		&:first-child {
+			margin-right: 30px;
+		}
+
+		&:last-child {
+			margin-left: 30px;
+		}
+	}
+
+	&__link {
+		/* Positioning */
+		/* Display & Box Model */
+		display: block;
+		padding-bottom: 5px;
+		width: 100%;
+		height: 100%;
+		/* Color */
+		color: $ui-black;
+		/* Text */
+		text-decoration: none;
+		/* other */
+		border-bottom: 1px solid transparent;
+		transition: border .4s ease-in-out;
+
+		&:hover,
+		&:focus {
+			border-bottom: 1px solid $ui-white;
+		}
+	}
+
+	&.is-active {
+		border-bottom: 1px solid $ui-white;
+	}
+
+	.link {
+		&:hover {
+			cursor: pointer;
+		}
+
+		&__text {
+			display: none;
+		}
+
+		&__icon {
+			height: 30px;
+
+			svg {
+				height: 100%;
+				width: auto;
+			}
+		}
+
+		&--active {
+			.link__icon {
+				height: 50px;
+			}
+
+			svg {
+				stroke-width: 2px;
+			}
+		}
+	}
+}

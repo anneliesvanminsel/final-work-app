@@ -4,120 +4,62 @@
 @import "../../../resources/config/typography";
 @import "../../../resources/components/button/button";
 
+.sidebar {
+    /* Positioning */
+    @media screen and (min-width: $breakpoint-tablet) {
+        display: flex;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: auto;
+        width: 300px;
+        /* Display & Box Model */
+        flex-flow: column nowrap;
+        /* Color */
+        /* Text */
+        /* other */
+    }
+}
+
 .header {
-    padding: 30px;
+    @media screen and (min-width: $breakpoint-tablet) {
+        padding: 30px;
+    }
+
     &__content {
-        margin: 30px 0;
-        padding: 30px 0;
-        border-bottom: 1px solid $ui-light-grey;
+        @media screen and (min-width: $breakpoint-tablet) {
+            margin: 30px 0;
+            padding: 30px 0;
+            border-bottom: 1px solid $ui-light-grey;
+        }
     }
+
     &__text {
-        color: $ui-white;
-        @include font-heading;
-        font-size: 20px;
-        text-align: center;
+        display: none;
+
+        @media screen and (min-width: $breakpoint-tablet) {
+            display: block;
+            color: $ui-black;
+            @include font-heading;
+            font-size: 20px;
+            text-align: center;
+        }
     }
+
     &__image {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 10px;
+        display: none;
+
+        @media screen and (min-width: $breakpoint-tablet) {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+        }
 
         img {
             width: 70%;
             margin: 0 auto;
             border-radius: 50%;
         }
-    }
-}
-
-.sidebar {
-    /* Positioning */
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 300px;
-    /* Display & Box Model */
-    display: flex;
-    flex-flow: column nowrap;
-    /* Color */
-    /* Text */
-    /* other */
-    background-color: $ui-medium-grey;
-
-    @each $theme, $color in $c-themes {
-        .theme-#{$theme} & {
-            background-color: rgba($color, 1);
-        }
-    }
-}
-
-.navigation {
-    /* Positioning */
-    /* Display & Box Model */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    /* Color */
-    /* Text */
-    font-size: 20px;
-    text-transform: lowercase;
-    /* other */
-
-    &__bar {
-        /* Positioning */
-        /* Display & Box Model */
-        display: block;
-        /* Color */
-        /* Text */
-        /* other */
-        list-style: none;
-        width: 100%;
-    }
-
-    &__item {
-        /* Positioning */
-        /* Display & Box Model */
-        padding: $spacing-m;
-        @include font-heading;
-        /* Color */
-        /* Text */
-        /* other */
-    }
-
-    &__link {
-        /* Positioning */
-        /* Display & Box Model */
-        padding-bottom: 5px;
-        min-width: 100%;
-        /* Color */
-        color: $ui-black;
-        /* Text */
-        text-decoration: none;
-        /* other */
-        border-bottom: 1px solid transparent;
-        transition: border .4s ease-in-out;
-
-        &:hover,
-        &:focus {
-            border-bottom: 1px solid $ui-white;
-        }
-    }
-
-    &.is-active {
-        border-bottom: 1px solid $ui-white;
-    }
-}
-
-.button {
-    padding: 0;
-    margin: 0;
-    color: $ui-black;
-    border-radius: 0;
-    text-align: left;
-    &:hover,
-    &:focus {
-        border-bottom: 1px solid $ui-white;
     }
 }
