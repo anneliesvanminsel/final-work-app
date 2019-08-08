@@ -36,8 +36,17 @@
       </div>
 
       <div class="form__actions row">
-        <button  routerLink="/index" class="button is-cancel" type="submit">Annuleer</button>
-        <button class="button is-submit" type="submit">Aanmelden</button>
+        <app-button-link
+                [label]="'annuleer'"
+                [link]="'/index'"
+                [class]="'is-ghost'"
+        ></app-button-link>
+
+        <app-button
+                [label]="'Aanmelden'"
+                [type]="'submit'"
+        ></app-button>
+        
       </div>
     </form>
   </div>

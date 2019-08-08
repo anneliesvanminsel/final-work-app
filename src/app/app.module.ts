@@ -39,6 +39,8 @@ import { LoginComponent } from './forms/login/login.component';
 import { CardComponent } from './components/card/card.component';
 import { ColorrowComponent } from './components/colorrow/colorrow.component';
 import { NavigationTeacherComponent } from './header/navigation-teacher/navigation-teacher.component';
+import { ButtonComponent } from './components/button/button.component';
+import { ButtonLinkComponent } from './components/button-link/button-link.component';
 
 const appRoutes: Routes = [
   {
@@ -96,6 +98,7 @@ const appRoutes: Routes = [
     // All Header Components
     HeaderTeacherComponent,
     HeaderStudentComponent,
+    NavigationTeacherComponent,
 
     // All Footer Components
     FooterTeacherComponent,
@@ -116,16 +119,12 @@ const appRoutes: Routes = [
     AddClassComponent,
     EditClassComponent,
     ClassItemComponent,
-    CourseItemComponent,
-    IndexComponent,
-    PricingComponent,
-    TestimonialComponent,
-    FormsComponent,
-    RegisterComponent,
-    LoginComponent,
+
+    // All re-usable components
     CardComponent,
     ColorrowComponent,
-    NavigationTeacherComponent,
+    ButtonComponent,
+    ButtonLinkComponent,
   ],
   imports: [
     RouterModule.forRoot(

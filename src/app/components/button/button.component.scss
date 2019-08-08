@@ -1,0 +1,37 @@
+@import "../../../resources/config/variables";
+@import "../../../resources/config/colors";
+@import "../../../resources/config/base";
+@import "../../../resources/config/typography";
+
+.button {
+	/* Positioning */
+	/* Display & Box Model */
+	display: inline-block;
+	padding: 15px 25px;
+	margin: $spacing-s;
+	width: auto;
+	/* Color */
+	background-color: $c-purple;
+	color: $ui-white;
+	/* Text */
+	text-align: center;
+	text-decoration: none;
+	font-size: 20px;
+	/* other */
+	border: none;
+	border-radius: 200px;
+
+	&.has-icon {
+		display: flex;
+
+		fa-icon {
+			margin-right: 10px;
+		}
+	}
+
+	&.is-ghost {
+		background-color: $ui-white;
+		color: $c-purple;
+		border: 1px solid $c-purple;
+	}
+}
