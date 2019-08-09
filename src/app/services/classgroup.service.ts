@@ -6,12 +6,14 @@ import { Observable } from 'RxJS';
 import { map } from "rxjs/operators";
 import { Classgroup} from '../models/classgroup.model';
 import {Account} from '../models/account';
+import {User} from 'firebase';
 
 @Injectable()
 export class ClassgroupService {
-    classgroupCollection: AngularFirestoreCollection<Classgroup>;
-    classgroups: Observable<Classgroup[]>;
-    classgroupDoc: AngularFirestoreDocument<Classgroup>;
+    private classgroupCollection: AngularFirestoreCollection<Classgroup>;
+    private classgroups: Observable<Classgroup[]>;
+    private classgroupDoc: AngularFirestoreDocument<Classgroup>;
+    private classDetail: Classgroup;
 
     constructor(private db: AngularFirestore) {
         //this.classgroups = db.collection('/classgroup').valueChanges();
@@ -43,12 +45,20 @@ export class ClassgroupService {
         this.classgroupCollection[id].name = name;
     }
 
-    getClassgroupFromDb(id: string) {
-        this.db.collection("classgroup", ref => ref.where("doc.id", '==', id)).get().subscribe((querySnapshot) => {
-            console.log(querySnapshot);
-            querySnapshot.forEach((doc) => {
-                console.log(doc.data());
-            });
+    async getClassgroupFromDb(id: string) {
+
+        await this.classgroupCollection.doc(id).ref.get().then((doc) => {
+            if (doc.exists) {
+                this.classDetail = <Classgroup> doc.data();
+            } else {
+                console.log("No such document!");
+            }
+        }).catch(function(error) {
+            console.log("Error getting document:", error);
         });
+    }
+
+    get class() : Classgroup {
+        return this.classDetail;
     }
 }

@@ -9,15 +9,17 @@
       icon
     </div>
     <h2>
-       {{class.name}}
+     klas {{class.name}} - {{class.date}}
     </h2>
     <app-button-link
             [label]="'voeg een leerling toe'"
-            [link]="'/addclass'"
+            [link]="'/teacher/:classid/addstudent'"
             [class]="'is-ghost'"
     ></app-button-link>
   </div>
-  <h1>{{id}}</h1>
+  <div>
+    <app-students-list></app-students-list>
+  </div>
 </main>
 
 <app-footer-teacher></app-footer-teacher>

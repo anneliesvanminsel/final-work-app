@@ -21,7 +21,7 @@ export class AuthService {
       if (user) {
         this.getAccountFromDb(user).then(() => this.isLoggedIn.next(true));
       } else {
-        localStorage.setItem('user', null);
+        console.log('no user');
       }
     })
   }
@@ -41,10 +41,8 @@ export class AuthService {
 
   async getAccountFromDb(user: User) {
     await this.db.collection("user", ref => ref.where("user_id", '==', user.uid)).get().subscribe((querySnapshot) => {
-      console.log(querySnapshot);
       querySnapshot.forEach((doc) => {
         this._account = <Account> doc.data();
-        console.log(this._account);
       });
     });
   }

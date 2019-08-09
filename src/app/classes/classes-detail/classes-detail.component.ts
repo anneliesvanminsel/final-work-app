@@ -10,7 +10,7 @@ import { ClassgroupService } from "../../services/classgroup.service";
 })
 export class ClassesDetailComponent implements OnInit {
   private id: string;
-  private id: string;
+  private class: Classgroup;
 
   constructor(private classgroupService: ClassgroupService, private route: ActivatedRoute) { }
 
@@ -18,6 +18,13 @@ export class ClassesDetailComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.id = params.get("id")
     });
+
+    this.setClass();
+  }
+
+  async setClass() {
+    await this.classgroupService.getClassgroupFromDb(this.id);
+    this.class = this.classgroupService.class;
   }
 
 }
