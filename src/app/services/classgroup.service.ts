@@ -5,8 +5,6 @@ import {
 import { Observable } from 'RxJS';
 import { map } from "rxjs/operators";
 import { Classgroup} from '../models/classgroup.model';
-import {Account} from '../models/account';
-import {User} from 'firebase';
 
 @Injectable()
 export class ClassgroupService {
