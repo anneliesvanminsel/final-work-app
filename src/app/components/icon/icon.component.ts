@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-icon',
@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./icon.component.scss']
 })
 export class IconComponent implements OnInit {
+  @Input() class: string;
+
+  private classList: string = 'icon';
 
   constructor() { }
 
   ngOnInit() {
+    if (this.class) {
+      this.classList += ' ' + this.class;
+    }
   }
 
 }
