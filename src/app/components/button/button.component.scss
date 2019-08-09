@@ -5,6 +5,7 @@
 
 .button {
 	/* Positioning */
+	position: relative;
 	/* Display & Box Model */
 	display: inline-block;
 	padding: 15px 25px;
@@ -21,6 +22,30 @@
 	/* other */
 	border: none;
 	border-radius: 200px;
+	transition: all 300ms ease-in-out;
+	overflow: hidden;
+
+	&::before {
+		content: "";
+		position: absolute;
+		z-index: 0;
+		transition: all 300ms ease-in-out;
+		width: 15%;
+		height: 300%;
+		background: rgba($ui-white, .1);
+		left: 0;
+		top: 0;
+		margin: -40% 0 0 0;
+		transform-origin: 0 0;
+		transform: rotate(21deg);
+	}
+
+	&:hover {
+		&::before {
+			width: 140%;
+		}
+	}
+
 
 	&.has-icon {
 		display: flex;
@@ -30,5 +55,9 @@
 		background-color: $ui-white;
 		color: $c-purple;
 		border: 1px solid $c-purple;
+
+		&::before {
+			background: rgba($c-purple, .1);
+		}
 	}
 }
