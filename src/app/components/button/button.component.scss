@@ -16,17 +16,14 @@
 	/* Text */
 	text-align: center;
 	text-decoration: none;
-	font-size: 20px;
+	font-size: 15px;
+	text-transform: lowercase;
 	/* other */
 	border: none;
 	border-radius: 200px;
 
 	&.has-icon {
 		display: flex;
-
-		fa-icon {
-			margin-right: 10px;
-		}
 	}
 
 	&.is-ghost {
