@@ -23,18 +23,23 @@ body {
     font-weight: 400 !important;
 }
 
+main {
+    flex-grow: 1;
+}
+
 img {
     width: 100%;
     height: auto;
 }
 
-h1 {
-    font-family: 'Nunito', sans-serif;
-    font-weight: 400;
-    text-transform: lowercase;
+h1, h2 {
+    font-family: 'Nunito', sans-serif !important;
+    font-weight: 400 !important;
+    text-transform: lowercase !important;
 }
 
 .row {
     display: flex;
     align-items: center;
+    margin: 0 !important;
 }

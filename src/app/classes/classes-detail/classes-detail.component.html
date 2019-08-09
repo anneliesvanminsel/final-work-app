@@ -1,3 +1,23 @@
-<p>
-  classes-detail works!
-</p>
+<app-header-teacher> </app-header-teacher>
+
+<main class="page">
+  <div class="page__heading row">
+    <h1>
+      klassen
+    </h1>
+    <div class="icon">
+      icon
+    </div>
+    <h2>
+       {{class.name}}
+    </h2>
+    <app-button-link
+            [label]="'voeg een leerling toe'"
+            [link]="'/addclass'"
+            [class]="'is-ghost'"
+    ></app-button-link>
+  </div>
+  <h1>{{id}}</h1>
+</main>
+
+<app-footer-teacher></app-footer-teacher>

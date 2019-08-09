@@ -60,8 +60,12 @@ const appRoutes: Routes = [
     component: AddClassComponent
   },
   {
-    path: 'editclass/:id',
+    path: 'teacher/editclass/:id',
     component: EditClassComponent
+  },
+  {
+    path: 'teacher/detailclass/:id',
+    component: ClassesDetailComponent
   },
   {
     path: 'login',

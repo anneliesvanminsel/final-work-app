@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from "@angular/router";
+import { Classgroup } from '../../models/classgroup.model';
+import { ClassgroupService } from "../../services/classgroup.service";
 
 @Component({
   selector: 'app-classes-detail',
@@ -6,10 +9,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./classes-detail.component.scss']
 })
 export class ClassesDetailComponent implements OnInit {
+  private id: string;
+  private id: string;
 
-  constructor() { }
+  constructor(private classgroupService: ClassgroupService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      this.id = params.get("id")
+    });
   }
 
 }

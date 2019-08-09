@@ -5,6 +5,7 @@ import {
 import { Observable } from 'RxJS';
 import { map } from "rxjs/operators";
 import { Classgroup} from '../models/classgroup.model';
+import {Account} from '../models/account';
 
 @Injectable()
 export class ClassgroupService {
@@ -12,7 +13,7 @@ export class ClassgroupService {
     classgroups: Observable<Classgroup[]>;
     classgroupDoc: AngularFirestoreDocument<Classgroup>;
 
-    constructor(db: AngularFirestore) {
+    constructor(private db: AngularFirestore) {
         //this.classgroups = db.collection('/classgroup').valueChanges();
 
         this.classgroupCollection = db.collection("/classgroup", ref =>
@@ -40,5 +41,14 @@ export class ClassgroupService {
 
     updateClassgroup(id: string, name: string) {
         this.classgroupCollection[id].name = name;
+    }
+
+    getClassgroupFromDb(id: string) {
+        this.db.collection("classgroup", ref => ref.where("doc.id", '==', id)).get().subscribe((querySnapshot) => {
+            console.log(querySnapshot);
+            querySnapshot.forEach((doc) => {
+                console.log(doc.data());
+            });
+        });
     }
 }
