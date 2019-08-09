@@ -1,3 +1,15 @@
-<p>
-  {{student.name}}
-</p>
+<li>
+  <div>
+    {{student.name}}
+  </div>
+  <div>
+    <app-button-link
+      [label]="'edit'"
+      [link]="'/editstudent'"
+    ></app-button-link>
+    <app-button
+            [label]="'delete'"
+            [class]="'is-ghost'"
+    ></app-button>
+  </div>
+</li>

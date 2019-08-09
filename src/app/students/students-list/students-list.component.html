@@ -2,8 +2,11 @@
   <div>
     nr naam acties
   </div>
-  <app-student-item
-      *ngFor="let studentItem of students"
-      [student]="studentItem"
-  ></app-student-item>
+
+  <ol>
+    <app-student-item
+            *ngFor="let studentItem of students"
+            [student]="studentItem"
+    ></app-student-item>
+  </ol>
 </div>
