@@ -1,7 +1,6 @@
 @import "../../../resources/config/base";
 @import "../../../resources/config/colors";
-@import "../../../resources/components/forms/forms";
-@import "../../../resources/components/button/button";
+@import "../_inputfield";
 
 .container {
 	display: flex;
@@ -13,38 +12,11 @@
 	height: 100vh;
 }
 
-.pattern {
-	&__top {
-		position: absolute;
-		left: 0;
-		top: 0;
-		width: 700px;
-
-
-		svg {
-			width: 100%;
-		}
-	}
-
-	&__bottom {
-		position: absolute;
-		right: 0;
-		bottom: 0;
-		width: 700px;
-
-
-		svg {
-			width: 100%;
-		}
-	}
-}
-
 .panel {
-	position:relative;
-	z-index: 12;
-	background-color: $ui-white;
-	width: 60%;
-	padding: 80px;
+	width: 90%;
+	padding: 10px;
+	border: none; //overriding panel.less
+	box-shadow: none; //overriding panel.less
 
 	&__heading {
 		margin-bottom: 40px;

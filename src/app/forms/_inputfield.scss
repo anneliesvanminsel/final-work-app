@@ -1,0 +1,29 @@
+@import "../../resources/config/colors";
+@import "../../resources/config/typography";
+@import "../../resources/config/base";
+
+.form {
+	&__label {
+		@include font-base--light;
+		font-size: 15px;
+		font-family: inherit;
+		text-transform: lowercase;
+	}
+
+	&__input {
+		max-width: 100%;
+		width: 100%;
+		padding: 15px 20px;
+		margin-bottom: 50px;
+		font-size: inherit;
+		font-family: inherit;
+		border: 1px solid $c-purple;
+		border-radius: 20px;
+
+		transition: border-color .5s ease-in-out;
+
+		&:focus {
+			outline: none;
+		}
+	}
+}
