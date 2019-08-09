@@ -1,0 +1,62 @@
+<footer class="footer">
+  <nav class="footer__nav">
+    <div class="footer__column is-logo">
+      <svg width="96.16" height="82.048">
+        <g><path fill="#28b9cb" d="M34.581 5.576h11.147V56.12H34.581z"/><path d="M34.582 19.797a22.189 22.189 0 0 0-11.992-3.518 22.427 22.427 0 0 0-18.742 10.2c-9.987 15.142.598 35.8 18.746 35.8a22.189 22.189 0 0 0 12.489-3.835zM22.594 51.129a11.642 11.642 0 0 1-11.433-11.85c0-11.662 14.569-16.231 20.87-6.671 5.176 7.854-.295 18.518-9.446 18.518" fill="#e93081"/><path d="M34.581 19.797c0 39.577-.2 37.123.5 38.649a23.247 23.247 0 0 0-.5-38.649" fill="#6e3772"/><path d="M34.581 5.576a5.576 5.576 0 1 1 5.567 5.576 5.576 5.576 0 0 1-5.567-5.576z" fill="#ffef00"/><path d="M34.581 56.155a5.576 5.576 0 1 1 5.567 5.576 5.576 5.576 0 0 1-5.567-5.576z" fill="#f49200"/><path fill="#e82f81" d="M50.979 23.592h11.147v50.544H50.979z"/><circle cx="5.572" cy="5.572" r="5.572" transform="translate(50.979 18.021)" fill="#a2c72d"/><path d="M73.542 34.309a22.211 22.211 0 0 0-11.433 3.162v19.762c.07-11.622 14.591-16.139 20.87-6.6 5.176 7.849-.286 18.513-9.441 18.518a11.636 11.636 0 0 1-11.433-11.772v16.767a5.536 5.536 0 0 1-.638 2.594 22.343 22.343 0 0 0 30.835-6.64c10.074-15.285-.77-35.8-18.759-35.8" fill="#2ab9cb"/><path d="M62.135 37.462a23.211 23.211 0 0 0-1.249 38.86c.2.141.4.277.611.409a5.541 5.541 0 0 0 .638-2.6V37.462" fill="#6e3772"/><circle cx="5.572" cy="5.572" r="5.572" transform="rotate(-45 113.866 -21.668)" fill="#009c57"/></g>
+      </svg>
+    </div>
+    <div class="footer__column">
+      <div>
+        leerkracht
+      </div>
+      <ul class="footer__nav__list">
+        <li *ngIf="user" class="footer__nav__item">
+          <a *ngIf="authService.isTeacher" class="footer__nav__link" routerLink="/teacher/classes">
+            overzicht
+          </a>
+        </li>
+        <li class="footer__nav__item">
+          <a class="footer__nav__link" routerLink="/login">
+            aanmelden
+          </a>
+        </li>
+        <li class="footer__nav__item">
+          <a class="footer__nav__link" routerLink="/register">
+            registreer
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="footer__column">
+      <div>
+        leerling
+      </div>
+      <ul class="footer__nav__list">
+        <li *ngIf="user" class="footer__nav__item">
+          <a *ngIf="authService.isStudent" class="footer__nav__link" routerLink="/student">
+            overzicht
+          </a>
+        </li>
+        <li class="footer__nav__item">
+          <a class="footer__nav__link" routerLink="/login">
+            aanmelden
+          </a>
+        </li>
+      </ul>
+    </div>
+
+  </nav>
+
+  <div class="footer__closure">
+    <div class="footer__primary">
+      &copy; Van Minsel Annelies (2019)
+    </div>
+    <a class="footer__secondary link" routerLink="/privacybeleid">
+      privacybeleid
+    </a>
+    <a class="footer__secondary link" routerLink="/cookiebeleid">
+      cookiebeleid
+    </a>
+  </div>
+</footer>

@@ -1,0 +1,18 @@
+@import "../../../resources/config/variables";
+@import "../../../resources/config/colors";
+@import "../../../resources/config/base";
+@import "../../../resources/config/typography";
+
+footer {
+	display: none;
+
+	@media screen and (min-width: $breakpoint-tablet) {
+		display: block;
+		position: absolute;
+		bottom: 10px;
+		left: 0;
+		right: 0;
+	}
+
+
+}
