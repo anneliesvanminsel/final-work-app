@@ -19,9 +19,8 @@ body {
     display: flex !important;
     flex-direction: column !important;
     font-size: 1.6rem !important;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    background-color: #FDFDFD !important;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400 !important;
 }
 
 img {
@@ -32,4 +31,10 @@ img {
 h1 {
     font-family: 'Nunito', sans-serif;
     font-weight: 400;
+    text-transform: lowercase;
+}
+
+.row {
+    display: flex;
+    align-items: center;
 }

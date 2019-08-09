@@ -19,11 +19,16 @@
                     class="form__input"
                     #dateInput>
         </div>
+        <app-button-link
+                [label]="'annuleer'"
+                [link]="'/teacher/classes'"
+                [class]="'is-ghost'"
+        ></app-button-link>
 
-        <div class="row">
-            <div class="col-xs-12">
-                <button class="btn is-submit" type="submit">Voeg de klasgroep toe</button>
-            </div>
-        </div>
+        <app-button
+                [label]="'Voeg de klasgroep toe'"
+                [type]="'submit'"
+        ></app-button>
+
     </form>
 </main>

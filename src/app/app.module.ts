@@ -33,7 +33,6 @@ import { CourseItemComponent } from './courses/courses-list/course-item/course-i
 import { IndexComponent } from './index/index.component';
 import { PricingComponent } from './index/pricing/pricing.component';
 import { TestimonialComponent } from './index/testimonial/testimonial.component';
-import { FormsComponent } from './forms/forms.component';
 import { RegisterComponent } from './forms/register/register.component';
 import { LoginComponent } from './forms/login/login.component';
 import { CardComponent } from './components/card/card.component';
@@ -41,6 +40,8 @@ import { ColorrowComponent } from './components/colorrow/colorrow.component';
 import { NavigationTeacherComponent } from './header/navigation-teacher/navigation-teacher.component';
 import { ButtonComponent } from './components/button/button.component';
 import { ButtonLinkComponent } from './components/button-link/button-link.component';
+import { IconComponent } from './components/icon/icon.component';
+import { InputfieldComponent } from './components/inputfield/inputfield.component';
 
 const appRoutes: Routes = [
   {
@@ -91,7 +92,6 @@ const appRoutes: Routes = [
     TestimonialComponent,
 
     // All Authentication Components
-    FormsComponent,
     RegisterComponent,
     LoginComponent,
 
@@ -125,6 +125,8 @@ const appRoutes: Routes = [
     ColorrowComponent,
     ButtonComponent,
     ButtonLinkComponent,
+    IconComponent,
+    InputfieldComponent,
   ],
   imports: [
     RouterModule.forRoot(
