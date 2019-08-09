@@ -4,34 +4,5 @@
 @import "../../../resources/config/typography";
 @import "../../../resources/layout/section";
 @import "../../../resources/layout/container";
-.container {
-    padding-top: 30px;
-    width: 100%;
-}
 
-.section {
-    &__content {
-        /* Positioning */
-        /* Display & Box Model */
-        width: 100%;
-        /* Color */
-        /* Text */
-        /* other */
-    }
-}
-
-.image-teaser {
-    /* Positioning */
-    /* Display & Box Model */
-    width: calc(50% - 30px);
-    margin: 15px;
-    /* Color */
-    background-color: $ui-medium-grey;
-    /* Text */
-    text-align: center;
-    /* other */
-
-    &__title {
-        color: $ui-white;
-    }
-}
+@import "../classes-detail/classes-detail.component";

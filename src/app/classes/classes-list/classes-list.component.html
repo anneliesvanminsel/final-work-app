@@ -1,25 +1,25 @@
 <app-header-teacher></app-header-teacher>
 
-<div class="container">
-    <div class="section">
-        <div class="section__heading">
-            <h1 class="section__title title">
-                klassen
-            </h1>
-            <app-button-link
-                    [label]="'voeg een class toe'"
-                    [link]="'/addclass'"
-                    [class]="'is-ghost'"
-            ></app-button-link>
-        </div>
-        <div class="section__content">
-            <app-class-item
-                *ngFor="let classGroupItem of classgroups"
-                [classgroup]="classGroupItem"
-            ></app-class-item>
-        </div>
+<main class="page">
+    <div class="page__heading row">
+        <h1>
+            klassen
+        </h1>
+        <app-button-link
+                [label]="'voeg een class toe'"
+                [link]="'/addclass'"
+                [class]="'is-ghost'"
+        ></app-button-link>
     </div>
-</div>
+
+    <div class="page__content">
+        <app-class-item
+            *ngFor="let classGroupItem of classgroups"
+            [classgroup]="classGroupItem"
+        ></app-class-item>
+    </div>
+
+</main>
 
 <app-footer-teacher></app-footer-teacher>
 
