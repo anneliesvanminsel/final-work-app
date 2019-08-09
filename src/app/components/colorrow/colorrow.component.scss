@@ -1,8 +1,9 @@
 @import "../../../resources/config/colors";
+@import "../../../resources/config/variables";
 
 .colorrow {
 	position: relative;
-	margin: 0;
+	margin: 0 auto;
 	width: 100%;
 	max-width: 1200px;
 
@@ -12,7 +13,12 @@
 
 	&.top {
 		top: 0;
-		bottom: -10px;
+	}
+
+	&.is-hidden {
+		@media screen and (min-width: $breakpoint-tablet) {
+			display: none;
+		}
 	}
 
 	.is-blue, .is-pink, .is-green, .is-orange {
@@ -22,7 +28,7 @@
 		z-index: 9999;
 
 		width: calc(100% / 4);
-		height: 20px;
+		height: 10px;
 
 		background-color: transparent;
 	}

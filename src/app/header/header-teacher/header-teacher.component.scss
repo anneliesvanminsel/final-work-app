@@ -2,22 +2,19 @@
 @import "../../../resources/config/colors";
 @import "../../../resources/config/base";
 @import "../../../resources/config/typography";
-@import "../../../resources/components/button/button";
 
 .sidebar {
     /* Positioning */
     @media screen and (min-width: $breakpoint-tablet) {
-        display: flex;
-        top: 0;
-        left: 0;
-        bottom: 0;
-        right: auto;
+        /* Positioning */
         width: 300px;
         /* Display & Box Model */
+        display: flex;
         flex-flow: column nowrap;
         /* Color */
         /* Text */
         /* other */
+        border-right: 1px solid $ui-light-grey;
     }
 }
 
@@ -27,7 +24,10 @@
     }
 
     &__content {
+        display: none;
+
         @media screen and (min-width: $breakpoint-tablet) {
+            display: block;
             margin: 30px 0;
             padding: 30px 0;
             border-bottom: 1px solid $ui-light-grey;
@@ -35,26 +35,17 @@
     }
 
     &__text {
-        display: none;
-
-        @media screen and (min-width: $breakpoint-tablet) {
-            display: block;
-            color: $ui-black;
-            @include font-heading;
-            font-size: 20px;
-            text-align: center;
-        }
+        color: $ui-black;
+        @include font-heading;
+        font-size: 20px;
+        text-align: center;
     }
 
     &__image {
-        display: none;
-
-        @media screen and (min-width: $breakpoint-tablet) {
-            display: block;
-            width: 100%;
-            text-align: center;
-            margin-bottom: 10px;
-        }
+        display: block;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 10px;
 
         img {
             width: 70%;

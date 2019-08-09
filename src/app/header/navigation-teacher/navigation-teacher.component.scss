@@ -19,8 +19,16 @@
 	border-top: 1px solid $c-purple;
 	overflow: hidden;
 
+	@media screen and (min-width: $breakpoint-tablet) {
+		width: 300px;
+		position: relative;
+		border: none;
+		background-color: transparent;
+	}
+
 	&__bar {
 		/* Positioning */
+		width: 100%;
 		/* Display & Box Model */
 		display: flex;
 		flex-direction: row;
@@ -30,7 +38,12 @@
 		/* Text */
 		/* other */
 		list-style: none;
-		width: 100%;
+
+		@media screen and (min-width: $breakpoint-tablet) {
+			flex-direction: column;
+			justify-content: start;
+			align-items: flex-start;
+		}
 	}
 
 	&__item {
@@ -45,10 +58,18 @@
 
 		&:first-child {
 			margin-right: 8%;
+
+			@media screen and (min-width: $breakpoint-tablet) {
+				margin-right: 0;
+			}
 		}
 
 		&:last-child {
 			margin-left: 8%;
+
+			@media screen and (min-width: $breakpoint-tablet) {
+				margin-left: 0;
+			}
 		}
 	}
 
@@ -64,12 +85,12 @@
 		/* Text */
 		text-decoration: none;
 		/* other */
-		border-bottom: 1px solid transparent;
-		transition: border .4s ease-in-out;
 
 		&:hover,
 		&:focus {
-			border-bottom: 1px solid $ui-white;
+			@include font-base--medium;
+			font-size: 25px;
+
 		}
 	}
 
@@ -84,24 +105,29 @@
 
 		&__text {
 			display: none;
+
+			@media screen and (min-width: $breakpoint-tablet) {
+				display: block;
+			}
 		}
 
 		&__icon {
 			height: 30px;
 
+			&:hover,
+			&:focus {
+				svg {
+					stroke-width: 2.5px;
+				}
+			}
+
+			@media screen and (min-width: $breakpoint-tablet) {
+				display: none;
+			}
+
 			svg {
 				height: 100%;
 				width: auto;
-			}
-		}
-
-		&--active {
-			.link__icon {
-				height: 50px;
-			}
-
-			svg {
-				stroke-width: 2px;
 			}
 		}
 	}
