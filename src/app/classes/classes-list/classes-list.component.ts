@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Classgroup } from '../../models/classgroup.model';
 import { ClassgroupService } from "../../services/classgroup.service";
 
@@ -9,9 +8,7 @@ import { ClassgroupService } from "../../services/classgroup.service";
   styleUrls: ['./classes-list.component.scss'],
 })
 export class ClassesListComponent implements OnInit {
-
   classgroups: Classgroup[];
-  faPlus = faPlus;
 
   constructor(private classgroupService: ClassgroupService){
 

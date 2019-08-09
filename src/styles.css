@@ -23,6 +23,10 @@ body {
     font-weight: 400 !important;
 }
 
+body > * {
+    flex-grow: 1;
+}
+
 main {
     flex-grow: 1;
 }

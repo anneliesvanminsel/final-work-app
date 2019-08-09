@@ -1,4 +1,13 @@
+@import "../../../resources/config/variables";
+
 .page {
+	margin-top: 20px;
+	margin-left: 20px;
+	@media screen and (min-width: $breakpoint-tablet) {
+		margin-top: 80px;
+		margin-left: 320px;
+	}
+
 	&__heading {
 		h1 {
 

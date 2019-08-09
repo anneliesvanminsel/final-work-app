@@ -13,6 +13,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AuthService } from "./services/auth.service";
 import { ClassgroupService } from './services/classgroup.service';
 import { CourseService } from './services/course.service';
+import { StudentTeacherService } from './services/student-teacher.service';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
@@ -45,6 +46,7 @@ import { InputfieldComponent } from './components/inputfield/inputfield.componen
 import { StudentsListComponent } from './students/students-list/students-list.component';
 import { AddstudentComponent } from './students/addstudent/addstudent.component';
 import { StudentItemComponent } from './students/students-list/student-item/student-item.component';
+import { FooterIndexComponent } from './footer/footer-index/footer-index.component';
 
 const appRoutes: Routes = [
   {
@@ -137,6 +139,7 @@ const appRoutes: Routes = [
     StudentsListComponent,
     AddstudentComponent,
     StudentItemComponent,
+    FooterIndexComponent,
   ],
   imports: [
     RouterModule.forRoot(
@@ -153,7 +156,8 @@ const appRoutes: Routes = [
   providers: [
     ClassgroupService,
     CourseService,
-    AuthService
+    AuthService,
+    StudentTeacherService,
   ],
   bootstrap: [
       AppComponent

@@ -5,7 +5,7 @@ import * as _ from "lodash"
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from "angularfire2/firestore";
 import { AngularFireAuth } from 'angularfire2/auth';
 import { User } from  'firebase';
-import { Account } from  '../models/account';
+import { Account } from '../models/account.model';
 import {BehaviorSubject, Observable, Subscription} from 'rxjs';
 
 @Injectable({

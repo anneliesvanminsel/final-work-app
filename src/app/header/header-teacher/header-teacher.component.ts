@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
-import { Account } from  '../../models/account';
+import { Account } from '../../models/account.model';
 
 @Component({
   selector: 'app-header-teacher',
@@ -22,16 +22,3 @@ export class HeaderTeacherComponent implements OnInit {
     this.authService.logout();
   }
 }
-
-/*
-(() => {
-  const colors = ["yellow", "green", "red", "purple"];
-
-  const randomColor = (() => {
-    return colors[Math.floor(Math.random() * colors.length)];
-  })();
-
-  document.querySelector(".sidebar").classList.add(`theme-${randomColor}`);
-
-}
-*/
