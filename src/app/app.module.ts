@@ -10,7 +10,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
-import { AuthService } from "./services/authservice.service";
+import { AuthService } from "./services/auth.service";
 import { ClassgroupService } from './services/classgroup.service';
 import { CourseService } from './services/course.service';
 
@@ -42,6 +42,9 @@ import { ButtonComponent } from './components/button/button.component';
 import { ButtonLinkComponent } from './components/button-link/button-link.component';
 import { IconComponent } from './components/icon/icon.component';
 import { InputfieldComponent } from './components/inputfield/inputfield.component';
+import { StudentsListComponent } from './students/students-list/students-list.component';
+import { AddstudentComponent } from './students/addstudent/addstudent.component';
+import { StudentItemComponent } from './students/students-list/student-item/student-item.component';
 
 const appRoutes: Routes = [
   {
@@ -131,6 +134,9 @@ const appRoutes: Routes = [
     ButtonLinkComponent,
     IconComponent,
     InputfieldComponent,
+    StudentsListComponent,
+    AddstudentComponent,
+    StudentItemComponent,
   ],
   imports: [
     RouterModule.forRoot(
