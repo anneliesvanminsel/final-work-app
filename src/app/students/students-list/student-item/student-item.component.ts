@@ -8,6 +8,7 @@ import {Student} from '../../../models/student.model';
 })
 export class StudentItemComponent implements OnInit {
   @Input() student: Student;
+  @Input() index: number;
 
   constructor() { }
 

@@ -1,0 +1,36 @@
+@import "../../../resources/config/colors";
+@import "../../../resources/config/variables";
+
+.list {
+
+	&__heading {
+		padding: 20px 0;
+		font-size: 16px;
+		border-bottom: 1px solid $ui-dark-grey;
+		margin-right: auto !important;
+
+		@media screen and (min-width: $breakpoint-tablet) {
+			font-size: 20px;
+		}
+
+		&__number {
+			width: 100px;
+			text-align: center;
+			flex-shrink: 0;
+			flex-grow: 0;
+		}
+
+		&__label {
+			flex-grow: 1;
+		}
+
+		&__actions {
+			width: 100px;
+			flex-shrink: 0;
+			flex-grow: 0;
+		}
+	}
+
+
+
+}

@@ -1,12 +1,21 @@
-<div>
-  <div>
-    nr naam acties
-  </div>
+<div class="list">
+    <div class="list__heading row">
+        <div class="list__heading__number">
+            nr
+        </div>
+        <div class="list__heading__label">
+            naam
+        </div>
+        <div class="list__heading__actions">
+            acties
+        </div>
+    </div>
 
-  <ol>
-    <app-student-item
-            *ngFor="let studentItem of students"
-            [student]="studentItem"
-    ></app-student-item>
-  </ol>
+    <div class="list__items">
+        <app-student-item
+            *ngFor="let student of students; let i = index"
+            [student]="student"
+            [index]="i"
+        ></app-student-item>
+    </div>
 </div>

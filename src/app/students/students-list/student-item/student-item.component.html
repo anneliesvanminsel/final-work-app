@@ -1,15 +1,25 @@
-<li>
-  <div>
-    {{student.name}}
-  </div>
-  <div>
-    <app-button-link
-      [label]="'edit'"
-      [link]="'/editstudent'"
-    ></app-button-link>
-    <app-button
-            [label]="'delete'"
-            [class]="'is-ghost'"
-    ></app-button>
-  </div>
-</li>
+<div class="item row">
+    <div class="item__number">
+        {{index + 1}}
+    </div>
+    <div class="item__label">
+        {{student.name}}
+    </div>
+
+    <div class="item__actions actions row">
+
+        <a class="actions__edit" routerLink="/editstudent/:id" routerLinkActive="active">
+            <app-icon
+                    [class]="'edit'"
+            ></app-icon>
+        </a>
+
+        <button class="">
+            <app-icon
+                    [class]="'delete'"
+            ></app-icon>
+        </button>
+
+    </div>
+
+</div>
