@@ -1,11 +1,11 @@
 export class Student {
-    email: string;
-    name: string;
-    class_id: string;
+    public email: string;
+    public name: string;
+    public class_id: string;
 
-    constructor(name: string, email: string, class_id: string) {
+    constructor(name: string, email: string, classid: string) {
         this.email = email;
         this.name = name;
-        this.class_id = class_id
+        this.class_id = classid
     }
 }
