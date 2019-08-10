@@ -42,125 +42,129 @@ import { NavigationTeacherComponent } from './header/navigation-teacher/navigati
 import { ButtonComponent } from './components/button/button.component';
 import { ButtonLinkComponent } from './components/button-link/button-link.component';
 import { IconComponent } from './components/icon/icon.component';
-import { InputfieldComponent } from './components/inputfield/inputfield.component';
 import { StudentsListComponent } from './students/students-list/students-list.component';
 import { AddstudentComponent } from './students/addstudent/addstudent.component';
 import { StudentItemComponent } from './students/students-list/student-item/student-item.component';
 import { FooterIndexComponent } from './footer/footer-index/footer-index.component';
 
 const appRoutes: Routes = [
-  {
-    path: 'teacher/classes',
-    component: ClassesListComponent
-  },
-  {
-    path: 'teacher/courses',
-    component: CoursesListComponent
-  },
-  {
-    path: 'teacher/materials',
-    component: MaterialsListComponent
-  },
-  { path: 'addclass',
-    component: AddClassComponent
-  },
-  {
-    path: 'teacher/editclass/:id',
-    component: EditClassComponent
-  },
-  {
-    path: 'teacher/detailclass/:id',
-    component: ClassesDetailComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'register',
-    component: RegisterComponent
-  },
-  {
-    path: 'index',
-    component: IndexComponent
-  },
-  {
-    path: '',
-    redirectTo: 'index',
-    pathMatch: 'full'
-  }
+    {
+        path: 'teacher/classes',
+        component: ClassesListComponent
+    },
+    {
+        path: 'teacher/courses',
+        component: CoursesListComponent
+    },
+    {
+        path: 'teacher/materials',
+        component: MaterialsListComponent
+    },
+    { path: 'teacher/classes/addclass',
+        component: AddClassComponent
+    },
+    {
+        path: 'teacher/classes/editclass/:id',
+        component: EditClassComponent
+    },
+    {
+        path: 'teacher/classes/detail/:id',
+        component: ClassesDetailComponent
+    },
+    {
+        path: 'teacher/classes/addstudent/:classid',
+        component: AddstudentComponent
+    },
+    {
+        path: 'login',
+        component: LoginComponent
+    },
+    {
+        path: 'register',
+        component: RegisterComponent
+    },
+    {
+        path: 'index',
+        component: IndexComponent
+    },
+    {
+        path: '',
+        redirectTo: 'index',
+        pathMatch: 'full'
+    }
 ];
 
 @NgModule({
-  declarations: [
-    AppComponent,
+    declarations: [
+        AppComponent,
 
-    // General Components
-    IndexComponent,
-    PricingComponent,
-    TestimonialComponent,
+        // General Components
+        IndexComponent,
+        PricingComponent,
+        TestimonialComponent,
+        FooterIndexComponent,
 
-    // All Authentication Components
-    RegisterComponent,
-    LoginComponent,
+        // All Authentication Components
+        RegisterComponent,
+        LoginComponent,
 
-    // All Header Components
-    HeaderTeacherComponent,
-    HeaderStudentComponent,
-    NavigationTeacherComponent,
+        // All Header Components
+        HeaderTeacherComponent,
+        HeaderStudentComponent,
+        NavigationTeacherComponent,
 
-    // All Footer Components
-    FooterTeacherComponent,
-    FooterStudentComponent,
+        // All Footer Components
+        FooterTeacherComponent,
+        FooterStudentComponent,
 
-    // All components for materials
-    MaterialsListComponent,
-    MaterialsDetailComponent,
+        // All components for materials
+        MaterialsListComponent,
+        MaterialsDetailComponent,
 
-    // All components for courses
-    CoursesDetailComponent,
-    CoursesListComponent,
-    CourseItemComponent,
+        // All components for courses
+        CoursesDetailComponent,
+        CoursesListComponent,
+        CourseItemComponent,
 
-    // All components for Classes
-    ClassesListComponent,
-    ClassesDetailComponent,
-    AddClassComponent,
-    EditClassComponent,
-    ClassItemComponent,
+        // All components for Classes
+        ClassesListComponent,
+        ClassesDetailComponent,
+        AddClassComponent,
+        EditClassComponent,
+        ClassItemComponent,
 
-    // All re-usable components
-    CardComponent,
-    ColorrowComponent,
-    ButtonComponent,
-    ButtonLinkComponent,
-    IconComponent,
-    InputfieldComponent,
-    StudentsListComponent,
-    AddstudentComponent,
-    StudentItemComponent,
-    FooterIndexComponent,
-  ],
-  imports: [
-    RouterModule.forRoot(
-        appRoutes,
-        { enableTracing: true } // <-- debugging purposes only
-    ),
-    BrowserModule,
-    FormsModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-    FontAwesomeModule,
-    AngularFireAuthModule,
-  ],
-  providers: [
-    ClassgroupService,
-    CourseService,
-    AuthService,
-    StudentTeacherService,
-  ],
-  bootstrap: [
-      AppComponent
-  ]
+        //All components for teacher-student
+        StudentsListComponent,
+        AddstudentComponent,
+        StudentItemComponent,
+
+        // All re-usable components
+        CardComponent,
+        ColorrowComponent,
+        ButtonComponent,
+        ButtonLinkComponent,
+        IconComponent,
+    ],
+    imports: [
+        RouterModule.forRoot(
+            appRoutes,
+            { enableTracing: true } // <-- debugging purposes only
+        ),
+        BrowserModule,
+        FormsModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFirestoreModule,
+        FontAwesomeModule,
+        AngularFireAuthModule,
+    ],
+    providers: [
+        ClassgroupService,
+        CourseService,
+        AuthService,
+        StudentTeacherService,
+    ],
+    bootstrap: [
+        AppComponent
+    ]
 })
 export class AppModule { }
