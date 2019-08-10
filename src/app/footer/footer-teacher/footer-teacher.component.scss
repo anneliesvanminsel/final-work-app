@@ -1,6 +1,5 @@
 @import "../../../resources/config/variables";
 @import "../../../resources/config/colors";
-@import "../../../resources/config/base";
 @import "../../../resources/config/typography";
 
 footer {
@@ -8,7 +7,7 @@ footer {
 
 	@media screen and (min-width: $breakpoint-tablet) {
 		display: block;
-		position: absolute;
+		position: fixed;
 		bottom: 10px;
 		left: 0;
 		right: 0;
