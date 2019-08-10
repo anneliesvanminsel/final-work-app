@@ -2,26 +2,25 @@
 
 <main class="page">
 
-  <div class="page__heading row">
-    <h1>
-      klassen
-    </h1>
-    <div class="icon">
-      icon
+    <div class="page__heading row">
+        <h1>
+            klassen
+        </h1>
+        <app-icon
+                [class]="'chevron-right'"></app-icon>
+        <h2>
+            klas {{class.name}} - {{class.date}}
+        </h2>
+        <app-button-link
+                [label]="'voeg een leerling toe'"
+                [link]="link"
+                [class]="'is-ghost'"
+        ></app-button-link>
     </div>
-    <h2>
-     klas {{class.name}} - {{class.date}}
-    </h2>
-    <app-button-link
-            [label]="'voeg een leerling toe'"
-            [link]="'/teacher/:classid/addstudent'"
-            [class]="'is-ghost'"
-    ></app-button-link>
-  </div>
 
-  <div class="page__content">
-    <app-students-list></app-students-list>
-  </div>
+    <div class="page__content">
+        <app-students-list></app-students-list>
+    </div>
 </main>
 
 
