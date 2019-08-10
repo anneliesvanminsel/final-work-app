@@ -1,3 +1,57 @@
-<p>
-  addstudent works!
-</p>
+<app-header-teacher> </app-header-teacher>
+
+<main class="page">
+  <div class="page__heading row">
+    <h1>
+      klas {{class.name}}
+    </h1>
+    <app-icon
+            [class]="'chevron-right'"></app-icon>
+    <h2>
+       nieuwe leerling toevoegen
+    </h2>
+
+  </div>
+
+  <div class="page__content">
+    <form (ngSubmit)="onAddStudent()" class="form">
+      <div class="form__group">
+        <label class="form__label" for="name">Naam</label>
+        <input
+                type="text"
+                id="name"
+                name="name"
+                class="form__input"
+                required
+                #nameInput>
+      </div>
+
+      <div class="form__group">
+        <label class="form__label" for="mail">Email</label>
+        <input
+                type="email"
+                id="mail"
+                name="mail"
+                class="form__input"
+                required
+                #mailInput>
+      </div>
+
+      <div class="row">
+        <app-button-link
+                [label]="'annuleer'"
+                [link]="link"
+                [class]="'is-ghost'"
+        ></app-button-link>
+
+        <app-button
+                [label]="'Voeg de student toe'"
+                [type]="'submit'"
+        ></app-button>
+      </div>
+
+    </form>
+  </div>
+</main>
+
+<app-footer-teacher></app-footer-teacher>
