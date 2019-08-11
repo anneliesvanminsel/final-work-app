@@ -1,20 +1,40 @@
+@import "../../../../resources/config/colors";
+@import "../../../../resources/config/variables";
 
-.class-teaser {
+.class-item {
+	position: relative;
 	display: inline-block;
 	width: calc(50% - 30px);
-	border: 1px solid #9E1779;
+	border: 1px solid $c-purple;
 	border-radius: 10px;
-	color: #9E1779;
+	color: $ui-black;
 	margin: 10px;
 	background-color: transparent;
+	text-decoration: none;
 
-	&__image {
-		width: 100%;
-		max-height: 100px;
+	&:hover {
+		border: 2px solid $c-purple;
 	}
 
-	&__text {
+	&__menu {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+	}
+
+	&__title {
 		text-align: center;
-		padding: 15px;
+		padding: 20px 0;
+		margin: 0 20px;
+		font-size: 30px;
+		border-bottom: 1px solid $c-purple;
+	}
+
+	&__content {
+		padding: 10px 20px ;
+	}
+
+	&__date {
+		flex-grow: 1;
 	}
 }

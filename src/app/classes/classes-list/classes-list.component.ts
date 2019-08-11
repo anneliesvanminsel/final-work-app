@@ -15,6 +15,7 @@ export class ClassesListComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log('classeennn');
     this.classgroupService.getClassgroups().subscribe(classes => {
       console.log(classes);
       this.classgroups = classes;

@@ -1,10 +1,26 @@
-<a class="class-teaser" routerLink="/teacher/classes/detail/{{classgroup.id}}">
+<a class="class-item" routerLink="/teacher/classes/detail/{{classgroup.id}}">
 
-  <div class="class-teaser__menu">
-
+  <div class="class-item__menu">
+    <app-icon
+      [class]="'menu'"
+    ></app-icon>
   </div>
 
-  <div class="class-teaser__text">
+  <div class="class-item__title">
     {{ classgroup.name }}
   </div>
+  <div class="class-item__content row">
+    <div class="class-item__date">
+      {{ classgroup.date }}
+    </div>
+    <div class="row">
+      <app-icon
+              [class]="'person'"
+      ></app-icon>
+      <div>
+        {{numberOfStudents}}
+      </div>
+    </div>
+  </div>
+
 </a>
