@@ -10,7 +10,6 @@ import { Course} from '../models/course.model';
 export class CourseService {
     courseCollection: AngularFirestoreCollection<Course>;
     courses: Observable<Course[]>;
-    courseDoc: AngularFirestoreDocument<Course>;
 
     constructor(db: AngularFirestore) {
 

@@ -5,8 +5,6 @@ import {
 import { Observable } from 'RxJS';
 import { map } from "rxjs/operators";
 import { Student} from '../models/student.model';
-import {Account} from '../models/account.model';
-import {Classgroup} from '../models/classgroup.model';
 
 @Injectable()
 export class StudentTeacherService {
@@ -32,6 +30,8 @@ export class StudentTeacherService {
     }
 
     async getStudentsByClass(class_id: string) {
+        await this.emptyStudents();
+
         await this.db.collection("/student", ref => ref.where("class_id", '==', class_id)).get().subscribe(value => {
             value.forEach((doc) => {
                 const newStudent = <Student> doc.data();
@@ -51,5 +51,9 @@ export class StudentTeacherService {
 
     updateStudent(id: string, name: string) {
         this.studentCollection[id].name = name;
+    }
+
+    emptyStudents () {
+        this.students = new Array();
     }
 }
