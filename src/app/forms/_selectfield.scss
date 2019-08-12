@@ -1,0 +1,26 @@
+@import "../../resources/config/colors";
+@import "../../resources/config/typography";
+
+.form {
+	&__select {
+		-webkit-appearance: none;
+		@include font-base--light;
+		font-size: inherit;
+		font-family: inherit;
+		text-transform: lowercase;
+		max-width: 100%;
+		width: 100%;
+		padding: 15px 20px;
+		margin-bottom: 50px;
+
+		border: 1px solid $c-purple;
+		border-radius: 20px;
+
+		transition: border-color .5s ease-in-out;
+
+		&:focus {
+			outline: none;
+			box-shadow: inset 0 2px 4px 0 hsla(0, 0%, 0%, 0.08);
+		}
+	}
+}

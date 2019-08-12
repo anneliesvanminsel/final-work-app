@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { environment } from '../environments/environment';
 
 import { AngularFirestoreModule } from 'angularfire2/firestore';
@@ -9,6 +10,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireAuth } from 'angularfire2/auth';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MatSelectModule } from '@angular/material/select';
 
 import { AuthService } from "./services/auth.service";
 import { ClassgroupService } from './services/classgroup.service';
@@ -46,19 +48,23 @@ import { StudentsListComponent } from './students/students-list/students-list.co
 import { AddstudentComponent } from './students/addstudent/addstudent.component';
 import { StudentItemComponent } from './students/students-list/student-item/student-item.component';
 import { FooterIndexComponent } from './footer/footer-index/footer-index.component';
+import { AddcourseComponent } from './courses/addcourse/addcourse.component';
+import { EditcourseComponent } from './courses/editcourse/editcourse.component';
 
 const appRoutes: Routes = [
+    //authentication routes
+    {
+        path: 'login',
+        component: LoginComponent
+    },
+    {
+        path: 'register',
+        component: RegisterComponent
+    },
+    //class-routes
     {
         path: 'teacher/classes',
         component: ClassesListComponent
-    },
-    {
-        path: 'teacher/courses',
-        component: CoursesListComponent
-    },
-    {
-        path: 'teacher/materials',
-        component: MaterialsListComponent
     },
     { path: 'teacher/classes/addclass',
         component: AddClassComponent
@@ -75,13 +81,30 @@ const appRoutes: Routes = [
         path: 'teacher/classes/addstudent/:classid',
         component: AddstudentComponent
     },
+    //course routes
     {
-        path: 'login',
-        component: LoginComponent
+        path: 'teacher/courses',
+        component: CoursesListComponent
+    },
+    { path: 'teacher/courses/addcourse',
+        component: AddcourseComponent
     },
     {
-        path: 'register',
-        component: RegisterComponent
+        path: 'teacher/courses/editcourse/:courseid',
+        component: EditcourseComponent
+    },
+    {
+        path: 'teacher/courses/detail/:id',
+        component: CoursesDetailComponent
+    },
+    {
+        path: 'teacher/courses/addmaterial/:courseid',
+        component: CoursesListComponent
+    },
+    //material routes
+    {
+        path: 'teacher/materials',
+        component: MaterialsListComponent
     },
     {
         path: 'index',
@@ -144,6 +167,8 @@ const appRoutes: Routes = [
         ButtonComponent,
         ButtonLinkComponent,
         IconComponent,
+        AddcourseComponent,
+        EditcourseComponent,
     ],
     imports: [
         RouterModule.forRoot(
@@ -156,6 +181,11 @@ const appRoutes: Routes = [
         AngularFirestoreModule,
         FontAwesomeModule,
         AngularFireAuthModule,
+        BrowserAnimationsModule,
+        MatSelectModule,
+    ],
+    exports: [
+        MatSelectModule,
     ],
     providers: [
         ClassgroupService,

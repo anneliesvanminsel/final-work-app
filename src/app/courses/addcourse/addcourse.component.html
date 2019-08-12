@@ -42,21 +42,7 @@
 
                 <label class="form__label" for="class">Klassen die dit vak volgen</label>
 
-                <mat-select
-                    class="form__select"
-                    name=""
-                    id=""
-                    multiple
-                    #classInput
-                >
-                    <mat-option
-                            class="form__select"
-                            *ngFor="let classGroupItem of classgroups"
-                            [value]="classGroupItem.id"
-                    >
-                        {{classGroupItem.name}}
-                    </mat-option>
-                </mat-select>
+
 
                 <input
                         type="text"

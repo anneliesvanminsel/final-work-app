@@ -15,6 +15,7 @@ export class AddcourseComponent implements OnInit {
   @ViewChild('yearInput') yearInputRef: ElementRef;
 
   course: Course ={
+    id: '',
     name: '',
     year: '',
     allowedClasses: [Classgroup],
