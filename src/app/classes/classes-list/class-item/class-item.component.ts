@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Classgroup } from '../../../models/classgroup.model';
 import {ClassgroupService} from '../../../services/classgroup.service';
 import {StudentTeacherService} from '../../../services/student-teacher.service';
+import {Student} from '../../../models/student.model';
 
 @Component({
   selector: 'app-class-item',
@@ -10,22 +11,20 @@ import {StudentTeacherService} from '../../../services/student-teacher.service';
 })
 export class ClassItemComponent implements OnInit {
   @Input() classgroup: Classgroup;
-
-  numberOfStudents: number;
+  students: Student[];
+  numberOfStudents: number = 0;
 
   constructor(private classgroupService: ClassgroupService, private studenteachterService: StudentTeacherService) { }
 
   ngOnInit() {
     this.setNumberOfStudents();
-    console.log('itemmm');
   }
 
-  setNumberOfStudents() {
-    this.studenteachterService.getStudentsByClass(this.classgroup.id);
-    this.numberOfStudents = this.studenteachterService.getStudents().length;
-    console.log(this.studenteachterService.getStudents());
+  async setNumberOfStudents() {
+    this.students = new Array();
+    await this.studenteachterService.getStudentsByClass(this.classgroup.id);
+    this.students = await this.studenteachterService.getStudents();
+    console.log(this.classgroup.name, this.students);
+    this.numberOfStudents = this.students.length;
   }
-
-
-
 }

@@ -36,7 +36,6 @@ export class StudentTeacherService {
             value.forEach((doc) => {
                 const newStudent = <Student> doc.data();
                 this.students.push(newStudent);
-                console.log(this.students);
             });
         });
     };
