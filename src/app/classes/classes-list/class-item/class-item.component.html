@@ -1,16 +1,16 @@
-<a class="class-item" routerLink="/teacher/classes/detail/{{classgroup.id}}">
+<a class="item" routerLink="/teacher/classes/detail/{{classgroup.id}}">
 
-  <div class="class-item__menu">
+  <div class="item__menu">
     <app-icon
       [class]="'menu'"
     ></app-icon>
   </div>
 
-  <div class="class-item__title">
+  <div class="item__title">
     {{ classgroup.name }}
   </div>
-  <div class="class-item__content row">
-    <div class="class-item__date">
+  <div class="item__content row">
+    <div class="item__full">
       {{ classgroup.date }}
     </div>
     <div class="row">

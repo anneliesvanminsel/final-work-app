@@ -3,21 +3,20 @@ import { Classgroup } from '../../models/classgroup.model';
 import { ClassgroupService } from "../../services/classgroup.service";
 
 @Component({
-  selector: 'app-classes-list',
-  templateUrl: './classes-list.component.html',
-  styleUrls: ['./classes-list.component.scss'],
+    selector: 'app-classes-list',
+    templateUrl: './classes-list.component.html',
+    styleUrls: ['./classes-list.component.scss'],
 })
 export class ClassesListComponent implements OnInit {
-  classgroups: Classgroup[];
+    classgroups: Classgroup[];
 
-  constructor(private classgroupService: ClassgroupService){
+    constructor(private classgroupService: ClassgroupService){
 
-  }
+    }
 
-  ngOnInit() {
-    console.log('classeennn');
-    this.classgroupService.getClassgroups().subscribe(classes => {
-      this.classgroups = classes;
-    });
-  }
+    ngOnInit() {
+        this.classgroupService.getClassgroups().subscribe(classes => {
+            this.classgroups = classes;
+        });
+    }
 }

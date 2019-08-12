@@ -1,0 +1,87 @@
+<app-header-teacher></app-header-teacher>
+
+<main class="page">
+    <div class="page__heading row">
+        <h1>
+            vakken
+        </h1>
+        <app-icon
+                [class]="'chevron-right'"
+        ></app-icon>
+        <h2>
+            nieuw vak toevoegen
+        </h2>
+    </div>
+
+    <div class="page__content">
+
+        <form (ngSubmit)="onAddCourse()" class="form">
+            <div class="form__group">
+                <label class="form__label" for="name">Naam</label>
+                <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        class="form__input"
+                        #nameInput
+                >
+            </div>
+
+            <div class="form__group">
+                <label class="form__label" for="year">Academiejaar</label>
+                <input
+                        type="text"
+                        id="year"
+                        name="year"
+                        class="form__input"
+                        #yearInput
+                >
+            </div>
+
+            <div class="form__group">
+
+                <label class="form__label" for="class">Klassen die dit vak volgen</label>
+
+                <mat-select
+                    class="form__select"
+                    name=""
+                    id=""
+                    multiple
+                    #classInput
+                >
+                    <mat-option
+                            class="form__select"
+                            *ngFor="let classGroupItem of classgroups"
+                            [value]="classGroupItem.id"
+                    >
+                        {{classGroupItem.name}}
+                    </mat-option>
+                </mat-select>
+
+                <input
+                        type="text"
+                        id="class"
+                        name="class"
+                        class="form__input"
+                        #classInput
+                >
+            </div>
+
+            <div class="row">
+                <app-button-link
+                        [label]="'annuleer'"
+                        [link]="'/teacher/courses'"
+                        [class]="'is-ghost'"
+                ></app-button-link>
+
+                <app-button
+                        [label]="'Voeg het vak toe'"
+                        [type]="'submit'"
+                ></app-button>
+            </div>
+
+        </form>
+    </div>
+</main>
+
+<app-footer-teacher></app-footer-teacher>

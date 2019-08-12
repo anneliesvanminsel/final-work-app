@@ -4,30 +4,30 @@ import { Classgroup } from '../../models/classgroup.model';
 import { ClassgroupService } from "../../services/classgroup.service";
 
 @Component({
-  selector: 'app-classes-detail',
-  templateUrl: './classes-detail.component.html',
-  styleUrls: ['./classes-detail.component.scss']
+    selector: 'app-classes-detail',
+    templateUrl: './classes-detail.component.html',
+    styleUrls: ['./classes-detail.component.scss']
 })
 export class ClassesDetailComponent implements OnInit {
-  private id: string;
-  private link: string ="/teacher/classes/addstudent/";
-  private class: Classgroup;
+    private id: string;
+    private link: string ="/teacher/classes/addstudent/";
+    private class: Classgroup;
 
-  constructor(private classgroupService: ClassgroupService, private route: ActivatedRoute) { }
+    constructor(private classgroupService: ClassgroupService, private route: ActivatedRoute) { }
 
-  ngOnInit() {
-    this.route.paramMap.subscribe(params => {
-      this.id = params.get("id")
-    });
+    ngOnInit() {
+        this.route.paramMap.subscribe(params => {
+            this.id = params.get("id")
+        });
 
-    this.link += this.id;
+        this.link += this.id;
 
-    this.setClass();
-  }
+        this.setClass();
+    }
 
-  async setClass() {
-    await this.classgroupService.getClassgroupFromDb(this.id);
-    this.class = this.classgroupService.class;
-  }
+    async setClass() {
+        await this.classgroupService.getClassgroupFromDb(this.id);
+        this.class = this.classgroupService.class;
+    }
 
 }

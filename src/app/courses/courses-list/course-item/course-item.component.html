@@ -1,3 +1,24 @@
-<p>
-  course-item works!
-</p>
+<a class="item" routerLink="/teacher/courses/detail/{{course.id}}">
+
+  <div class="item__menu">
+    <app-icon
+            [class]="'menu'"
+    ></app-icon>
+  </div>
+
+  <div class="item__title">
+    {{ course.name }}
+  </div>
+  <div class="item__content row">
+    <div class="item__full">
+      <app-icon
+              [class]="'star'"
+      ></app-icon>
+    </div>
+    <div>
+      {{ course.year }}
+    </div>
+
+  </div>
+
+</a>

@@ -1,5 +1,11 @@
 @import "../../../resources/config/variables";
 
+/*
+	Om de iconen die ik vanuit mijn designfiles heb gehaald om te zetten naar data-uri's heb ik gebruik gemaakt van de volgende tools:
+	- https://jakearchibald.github.io/svgomg/ --> Om de SVG-code in te korten
+	- https://yoksel.github.io/url-encoder/ --> Om de SVG-code om te zetten in een data-url
+*/
+
 .icon {
 	text-indent: -9999;
 	background-position: 0 0;

@@ -1,7 +1,7 @@
 @import "../../../../resources/config/colors";
 @import "../../../../resources/config/variables";
 
-.class-item {
+.item {
 	position: relative;
 	display: inline-block;
 	width: calc(50% - 30px);
@@ -34,7 +34,7 @@
 		padding: 10px 20px ;
 	}
 
-	&__date {
+	&__full {
 		flex-grow: 1;
 	}
 }
