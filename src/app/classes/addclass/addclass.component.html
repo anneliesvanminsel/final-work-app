@@ -3,7 +3,7 @@
 <main class="page">
     <div class="page__heading row">
         <h1>
-            <a class="page__breadcrumb" href="/teacher/classes">klassen</a>
+            <a class="page__breadcrumb" routerLink="/teacher/classes">klassen</a>
         </h1>
         <app-icon
             [class]="'chevron-right'"
@@ -18,21 +18,23 @@
             <div class="form__group">
                 <label class="form__label" for="name">Naam</label>
                 <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        class="form__input"
-                        #nameInput>
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form__input"
+                    #nameInput
+                >
             </div>
 
             <div class="form__group">
                 <label class="form__label" for="date">Academiejaar</label>
                 <input
-                        type="text"
-                        id="date"
-                        name="date"
-                        class="form__input"
-                        #dateInput>
+                    type="text"
+                    id="date"
+                    name="date"
+                    class="form__input"
+                    #dateInput
+                >
             </div>
 
             <div class="row">

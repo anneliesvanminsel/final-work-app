@@ -1,4 +1,4 @@
-<a *ngIf="classgroup" class="item" routerLink="/teacher/classes/detail/{{classgroup.id}}">
+<a *ngIf="classgroup" class="item" [routerLink]="['/teacher/classes/detail/', classgroup.id]">
 
   <div class="item__menu">
     <app-icon

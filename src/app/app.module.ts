@@ -19,41 +19,57 @@ import { StudentTeacherService } from './services/student-teacher.service';
 
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { MaterialsListComponent } from './materials/materials-list/materials-list.component';
-import { MaterialsDetailComponent } from './materials/materials-detail/materials-detail.component';
-import { CoursesDetailComponent } from './courses/courses-detail/courses-detail.component';
-import { CoursesListComponent } from './courses/courses-list/courses-list.component';
-import { ClassesListComponent } from './classes/classes-list/classes-list.component';
-import { ClassesDetailComponent } from './classes/classes-detail/classes-detail.component';
+//headers - navigation
 import { HeaderTeacherComponent } from './header/header-teacher/header-teacher.component';
 import { HeaderStudentComponent } from './header/header-student/header-student.component';
+import { NavigationTeacherComponent } from './header/navigation-teacher/navigation-teacher.component';
+//footers
 import { FooterTeacherComponent } from './footer/footer-teacher/footer-teacher.component';
 import { FooterStudentComponent } from './footer/footer-student/footer-student.component';
-import { AddClassComponent } from './classes/addclass/addclass.component';
-import { EditClassComponent } from './classes/editclass/editclass.component';
-import { ClassItemComponent } from './classes/classes-list/class-item/class-item.component';
-import { CourseItemComponent } from './courses/courses-list/course-item/course-item.component';
+import { FooterIndexComponent } from './footer/footer-index/footer-index.component';
+//index
 import { IndexComponent } from './index/index.component';
 import { PricingComponent } from './index/pricing/pricing.component';
 import { TestimonialComponent } from './index/testimonial/testimonial.component';
-import { RegisterComponent } from './forms/register/register.component';
-import { LoginComponent } from './forms/login/login.component';
-import { CardComponent } from './components/card/card.component';
-import { ColorrowComponent } from './components/colorrow/colorrow.component';
-import { NavigationTeacherComponent } from './header/navigation-teacher/navigation-teacher.component';
-import { ButtonComponent } from './components/button/button.component';
-import { ButtonLinkComponent } from './components/button-link/button-link.component';
-import { IconComponent } from './components/icon/icon.component';
+//teacher - classes
+import { ClassesListComponent } from './classes/classes-list/classes-list.component';
+import { ClassesDetailComponent } from './classes/classes-detail/classes-detail.component';
+import { AddClassComponent } from './classes/addclass/addclass.component';
+import { EditClassComponent } from './classes/editclass/editclass.component';
+import { ClassItemComponent } from './classes/classes-list/class-item/class-item.component';
+//teacher - courses
+import { CoursesDetailComponent } from './courses/courses-detail/courses-detail.component';
+import { CoursesListComponent } from './courses/courses-list/courses-list.component';
+import { CourseItemComponent } from './courses/courses-list/course-item/course-item.component';
+import { AddcourseComponent } from './courses/addcourse/addcourse.component';
+import { EditcourseComponent } from './courses/editcourse/editcourse.component';
+//teacher - material
+import { MaterialsListComponent } from './materials/materials-list/materials-list.component';
+import { MaterialsDetailComponent } from './materials/materials-detail/materials-detail.component';
+import {MaterialService} from './services/material.service';
+import { MaterialItemComponent } from './materials/materials-list/material-item/material-item.component';
+//teacher - students
 import { StudentsListComponent } from './students/students-list/students-list.component';
 import { AddstudentComponent } from './students/addstudent/addstudent.component';
 import { StudentItemComponent } from './students/students-list/student-item/student-item.component';
-import { FooterIndexComponent } from './footer/footer-index/footer-index.component';
-import { AddcourseComponent } from './courses/addcourse/addcourse.component';
-import { EditcourseComponent } from './courses/editcourse/editcourse.component';
-import {MaterialService} from './services/material.service';
+//teacher - settings
+import { SettingsComponent } from './settings/settings.component';
+
+// authentication
+import { RegisterComponent } from './forms/register/register.component';
+import { LoginComponent } from './forms/login/login.component';
+//reusable components
+import { CardComponent } from './components/card/card.component';
+import { ColorrowComponent } from './components/colorrow/colorrow.component';
+import { ButtonComponent } from './components/button/button.component';
+import { ButtonLinkComponent } from './components/button-link/button-link.component';
+import { IconComponent } from './components/icon/icon.component';
+import { AddmaterialComponent } from './materials/addmaterial/addmaterial.component';
 
 const appRoutes: Routes = [
-    //authentication routes
+
+    // --- ATHENTICATION ---
+
     {
         path: 'login',
         component: LoginComponent
@@ -62,7 +78,10 @@ const appRoutes: Routes = [
         path: 'register',
         component: RegisterComponent
     },
-    //class-routes
+
+    // --- TEACHER ROUTES ---
+
+    // - class-routes -
     {
         path: 'teacher/classes',
         component: ClassesListComponent
@@ -82,7 +101,8 @@ const appRoutes: Routes = [
         path: 'teacher/classes/addstudent/:classid',
         component: AddstudentComponent
     },
-    //course routes
+
+    // - course routes -
     {
         path: 'teacher/courses',
         component: CoursesListComponent
@@ -100,13 +120,17 @@ const appRoutes: Routes = [
     },
     {
         path: 'teacher/courses/addmaterial/:courseid',
-        component: CoursesListComponent
+        component: AddmaterialComponent
     },
-    //material routes
+
+    // - settings routes -
     {
-        path: 'teacher/materials',
-        component: MaterialsListComponent
+        path: 'teacher/settings',
+        component: SettingsComponent
     },
+
+    // --- INDEX ---
+
     {
         path: 'index',
         component: IndexComponent
@@ -143,24 +167,31 @@ const appRoutes: Routes = [
 
         // All components for materials
         MaterialsListComponent,
+        MaterialItemComponent,
         MaterialsDetailComponent,
+        AddmaterialComponent,
 
-        // All components for courses
-        CoursesDetailComponent,
+        // All components for teacher - courses
         CoursesListComponent,
         CourseItemComponent,
+        CoursesDetailComponent,
+        AddcourseComponent,
+        EditcourseComponent,
 
-        // All components for Classes
+        // All components for teacher - Classes
         ClassesListComponent,
+        ClassItemComponent,
         ClassesDetailComponent,
         AddClassComponent,
         EditClassComponent,
-        ClassItemComponent,
-
-        //All components for teacher-student
+        
+        //All components for teacher - student
         StudentsListComponent,
         AddstudentComponent,
         StudentItemComponent,
+
+        //All components for teacher - settings
+        SettingsComponent,
 
         // All re-usable components
         CardComponent,
@@ -168,8 +199,6 @@ const appRoutes: Routes = [
         ButtonComponent,
         ButtonLinkComponent,
         IconComponent,
-        AddcourseComponent,
-        EditcourseComponent,
     ],
     imports: [
         RouterModule.forRoot(
