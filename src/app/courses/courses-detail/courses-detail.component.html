@@ -1,28 +1,25 @@
+<div class="component">
+    <div class="row">
+        <div class="component__heading row">
+            <h1 class="component__title">
+                <a class="component__breadcrumb" routerLink="/teacher/courses">vakken</a>
+            </h1>
+            <app-icon
+                    [class]="'chevron-right'"
+            ></app-icon>
+            <h2 *ngIf="course" class="component__subtitle">
+                {{course.name}} - {{course.year}}
+            </h2>
+        </div>
 
-<app-header-teacher> </app-header-teacher>
+        <app-button-link
+                [label]="'maak nieuw materiaal'"
+                [link]="link"
+                [class]="'is-ghost'"
+        ></app-button-link>
+    </div>
 
-<main class="page">
-
-  <div class="page__heading row">
-    <h1>
-      <a class="page__breadcrumb" routerLink="/teacher/courses">vakken</a>
-    </h1>
-    <app-icon
-            [class]="'chevron-right'"></app-icon>
-    <h2 *ngIf="course">
-      {{course.name}} - {{course.year}}
-    </h2>
-    <app-button-link
-            [label]="'maak nieuw materiaal'"
-            [link]="link"
-            [class]="'is-ghost'"
-    ></app-button-link>
-  </div>
-
-  <div class="page__content">
-    <app-materials-list></app-materials-list>
-  </div>
-</main>
-
-
-<app-footer-teacher></app-footer-teacher>
+    <div class="component__content">
+        <app-materials-list></app-materials-list>
+    </div>
+</div>

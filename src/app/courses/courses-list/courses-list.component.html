@@ -1,24 +1,20 @@
-<app-header-teacher></app-header-teacher>
+<div class="row">
+    <div class="component__heading">
+        <h1 class="component__title">
+            vakken
+        </h1>
+    </div>
 
-<main class="page">
-  <div class="page__heading row">
-    <h1>
-      vakken
-    </h1>
     <app-button-link
             [label]="'voeg een vak toe'"
             [link]="'/teacher/courses/addcourse'"
             [class]="'is-ghost'"
     ></app-button-link>
-  </div>
+</div>
 
-  <div class="page__content">
+<div class="page__content">
     <app-course-item
             *ngFor="let courseItem of courses"
             [course]="courseItem"
     ></app-course-item>
-  </div>
-
-</main>
-
-<app-footer-teacher></app-footer-teacher>
+</div>

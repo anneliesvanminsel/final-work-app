@@ -1,19 +1,17 @@
-<app-header-teacher></app-header-teacher>
-
-<main class="page">
-    <div class="page__heading row">
-        <h1>
-            <a class="page__breadcrumb" routerLink="/teacher/courses">vakken</a>
+<div class="component">
+    <div class="component__heading row">
+        <h1 class="component__title">
+            <a class="component__breadcrumb" routerLink="/teacher/courses">vakken</a>
         </h1>
         <app-icon
                 [class]="'chevron-right'"
         ></app-icon>
-        <h2>
+        <h2 class="component__subtitle">
             nieuw vak toevoegen
         </h2>
     </div>
 
-    <div class="page__content">
+    <div class="component__content">
 
         <form (ngSubmit)="onAddCourse()" class="form">
             <div class="form__group">
@@ -39,7 +37,6 @@
             </div>
 
             <mat-form-field class="form__group">
-
                 <label class="form__label">Klassen die dit vak volgen</label>
                 <mat-select
                     class=""
@@ -72,6 +69,4 @@
 
         </form>
     </div>
-</main>
-
-<app-footer-teacher></app-footer-teacher>
+</div>

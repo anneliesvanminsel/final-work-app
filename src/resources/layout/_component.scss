@@ -1,0 +1,44 @@
+@import "../config/variables";
+@import "../config/colors";
+
+.component {
+	&__heading {
+		flex-grow: 1;
+	}
+
+	&__title {
+		margin-top: 0;
+		margin-bottom: 0;
+		margin-right: 25px;
+		font-size: 30px;
+
+		@media screen and (min-width: $breakpoint-tablet) {
+			font-size: 35px;
+		}
+	}
+
+	&__breadcrumb {
+		text-decoration: none;
+		color: $ui-black;
+
+		&:hover {
+			color: $c-purple;
+		}
+	}
+
+	&__subtitle {
+		margin-top: 0;
+		margin-bottom: 0;
+		margin-left: 25px;
+		font-size: 20px;
+
+		@media screen and (min-width: $breakpoint-tablet) {
+			font-size: 30px;
+		}
+	}
+
+	&__content {
+		margin-top: 25px;
+	}
+}
+

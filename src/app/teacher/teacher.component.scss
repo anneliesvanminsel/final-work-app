@@ -1,0 +1,15 @@
+@import "../../resources/config/variables";
+@import "../../resources/config/colors";
+
+.page {
+	margin-top: 50px;
+	margin-left: 20px;
+	margin-right: 20px;
+
+	@media screen and (min-width: $breakpoint-tablet) {
+		margin-top: 80px;
+		margin-left: 320px;
+		margin-right: 30px;
+	}
+}
+

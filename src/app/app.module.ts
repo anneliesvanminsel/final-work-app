@@ -66,6 +66,9 @@ import { ButtonLinkComponent } from './components/button-link/button-link.compon
 import { IconComponent } from './components/icon/icon.component';
 import { AddmaterialComponent } from './materials/addmaterial/addmaterial.component';
 import {AppRoutingModule} from './app-routing.module';
+import { TeacherComponent } from './teacher/teacher.component';
+import { CoursesComponent } from './courses/courses.component';
+import { ClassesComponent } from './classes/classes.component';
 
 @NgModule({
     declarations: [
@@ -124,6 +127,9 @@ import {AppRoutingModule} from './app-routing.module';
         ButtonComponent,
         ButtonLinkComponent,
         IconComponent,
+        TeacherComponent,
+        CoursesComponent,
+        ClassesComponent,
     ],
     imports: [
         BrowserModule,

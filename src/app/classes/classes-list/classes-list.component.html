@@ -1,10 +1,10 @@
-<app-header-teacher></app-header-teacher>
-
-<main class="page">
-    <div class="page__heading row">
-        <h1>
-            klassen
-        </h1>
+<div class="component">
+    <div class="row">
+        <div class="component__heading">
+            <h1 class="component__title">
+                klassen
+            </h1>
+        </div>
         <app-button-link
                 [label]="'voeg een klas toe'"
                 [link]="'/teacher/classes/addclass'"
@@ -12,13 +12,10 @@
         ></app-button-link>
     </div>
 
-    <div class="page__content">
+    <div class="component__content">
         <app-class-item
-            *ngFor="let classGroupItem of classgroups"
-            [classgroup]="classGroupItem"
+                *ngFor="let classGroupItem of classgroups"
+                [classgroup]="classGroupItem"
         ></app-class-item>
     </div>
-
-</main>
-
-<app-footer-teacher></app-footer-teacher>
+</div>
