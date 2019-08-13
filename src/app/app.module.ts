@@ -50,6 +50,7 @@ import { StudentItemComponent } from './students/students-list/student-item/stud
 import { FooterIndexComponent } from './footer/footer-index/footer-index.component';
 import { AddcourseComponent } from './courses/addcourse/addcourse.component';
 import { EditcourseComponent } from './courses/editcourse/editcourse.component';
+import {MaterialService} from './services/material.service';
 
 const appRoutes: Routes = [
     //authentication routes
@@ -70,11 +71,11 @@ const appRoutes: Routes = [
         component: AddClassComponent
     },
     {
-        path: 'teacher/classes/editclass/:id',
+        path: 'teacher/classes/editclass/:classid',
         component: EditClassComponent
     },
     {
-        path: 'teacher/classes/detail/:id',
+        path: 'teacher/classes/detail/:classid',
         component: ClassesDetailComponent
     },
     {
@@ -94,7 +95,7 @@ const appRoutes: Routes = [
         component: EditcourseComponent
     },
     {
-        path: 'teacher/courses/detail/:id',
+        path: 'teacher/courses/detail/:courseid',
         component: CoursesDetailComponent
     },
     {
@@ -173,7 +174,7 @@ const appRoutes: Routes = [
     imports: [
         RouterModule.forRoot(
             appRoutes,
-            { enableTracing: true } // <-- debugging purposes only
+            { enableTracing: false } // <-- debugging purposes only
         ),
         BrowserModule,
         FormsModule,
@@ -192,6 +193,7 @@ const appRoutes: Routes = [
         CourseService,
         AuthService,
         StudentTeacherService,
+        MaterialService,
     ],
     bootstrap: [
         AppComponent
