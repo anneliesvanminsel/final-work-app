@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { environment } from '../environments/environment';
 
@@ -65,82 +65,7 @@ import { ButtonComponent } from './components/button/button.component';
 import { ButtonLinkComponent } from './components/button-link/button-link.component';
 import { IconComponent } from './components/icon/icon.component';
 import { AddmaterialComponent } from './materials/addmaterial/addmaterial.component';
-
-const appRoutes: Routes = [
-
-    // --- ATHENTICATION ---
-
-    {
-        path: 'login',
-        component: LoginComponent
-    },
-    {
-        path: 'register',
-        component: RegisterComponent
-    },
-
-    // --- TEACHER ROUTES ---
-
-    // - class-routes -
-    {
-        path: 'teacher/classes',
-        component: ClassesListComponent
-    },
-    { path: 'teacher/classes/addclass',
-        component: AddClassComponent
-    },
-    {
-        path: 'teacher/classes/editclass/:classid',
-        component: EditClassComponent
-    },
-    {
-        path: 'teacher/classes/detail/:classid',
-        component: ClassesDetailComponent
-    },
-    {
-        path: 'teacher/classes/addstudent/:classid',
-        component: AddstudentComponent
-    },
-
-    // - course routes -
-    {
-        path: 'teacher/courses',
-        component: CoursesListComponent
-    },
-    { path: 'teacher/courses/addcourse',
-        component: AddcourseComponent
-    },
-    {
-        path: 'teacher/courses/editcourse/:courseid',
-        component: EditcourseComponent
-    },
-    {
-        path: 'teacher/courses/detail/:courseid',
-        component: CoursesDetailComponent
-    },
-    {
-        path: 'teacher/courses/addmaterial/:courseid',
-        component: AddmaterialComponent
-    },
-
-    // - settings routes -
-    {
-        path: 'teacher/settings',
-        component: SettingsComponent
-    },
-
-    // --- INDEX ---
-
-    {
-        path: 'index',
-        component: IndexComponent
-    },
-    {
-        path: '',
-        redirectTo: 'index',
-        pathMatch: 'full'
-    }
-];
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
     declarations: [
@@ -201,11 +126,8 @@ const appRoutes: Routes = [
         IconComponent,
     ],
     imports: [
-        RouterModule.forRoot(
-            appRoutes,
-            { enableTracing: false } // <-- debugging purposes only
-        ),
         BrowserModule,
+        AppRoutingModule,
         FormsModule,
         AngularFireModule.initializeApp(environment.firebase),
         AngularFirestoreModule,
@@ -213,6 +135,7 @@ const appRoutes: Routes = [
         AngularFireAuthModule,
         BrowserAnimationsModule,
         MatSelectModule,
+
     ],
     exports: [
         MatSelectModule,
