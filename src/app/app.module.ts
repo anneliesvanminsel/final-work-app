@@ -54,10 +54,10 @@ import { AddstudentComponent } from './students/addstudent/addstudent.component'
 import { StudentItemComponent } from './students/students-list/student-item/student-item.component';
 //teacher - settings
 import { SettingsComponent } from './settings/settings.component';
-
 // authentication
 import { RegisterComponent } from './forms/register/register.component';
 import { LoginComponent } from './forms/login/login.component';
+import {HttpClientModule} from '@angular/common/http';
 //reusable components
 import { CardComponent } from './components/card/card.component';
 import { ColorrowComponent } from './components/colorrow/colorrow.component';
@@ -69,6 +69,7 @@ import {AppRoutingModule} from './app-routing.module';
 import { TeacherComponent } from './teacher/teacher.component';
 import { CoursesComponent } from './courses/courses.component';
 import { ClassesComponent } from './classes/classes.component';
+import {SpinnerComponent} from '../resources/spinner/spinner.component';
 
 @NgModule({
     declarations: [
@@ -130,6 +131,7 @@ import { ClassesComponent } from './classes/classes.component';
         TeacherComponent,
         CoursesComponent,
         ClassesComponent,
+        SpinnerComponent,
     ],
     imports: [
         BrowserModule,
@@ -141,7 +143,7 @@ import { ClassesComponent } from './classes/classes.component';
         AngularFireAuthModule,
         BrowserAnimationsModule,
         MatSelectModule,
-
+        HttpClientModule,
     ],
     exports: [
         MatSelectModule,

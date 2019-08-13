@@ -95,11 +95,14 @@
 		&.active {
 			@include font-base--medium;
 			font-size: 25px;
-		}
-	}
 
-	&.is-active {
-		border-bottom: 1px solid $ui-white;
+			svg {
+				stroke-width: 2.5px;
+				path {
+					stroke: $ui-black;
+				}
+			}
+		}
 	}
 
 	.link {

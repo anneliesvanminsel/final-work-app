@@ -19,11 +19,7 @@ export class CoursesDetailComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.id = params.get("courseid")
     });
-
-    console.log(this.id);
-
     this.link += this.id;
-
     this.setCourse();
   }
 

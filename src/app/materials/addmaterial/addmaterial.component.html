@@ -1,3 +1,58 @@
-<p>
-  addmaterial works!
-</p>
+<div class="component">
+  <div class="component__heading row">
+    <h1 *ngIf="course" class="component__title">
+      <a class="component__breadcrumb" [routerLink]="['/teacher/courses/detail/', id]">{{course.name}}</a>
+    </h1>
+    <app-icon
+            [class]="'chevron-right'"
+    ></app-icon>
+    <h2  class="component__subtitle">
+      nieuw materiaal toevoegen
+    </h2>
+  </div>
+
+  <div class="component__content">
+    <form (ngSubmit)="onSubmit(authForm)" #authForm="ngForm" class="form">
+      <div class="form__group">
+        <label class="form__label" for="title">Titel</label>
+        <input
+                ngModel
+                type="text"
+                id="title"
+                name="title"
+                class="form__input"
+                autofocus
+                required
+        >
+      </div>
+
+      <div class="form__group">
+        <label class="form__label" for="description">beschrijving</label>
+        <input
+                ngModel
+                type="text"
+                id="description"
+                name="description"
+                class="form__input"
+                required
+        >
+      </div>
+
+      <div class="row">
+        <app-button-link
+                [label]="'annuleer'"
+                [link]="link"
+                [class]="'is-ghost'"
+        ></app-button-link>
+
+        <app-button
+                [label]="'Voeg het materiaal toe'"
+                [type]="'submit'"
+        ></app-button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<app-footer-teacher></app-footer-teacher>
