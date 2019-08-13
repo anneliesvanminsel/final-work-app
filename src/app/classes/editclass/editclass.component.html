@@ -1,18 +1,21 @@
-<form (ngSubmit)="onAddClass()">
-    <div class="form__group">
-        <label for="name">Name</label>
-        <input
-                type="text"
-                id="name"
-                class="form-control"
-                #nameInput>
+<app-header-teacher></app-header-teacher>
+
+<main class="page">
+    <div class="page__heading row">
+        <h1>
+            <a class="page__breadcrumb" routerLink="/teacher/classes">klassen</a>
+        </h1>
+        <app-icon
+                [class]="'chevron-right'"
+        ></app-icon>
+        <h2>
+            klas bewerken
+        </h2>
     </div>
 
-    <div class="row">
-        <div class="col-xs-12">
-            <button class="btn btn-success" type="submit">Voeg de klasgroep toe</button>
-            <button class="btn btn-danger" type="button">Annuleren</button>
-            <button class="btn btn-primary" type="button">Velden leegmaken</button>
-        </div>
+    <div class="page__content">
+
     </div>
-</form>
+</main>
+
+<app-footer-teacher></app-footer-teacher>
