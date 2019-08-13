@@ -1,3 +1,28 @@
-<p>
-  courses-detail works!
-</p>
+
+<app-header-teacher> </app-header-teacher>
+
+<main class="page">
+
+  <div class="page__heading row">
+    <h1>
+      vakken
+    </h1>
+    <app-icon
+            [class]="'chevron-right'"></app-icon>
+    <h2 *ngIf="course">
+      {{course.name}} - {{course.year}}
+    </h2>
+    <app-button-link
+            [label]="'maak nieuw materiaal'"
+            [link]="link"
+            [class]="'is-ghost'"
+    ></app-button-link>
+  </div>
+
+  <div class="page__content">
+    <app-materials-list></app-materials-list>
+  </div>
+</main>
+
+
+<app-footer-teacher></app-footer-teacher>
