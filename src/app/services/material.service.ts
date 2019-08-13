@@ -25,7 +25,17 @@ export class MaterialService {
                 map(value => {
                     const materialArray = [];
                     value.docs.forEach(
-                        doc => materialArray.push(doc.data())
+                        doc => {
+                            const material: Material = {
+                                id: doc.id,
+                                title: doc.data().title,
+                                description: doc.data().description,
+                                date: doc.data().date,
+                                course_id: doc.data().course_id,
+                                theme_id: doc.data().theme_id,
+                            };
+                            materialArray.push(material)
+                        }
                     );
                     return materialArray;
                 })

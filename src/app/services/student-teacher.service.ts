@@ -9,7 +9,6 @@ import { Student} from '../models/student.model';
 @Injectable()
 export class StudentTeacherService {
     private studentCollection: AngularFirestoreCollection<Student>;
-    private studentList: Observable<Student[]>;
     private students: Student[] = [];
 
 
@@ -20,13 +19,21 @@ export class StudentTeacherService {
         );
     }
 
-    getStudentsByClass(class_id: string): Observable<any> {
+    getStudentsByClass(class_id: string): Observable<Student[]> {
         return  this.db.collection("/student", ref => ref.where("class_id", '==', class_id)).get()
             .pipe(
                 map(value => {
                     const studentArray = [];
                     value.docs.forEach(
-                        doc => studentArray.push(doc.data())
+                        doc => {
+                            const student: Student = {
+                                id: doc.id,
+                                name: doc.data().name,
+                                email: doc.data().email,
+                                class_id: doc.data().class_id,
+                            };
+                            studentArray.push(student)
+                        }
                     );
                     return studentArray;
                 })
