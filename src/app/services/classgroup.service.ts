@@ -13,12 +13,13 @@ export class ClassgroupService {
     private classDetail: Classgroup;
 
     constructor(private db: AngularFirestore) {
-        //this.classgroups = db.collection('/classgroup').valueChanges();
-
         this.classgroupCollection = db.collection("/classgroup", ref =>
             ref.orderBy("name", "asc")
         );
 
+    }
+
+    getClassgroups() {
         this.classgroups = this.classgroupCollection.snapshotChanges().pipe(
             map(actions =>
                 actions.map(a => {
@@ -28,9 +29,7 @@ export class ClassgroupService {
                 })
             )
         );
-    }
-
-    getClassgroups() {
+        console.log('getting classgroups', this.classgroups);
         return this.classgroups;
     }
 
