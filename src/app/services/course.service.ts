@@ -9,16 +9,17 @@ import { Course} from '../models/course.model';
 @Injectable()
 export class CourseService {
     private courseCollection: AngularFirestoreCollection<Course>;
-    private courses: Observable<Course[]>;
+    private courses$: Observable<Course[]>;
     private courseDetail: Course;
 
     constructor(private db: AngularFirestore) {
-
         this.courseCollection = db.collection("/course", ref =>
             ref.orderBy("name", "asc")
         );
+    }
 
-        this.courses = this.courseCollection.snapshotChanges().pipe(
+    getCourses() {
+        this.courses$ = this.courseCollection.snapshotChanges().pipe(
             map(actions =>
                 actions.map(a => {
                     const data = a.payload.doc.data() as Course;
@@ -27,13 +28,10 @@ export class CourseService {
                 })
             )
         );
+        return this.courses$;
     }
 
-    getCourses() {
-        return this.courses;
-    }
-
-    async getCourseFromDb(id: string) {
+    async getCourseFromDb(id: string){
         await this.courseCollection.doc(id).ref.get().then((doc) => {
             if (doc.exists) {
                 this.courseDetail = <Course> doc.data();
@@ -45,7 +43,7 @@ export class CourseService {
         });
     }
 
-    get class() : Course {
+    get course() : Course {
         return this.courseDetail;
     }
 

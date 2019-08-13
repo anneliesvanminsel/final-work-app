@@ -18,31 +18,21 @@ export class StudentTeacherService {
         this.studentCollection = db.collection("/student", ref =>
             ref.orderBy("name", "asc")
         );
+    }
 
-        this.studentList = this.studentCollection.snapshotChanges().pipe(
-            map(actions =>
-                actions.map(a => {
-                    const data = a.payload.doc.data() as Student;
-                    return data;
+    getStudentsByClass(class_id: string): Observable<any> {
+        return  this.db.collection("/student", ref => ref.where("class_id", '==', class_id)).get()
+            .pipe(
+                map(value => {
+                    const studentArray = [];
+                    value.docs.forEach(
+                        doc => studentArray.push(doc.data())
+                    );
+                    return studentArray;
                 })
-            )
-        );
-    }
+            );
 
-    async getStudentsByClass(class_id: string) {
-        await this.emptyStudents();
-
-        await this.db.collection("/student", ref => ref.where("class_id", '==', class_id)).get().subscribe(value => {
-            value.forEach((doc) => {
-                const newStudent = <Student> doc.data();
-                this.students.push(newStudent);
-            });
-        });
     };
-
-    getStudents() {
-        return this.students;
-    }
 
     addStudent(newStudent) {
         this.studentCollection.add(newStudent);
@@ -53,6 +43,12 @@ export class StudentTeacherService {
     }
 
     emptyStudents () {
-        this.students = new Array();
+    /*.subscribe(value => {
+            value.forEach((doc) => {
+                const newStudent = <Student> doc.data();
+                this.students.push(newStudent);
+            });
+        });*/
+        this.students = [];
     }
 }
