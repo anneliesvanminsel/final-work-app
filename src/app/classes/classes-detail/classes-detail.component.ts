@@ -9,25 +9,25 @@ import { ClassgroupService } from "../../services/classgroup.service";
     styleUrls: ['./classes-detail.component.scss']
 })
 export class ClassesDetailComponent implements OnInit {
-    private id: string;
-    private link: string ="/teacher/classes/addstudent/";
-    private class: Classgroup;
+    private _classid: string;
+    private _link: string ="/teacher/classes/addstudent/";
+    private _class: Classgroup;
 
     constructor(private classgroupService: ClassgroupService, private route: ActivatedRoute) { }
 
     ngOnInit() {
         this.route.paramMap.subscribe(params => {
-            this.id = params.get("id")
+            this._classid = params.get("classid")
         });
 
-        this.link += this.id;
+        this._link += this._classid;
 
         this.setClass();
     }
 
     async setClass() {
-        await this.classgroupService.getClassgroupFromDb(this.id);
-        this.class = this.classgroupService.class;
+        await this.classgroupService.getClassgroupFromDb(this._classid);
+        this._class = this.classgroupService.class;
     }
 
 }
