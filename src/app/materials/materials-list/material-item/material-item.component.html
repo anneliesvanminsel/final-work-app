@@ -1,0 +1,25 @@
+<div *ngIf="material" class="item row">
+  <div class="item__number">
+    {{index + 1}}
+  </div>
+  <div class="item__label">
+    {{material.title}}
+  </div>
+
+  <div class="item__actions actions row">
+
+    <a class="actions__edit" [routerLink]="['/teacher/courses/editmaterial', material.id]" routerLinkActive="active">
+      <app-icon
+              [class]="'edit'"
+      ></app-icon>
+    </a>
+
+    <button class="">
+      <app-icon
+              [class]="'delete'"
+      ></app-icon>
+    </button>
+
+  </div>
+
+</div>
