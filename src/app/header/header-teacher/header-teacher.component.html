@@ -6,7 +6,7 @@
         <div class="header__image">
             <img src="http://www.buckinghamandcompany.com.au/wp-content/uploads/2016/03/profile-placeholder.png" alt="">
         </div>
-        <div class="header__text">
+        <div class="header__text" *ngIf="account">
             {{account.first_name}} {{account.name}}
         </div>
     </div>

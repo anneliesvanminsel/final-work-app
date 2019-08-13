@@ -1,19 +1,20 @@
+
 <app-header-teacher> </app-header-teacher>
 
 <main class="page">
 
     <div class="page__heading row">
         <h1>
-            klassen
+            <a class="page__breadcrumb" href="/teacher/classes">klassen</a>
         </h1>
         <app-icon
                 [class]="'chevron-right'"></app-icon>
-        <h2>
-            klas {{class.name}} - {{class.date}}
+        <h2 *ngIf="_class">
+            klas {{_class.name}} - {{_class.date}}
         </h2>
         <app-button-link
                 [label]="'voeg een leerling toe'"
-                [link]="link"
+                [link]="_link"
                 [class]="'is-ghost'"
         ></app-button-link>
     </div>

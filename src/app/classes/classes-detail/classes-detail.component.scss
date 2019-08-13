@@ -1,4 +1,5 @@
 @import "../../../resources/config/variables";
+@import "../../../resources/config/colors";
 
 .page {
 	margin-top: 50px;
@@ -31,6 +32,15 @@
 
 		@media screen and (min-width: $breakpoint-tablet) {
 			font-size: 30px;
+		}
+	}
+
+	&__breadcrumb {
+		text-decoration: none;
+		color: $ui-black;
+
+		&:hover {
+			color: $c-purple;
 		}
 	}
 

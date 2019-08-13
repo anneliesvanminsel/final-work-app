@@ -3,7 +3,7 @@
 <main class="page">
     <div class="page__heading row">
         <h1>
-            klassen
+            <a class="page__breadcrumb" href="/teacher/classes">klassen</a>
         </h1>
         <app-icon
             [class]="'chevron-right'"
@@ -14,7 +14,6 @@
     </div>
 
     <div class="page__content">
-
         <form (ngSubmit)="onAddClass()" class="form">
             <div class="form__group">
                 <label class="form__label" for="name">Naam</label>
@@ -48,7 +47,6 @@
                         [type]="'submit'"
                 ></app-button>
             </div>
-
         </form>
     </div>
 </main>
