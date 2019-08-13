@@ -4,37 +4,29 @@
       Registreren
     </h1>
 
-    <form class="form panel__body">
+    <form #authForm="ngForm" class="form panel__body" (ngSubmit)="onSubmit(authForm)">
       <div class="form__group">
-        <label for="mail" class="form__label">Email</label>
+        <label for="email" class="form__label">Email</label>
         <input
-                type="mail"
-                id="mail"
-                name="mail"
+                ngModel
+                type="email"
+                id="email"
+                name="email"
                 class="form__input"
-                #mailInput
+                required
         >
       </div>
 
       <div class="form__group">
         <label for="password" class="form__label">Wachtwoord</label>
         <input
-                type="text"
+                ngModel
+                type="password"
                 id="password"
-                name="date"
+                name="password"
                 class="form__input"
-                #passwordInput
-        >
-      </div>
-
-      <div class="form__group">
-        <label for="conformation" class="form__label">Wachtwoord bevestigen</label>
-        <input
-                type="text"
-                id="conformation"
-                name="date"
-                class="form__input"
-                #confirmationInput
+                required
+                minlength="6"
         >
       </div>
 
@@ -45,10 +37,13 @@
                 [class]="'is-ghost'"
         ></app-button-link>
 
-        <app-button
-                [label]="'Aanmelden'"
-                [type]="'submit'"
-        ></app-button>
+        <button
+                type="submit"
+                class="button"
+                [disabled]="!authForm.valid"
+        >
+          Registreren
+        </button>
       </div>
     </form>
   </div>

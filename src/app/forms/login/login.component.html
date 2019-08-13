@@ -1,47 +1,54 @@
 <main class="container">
-  <div class="panel">
-    <h1 class="panel__heading">
-      Aanmelden
-    </h1>
-    <form class="form panel__body" (ngSubmit)="onLogin()">
-      <div class="form__group">
-        <label for="mail" class="form__label">Email</label>
-        <input
-                type="text"
-                id="mail"
-                name="mail"
-                class="form__input"
-                #mailInput
-                required
-                autofocus
-        >
-      </div>
+    <div class="panel">
+        <h1 class="panel__heading">
+            Aanmelden
+        </h1>
 
-      <div class="form__group">
-        <label for="password" class="form__label">Wachtwoord</label>
-        <input
-                type="password"
-                id="password"
-                name="password"
-                class="form__input"
-                #passwordInput
-                required
-        >
-      </div>
+        <form #authForm="ngForm" class="form panel__body" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
+            <div class="form__group">
+                <label for="email" class="form__label">Email</label>
+                <input
+                        ngModel
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="form__input"
+                        autofocus
+                        required
+                >
+            </div>
 
-      <div class="form__actions row">
-        <app-button-link
-                [label]="'annuleer'"
-                [link]="'/index'"
-                [class]="'is-ghost'"
-        ></app-button-link>
+            <div class="form__group">
+                <label for="password" class="form__label">Wachtwoord</label>
+                <input
+                        ngModel
+                        type="password"
+                        id="password"
+                        name="password"
+                        class="form__input"
+                        required
+                        minlength="6"
+                >
+            </div>
 
-        <app-button
-                [label]="'Aanmelden'"
-                [type]="'submit'"
-        ></app-button>
+            <div class="form__actions row">
+                <app-button-link
+                        [label]="'annuleer'"
+                        [link]="'/index'"
+                        [class]="'is-ghost'"
+                ></app-button-link>
 
-      </div>
-    </form>
-  </div>
+                <button
+                        type="submit"
+                        class="button"
+                        [disabled]="!authForm.valid"
+                >
+                    Registreren
+                </button>
+            </div>
+        </form>
+        <div *ngIf="isLoading">
+            <app-loading-spinner></app-loading-spinner>
+        </div>
+    </div>
 </main>

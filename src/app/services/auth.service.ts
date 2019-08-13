@@ -7,6 +7,16 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { User } from  'firebase';
 import { Account } from '../models/account.model';
 import {BehaviorSubject, Observable, Subscription} from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+
+interface AuthResponseData {
+  kind: string;
+  idToken: string;
+  email: string;
+  refreshToken: string;
+  expiresIn: string;
+  localId: string;
+}
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +26,7 @@ export class AuthService {
   private _account: Account;
   isLoggedIn : BehaviorSubject<boolean> = new BehaviorSubject(false);
 
-  constructor(public  afAuth:  AngularFireAuth, public  router:  Router, private db: AngularFirestore) {
+  constructor(public  afAuth:  AngularFireAuth, public  router:  Router, private db: AngularFirestore, private http: HttpClient) {
     this.afAuth.authState.subscribe(user => {
       if (user) {
         this.getAccountFromDb(user).then(() => this.isLoggedIn.next(true));
@@ -32,6 +42,16 @@ export class AuthService {
     } catch (e) {
       alert("Error!"  +  e.message);
     }
+  }
+
+  signup(email: string, password: string) {
+    return this.http.post<AuthResponseData>(
+        'https://identitytoolkit.googleapis.com/v1/accounts:signInWithCustomToken?key=AIzaSyClgZaB7oe_otLva7qgyPJYKiBHT4TiRJY',
+        {
+          email: email,
+          password: password,
+          returnSecureToken: true,
+        });
   }
 
   async logout(){
