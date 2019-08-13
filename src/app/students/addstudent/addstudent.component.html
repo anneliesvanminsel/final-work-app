@@ -3,7 +3,7 @@
 <main class="page">
   <div class="page__heading row">
     <h1 *ngIf="class">
-      klas {{class.name}}
+      <a class="page__breadcrumb" [routerLink]="['/teacher/classes/detail/', id]">klas {{class.name}}</a>
     </h1>
     <app-icon
             [class]="'chevron-right'"></app-icon>

@@ -18,7 +18,7 @@ export class CourseService {
         );
     }
 
-    getCourses() {
+    getCourses() : Observable<Course[]> {
         this.courses$ = this.courseCollection.snapshotChanges().pipe(
             map(actions =>
                 actions.map(a => {

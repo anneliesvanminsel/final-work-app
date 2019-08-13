@@ -11,7 +11,7 @@ import {Observable} from 'rxjs';
 })
 export class StudentsListComponent implements OnInit {
   private _classid: string;
-  students$: Observable<any>;
+  students$: Observable<Student[]>;
 
   constructor(private studentTeacherService: StudentTeacherService, private route: ActivatedRoute){
     this.route.paramMap.subscribe(params => {

@@ -8,7 +8,7 @@
 
     <div class="item__actions actions row">
 
-        <a class="actions__edit" routerLink="/editstudent/:id" routerLinkActive="active">
+        <a class="actions__edit" [routerLink]="['/teacher/classes/editstudent', student.id]" routerLinkActive="active">
             <app-icon
                     [class]="'edit'"
             ></app-icon>

@@ -184,7 +184,7 @@ const appRoutes: Routes = [
         ClassesDetailComponent,
         AddClassComponent,
         EditClassComponent,
-        
+
         //All components for teacher - student
         StudentsListComponent,
         AddstudentComponent,

@@ -19,6 +19,7 @@ export class AddstudentComponent implements OnInit {
   @ViewChild('mailInput') mailInputRef: ElementRef;
 
   newStudent: Student ={
+    id: '',
     name: '',
     email: '',
     class_id: '',
