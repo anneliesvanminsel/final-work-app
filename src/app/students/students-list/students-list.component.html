@@ -13,7 +13,7 @@
 
     <div class="list__items">
         <app-student-item
-            *ngFor="let student of students; let i = index"
+            *ngFor="let student of (students$ | async); let i = index"
             [student]="student"
             [index]="i"
         ></app-student-item>
