@@ -38,20 +38,24 @@
                 >
             </div>
 
-            <div class="form__group">
+            <mat-form-field class="form__group">
 
-                <label class="form__label" for="class">Klassen die dit vak volgen</label>
-
-
-
-                <input
-                        type="text"
-                        id="class"
-                        name="class"
-                        class="form__input"
-                        #classInput
+                <label class="form__label">Klassen die dit vak volgen</label>
+                <mat-select
+                    class=""
+                    id="classgroups"
+                    multiple
+                    #classInput
                 >
-            </div>
+                    <mat-option
+                            class=""
+                            *ngFor="let classGroupItem of classgroups"
+                            [value]="classGroupItem.id"
+                    >
+                        {{classGroupItem.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
 
             <div class="row">
                 <app-button-link
