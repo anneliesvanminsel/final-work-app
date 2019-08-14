@@ -20,6 +20,7 @@ import { StudentTeacherService } from './services/student-teacher.service';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 //headers - navigation
+import {AppRoutingModule} from './app-routing.module';
 import { HeaderTeacherComponent } from './header/header-teacher/header-teacher.component';
 import { HeaderStudentComponent } from './header/header-student/header-student.component';
 import { NavigationTeacherComponent } from './header/navigation-teacher/navigation-teacher.component';
@@ -31,29 +32,33 @@ import { FooterIndexComponent } from './footer/footer-index/footer-index.compone
 import { IndexComponent } from './index/index.component';
 import { PricingComponent } from './index/pricing/pricing.component';
 import { TestimonialComponent } from './index/testimonial/testimonial.component';
-//teacher - classes
+//teacher
 import { ClassesListComponent } from './classes/classes-list/classes-list.component';
 import { ClassesDetailComponent } from './classes/classes-detail/classes-detail.component';
 import { AddClassComponent } from './classes/addclass/addclass.component';
 import { EditClassComponent } from './classes/editclass/editclass.component';
 import { ClassItemComponent } from './classes/classes-list/class-item/class-item.component';
-//teacher - courses
 import { CoursesDetailComponent } from './courses/courses-detail/courses-detail.component';
 import { CoursesListComponent } from './courses/courses-list/courses-list.component';
 import { CourseItemComponent } from './courses/courses-list/course-item/course-item.component';
 import { AddcourseComponent } from './courses/addcourse/addcourse.component';
 import { EditcourseComponent } from './courses/editcourse/editcourse.component';
-//teacher - material
+import { TeacherComponent } from './teacher/teacher.component';
+import { CoursesComponent } from './courses/courses.component';
+import { ClassesComponent } from './classes/classes.component';
 import { MaterialsListComponent } from './materials/materials-list/materials-list.component';
 import { MaterialsDetailComponent } from './materials/materials-detail/materials-detail.component';
 import {MaterialService} from './services/material.service';
 import { MaterialItemComponent } from './materials/materials-list/material-item/material-item.component';
-//teacher - students
+import { AddmaterialComponent } from './materials/addmaterial/addmaterial.component';
 import { StudentsListComponent } from './students/students-list/students-list.component';
 import { AddstudentComponent } from './students/addstudent/addstudent.component';
 import { StudentItemComponent } from './students/students-list/student-item/student-item.component';
-//teacher - settings
 import { SettingsComponent } from './settings/settings.component';
+//student components
+import { StudentComponent } from './student/student.component';
+import { StudentsettingsComponent } from './student/studentsettings/studentsettings.component';
+import { StudentcoursesComponent } from './student/studentcourses/studentcourses.component';
 // authentication
 import { RegisterComponent } from './forms/register/register.component';
 import { LoginComponent } from './forms/login/login.component';
@@ -64,11 +69,6 @@ import { ColorrowComponent } from './components/colorrow/colorrow.component';
 import { ButtonComponent } from './components/button/button.component';
 import { ButtonLinkComponent } from './components/button-link/button-link.component';
 import { IconComponent } from './components/icon/icon.component';
-import { AddmaterialComponent } from './materials/addmaterial/addmaterial.component';
-import {AppRoutingModule} from './app-routing.module';
-import { TeacherComponent } from './teacher/teacher.component';
-import { CoursesComponent } from './courses/courses.component';
-import { ClassesComponent } from './classes/classes.component';
 import {SpinnerComponent} from '../resources/spinner/spinner.component';
 import { ExercisesComponent } from './exercises/exercises.component';
 
@@ -134,6 +134,9 @@ import { ExercisesComponent } from './exercises/exercises.component';
         ClassesComponent,
         SpinnerComponent,
         ExercisesComponent,
+        StudentComponent,
+        StudentsettingsComponent,
+        StudentcoursesComponent,
     ],
     imports: [
         BrowserModule,

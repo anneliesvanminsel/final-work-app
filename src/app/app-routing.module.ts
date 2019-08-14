@@ -19,6 +19,7 @@ import {TeacherComponent} from './teacher/teacher.component';
 import {CoursesComponent} from './courses/courses.component';
 import {ClassesComponent} from './classes/classes.component';
 import {MaterialsDetailComponent} from './materials/materials-detail/materials-detail.component';
+import {StudentComponent} from './student/student.component';
 
 const appRoutes: Routes = [
 
@@ -66,6 +67,45 @@ const appRoutes: Routes = [
             {
                 path: 'courses',
                 component: CoursesComponent,
+                children: [
+                    { path: '',
+                        component: CoursesListComponent
+                    },
+                    { path: 'addcourse',
+                        component: AddcourseComponent
+                    },
+                    {
+                        path: 'editcourse/:courseid',
+                        component: EditcourseComponent
+                    },
+                    {
+                        path: 'detail/:courseid',
+                        component: CoursesDetailComponent
+                    },
+                    {
+                        path: 'addmaterial/:courseid',
+                        component: AddmaterialComponent
+                    },
+                    {
+                        path: 'material/detail/:courseid/:materialid',
+                        component: MaterialsDetailComponent
+                    },
+                ],
+            },
+            {
+                path: 'settings',
+                component: SettingsComponent
+            },
+        ],
+    },
+    // --- STUDENT ROUTES ---
+    {
+        path: 'student',
+        component: StudentComponent,
+        children: [
+            {
+                path: 'courses',
+                component: StudentCo,
                 children: [
                     { path: '',
                         component: CoursesListComponent
