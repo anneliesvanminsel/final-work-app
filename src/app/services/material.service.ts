@@ -11,6 +11,7 @@ export class MaterialService {
     private materialCollection: AngularFirestoreCollection<Material>;
     private materialsList$: Observable<Material[]>;
     private materials: Material[] = [];
+    private materialDetail: Material;
 
 
     constructor(private db: AngularFirestore) {
@@ -42,6 +43,23 @@ export class MaterialService {
             );
 
     };
+
+    async getMaterialFromDb(id: string) {
+
+        await this.materialCollection.doc(id).ref.get().then((doc) => {
+            if (doc.exists) {
+                this.materialDetail = <Material> doc.data();
+            } else {
+                console.log("No such document!");
+            }
+        }).catch(function(error) {
+            console.log("Error getting document:", error);
+        });
+    }
+
+    get material() : Material {
+        return this.materialDetail;
+    }
 
     addMaterial(newMaterial) {
         this.materialCollection.add(newMaterial);

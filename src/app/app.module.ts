@@ -70,6 +70,7 @@ import { TeacherComponent } from './teacher/teacher.component';
 import { CoursesComponent } from './courses/courses.component';
 import { ClassesComponent } from './classes/classes.component';
 import {SpinnerComponent} from '../resources/spinner/spinner.component';
+import { ExercisesComponent } from './exercises/exercises.component';
 
 @NgModule({
     declarations: [
@@ -132,6 +133,7 @@ import {SpinnerComponent} from '../resources/spinner/spinner.component';
         CoursesComponent,
         ClassesComponent,
         SpinnerComponent,
+        ExercisesComponent,
     ],
     imports: [
         BrowserModule,

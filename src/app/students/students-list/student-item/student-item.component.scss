@@ -2,6 +2,7 @@
 @import "../../../../resources/config/variables";
 
 .item {
+	position: relative;
 	padding: 20px 0;
 	font-size: 16px;
 	border-bottom: 1px solid $ui-medium-grey;
@@ -20,6 +21,26 @@
 
 	&__label {
 		flex-grow: 1;
+
+		&.is-link {
+			text-decoration: none;
+			color: $ui-black;
+
+			&:hover {
+				&::after {
+					content: "";
+					position: absolute;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					display: block;
+					z-index: -1;
+					background-color: rgba($c-green, .09);
+
+				}
+			}
+		}
 	}
 
 	&__actions {
@@ -35,6 +56,42 @@
 
 		> * {
 			margin: 0 5px;
+		}
+	}
+}
+
+.actions {
+	&__edit {
+		&:hover {
+			&::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				display: block;
+				z-index: -1;
+				background-color: rgba($c-orange, .15);
+
+			}
+		}
+	}
+
+	&__delete {
+		&:hover {
+			&::after {
+				content: "";
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				display: block;
+				z-index: -1;
+				background-color: rgba($c-pink, .15);
+
+			}
 		}
 	}
 }
