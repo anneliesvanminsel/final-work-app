@@ -20,6 +20,7 @@ import {CoursesComponent} from './courses/courses.component';
 import {ClassesComponent} from './classes/classes.component';
 import {MaterialsDetailComponent} from './materials/materials-detail/materials-detail.component';
 import {StudentComponent} from './student/student.component';
+import {StudentcoursesComponent} from './student/studentcourses/studentcourses.component';
 
 const appRoutes: Routes = [
 
@@ -105,25 +106,14 @@ const appRoutes: Routes = [
         children: [
             {
                 path: 'courses',
-                component: StudentCo,
+                component: StudentcoursesComponent,
                 children: [
                     { path: '',
                         component: CoursesListComponent
                     },
-                    { path: 'addcourse',
-                        component: AddcourseComponent
-                    },
-                    {
-                        path: 'editcourse/:courseid',
-                        component: EditcourseComponent
-                    },
                     {
                         path: 'detail/:courseid',
                         component: CoursesDetailComponent
-                    },
-                    {
-                        path: 'addmaterial/:courseid',
-                        component: AddmaterialComponent
                     },
                     {
                         path: 'material/detail/:courseid/:materialid',
