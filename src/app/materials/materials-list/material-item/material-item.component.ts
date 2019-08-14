@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Material} from '../../../models/material.model';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-material-item',
@@ -9,9 +10,14 @@ import {Material} from '../../../models/material.model';
 export class MaterialItemComponent implements OnInit {
   @Input() material: Material;
   @Input() index: number;
+  private _courseid: string;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.route.paramMap.subscribe(params => {
+      this._courseid = params.get("courseid")
+    });
+  }
 
 }
