@@ -1,3 +1,16 @@
-<p>
-  studentcourseslist works!
-</p>
+<div class="row">
+  <div class="component__heading">
+    <h1 class="component__title">
+      vakken
+    </h1>
+  </div>
+</div>
+
+<div class="component__content">
+  <router-outlet></router-outlet>
+  <app-course-item
+          *ngFor="let courseItem of courses"
+          [course]="courseItem"
+          [link]="'/student/courses/detail/'"
+  ></app-course-item>
+</div>

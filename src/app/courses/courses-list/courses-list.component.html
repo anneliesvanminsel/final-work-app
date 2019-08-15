@@ -12,9 +12,10 @@
     ></app-button-link>
 </div>
 
-<div class="page__content">
+<div class="component__content">
     <app-course-item
             *ngFor="let courseItem of courses"
             [course]="courseItem"
+            [link]="'/teacher/courses/detail/'"
     ></app-course-item>
 </div>

@@ -17,8 +17,4 @@ export class HeaderTeacherComponent implements OnInit {
       isLoggedIn && (this.account = this.authService.account);
     });
   }
-
-  onLogout() {
-    this.authService.logout();
-  }
 }

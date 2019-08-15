@@ -1,3 +1,19 @@
-<p>
-  studentcoursedetail works!
-</p>
+<div class="component">
+  <div class="row">
+    <div class="component__heading row">
+      <h1 class="component__title">
+        <a class="component__breadcrumb" routerLink="/student/courses">vakken</a>
+      </h1>
+      <app-icon
+              [class]="'chevron-right'"
+      ></app-icon>
+      <h2 *ngIf="course" class="component__subtitle">
+        {{course.name}}
+      </h2>
+    </div>
+  </div>
+
+  <div class="component__content">
+    <app-studentmaterials></app-studentmaterials>
+  </div>
+</div>

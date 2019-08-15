@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService} from "../../services/auth.service";
+import {Account} from "../../models/account.model";
 
 @Component({
   selector: 'app-header-student',
@@ -6,18 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header-student.component.scss']
 })
 export class HeaderStudentComponent implements OnInit {
-  show:boolean = false;
+  account: Account;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
+    this.authService.isLoggedIn.subscribe((isLoggedIn) => {
+      isLoggedIn && (this.account = this.authService.account);
+    });
   }
 
-  /*
-  * komt van
-  * https://angularfirebase.com/lessons/bootstrap-4-collapsable-navbar-work-with-angular/
-  */
-  toggleCollapse() {
-    this.show = !this.show;
-  }
 }
