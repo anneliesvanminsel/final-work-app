@@ -8,9 +8,12 @@ import {Course} from '../../../models/course.model';
 })
 export class CourseItemComponent implements OnInit {
   @Input() course: Course;
+  @Input() link: string;
+  fullLink: string;
   constructor() { }
 
   ngOnInit() {
+    this.fullLink = this.link + this.course.id;
   }
 
 }
