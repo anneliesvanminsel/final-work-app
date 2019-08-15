@@ -75,6 +75,7 @@ import { ButtonLinkComponent } from './components/button-link/button-link.compon
 import { IconComponent } from './components/icon/icon.component';
 import {SpinnerComponent} from '../resources/spinner/spinner.component';
 import { ExercisesComponent } from './exercises/exercises.component';
+import { NavigationStudentComponent } from './header/navigation-student/navigation-student.component';
 
 
 @NgModule({
@@ -146,6 +147,7 @@ import { ExercisesComponent } from './exercises/exercises.component';
         StudentmaterialdetailComponent,
         StudentcourseslistComponent,
         StudentcoursedetailComponent,
+        NavigationStudentComponent,
     ],
     imports: [
         BrowserModule,

@@ -49,6 +49,11 @@ const appRoutes: Routes = [
         canActivate: [StudentGuard],
         children: [
             {
+                path: '',
+                redirectTo: 'courses',
+                pathMatch: 'full'
+            },
+            {
                 path: 'courses',
                 component: StudentcoursesComponent,
                 children: [
