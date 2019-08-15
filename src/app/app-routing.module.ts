@@ -19,6 +19,8 @@ import {TeacherComponent} from './teacher/teacher.component';
 import {CoursesComponent} from './courses/courses.component';
 import {ClassesComponent} from './classes/classes.component';
 import {MaterialsDetailComponent} from './materials/materials-detail/materials-detail.component';
+import { TeacherGuard } from './services/teacher.guard';
+
 
 const appRoutes: Routes = [
 
@@ -38,6 +40,7 @@ const appRoutes: Routes = [
     {
         path: 'teacher',
         component: TeacherComponent,
+        canActivate: [TeacherGuard],
         children: [
             {
                 path: 'classes',
