@@ -1,5 +1,7 @@
 import {NgModule} from '@angular/core';
 import {Router, RouterModule, Routes} from '@angular/router';
+import { TeacherGuard } from './services/teacher.guard';
+import { StudentGuard } from './services/student.guard';
 
 import {LoginComponent} from './forms/login/login.component';
 import {RegisterComponent} from './forms/register/register.component';
@@ -19,9 +21,6 @@ import {TeacherComponent} from './teacher/teacher.component';
 import {CoursesComponent} from './courses/courses.component';
 import {ClassesComponent} from './classes/classes.component';
 import {MaterialsDetailComponent} from './materials/materials-detail/materials-detail.component';
-import { TeacherGuard } from './services/teacher.guard';
-import { StudentGuard } from './services/student.guard';
-
 import {StudentComponent} from './student/student.component';
 import {StudentcoursesComponent} from './student/studentcourses/studentcourses.component';
 
@@ -38,15 +37,40 @@ const appRoutes: Routes = [
         component: RegisterComponent
     },
 
-    // --- TEACHER ROUTES ---
+    // --- STUDENT ROUTES ---
+
     {
         path: 'student',
-        component: TeacherComponent,
+        component: StudentComponent,
         canActivate: [StudentGuard],
         children: [
+            {
+                path: 'courses',
+                component: StudentcoursesComponent,
+                children: [
+                    { path: '',
+                        component: CoursesListComponent
+                    },
+                    {
+                        path: 'detail/:courseid',
+                        component: CoursesDetailComponent
+                    },
+                    {
+                        path: 'material/detail/:courseid/:materialid',
+                        component: MaterialsDetailComponent
+                    },
+                ],
+            },
+            {
+                path: 'settings',
+                component: SettingsComponent
+            },
 
         ]
     },
+
+    // --- TEACHER ROUTES ---
+
     {
         path: 'teacher',
         component: TeacherComponent,
@@ -97,34 +121,6 @@ const appRoutes: Routes = [
                     {
                         path: 'addmaterial/:courseid',
                         component: AddmaterialComponent
-                    },
-                    {
-                        path: 'material/detail/:courseid/:materialid',
-                        component: MaterialsDetailComponent
-                    },
-                ],
-            },
-            {
-                path: 'settings',
-                component: SettingsComponent
-            },
-        ],
-    },
-    // --- STUDENT ROUTES ---
-    {
-        path: 'student',
-        component: StudentComponent,
-        children: [
-            {
-                path: 'courses',
-                component: StudentcoursesComponent,
-                children: [
-                    { path: '',
-                        component: CoursesListComponent
-                    },
-                    {
-                        path: 'detail/:courseid',
-                        component: CoursesDetailComponent
                     },
                     {
                         path: 'material/detail/:courseid/:materialid',
