@@ -59,6 +59,10 @@ import { SettingsComponent } from './settings/settings.component';
 import { StudentComponent } from './student/student.component';
 import { StudentsettingsComponent } from './student/studentsettings/studentsettings.component';
 import { StudentcoursesComponent } from './student/studentcourses/studentcourses.component';
+import { StudentmaterialsComponent } from './student/studentmaterials/studentmaterials.component';
+import { StudentmaterialdetailComponent } from './student/studentmaterialdetail/studentmaterialdetail.component';
+import { StudentcourseslistComponent } from './student/studentcourses/studentcourseslist/studentcourseslist.component';
+import { StudentcoursedetailComponent} from './student/studentcoursedetail/studentcoursedetail.component';
 // authentication
 import { RegisterComponent } from './forms/register/register.component';
 import { LoginComponent } from './forms/login/login.component';
@@ -71,6 +75,7 @@ import { ButtonLinkComponent } from './components/button-link/button-link.compon
 import { IconComponent } from './components/icon/icon.component';
 import {SpinnerComponent} from '../resources/spinner/spinner.component';
 import { ExercisesComponent } from './exercises/exercises.component';
+
 
 @NgModule({
     declarations: [
@@ -137,6 +142,10 @@ import { ExercisesComponent } from './exercises/exercises.component';
         StudentComponent,
         StudentsettingsComponent,
         StudentcoursesComponent,
+        StudentmaterialsComponent,
+        StudentmaterialdetailComponent,
+        StudentcourseslistComponent,
+        StudentcoursedetailComponent,
     ],
     imports: [
         BrowserModule,

@@ -23,6 +23,10 @@ import {ClassesComponent} from './classes/classes.component';
 import {MaterialsDetailComponent} from './materials/materials-detail/materials-detail.component';
 import {StudentComponent} from './student/student.component';
 import {StudentcoursesComponent} from './student/studentcourses/studentcourses.component';
+import {StudentmaterialdetailComponent} from './student/studentmaterialdetail/studentmaterialdetail.component';
+import {StudentcourseslistComponent} from './student/studentcourses/studentcourseslist/studentcourseslist.component';
+import {StudentcoursedetailComponent} from './student/studentcoursedetail/studentcoursedetail.component';
+import {StudentsettingsComponent} from './student/studentsettings/studentsettings.component';
 
 const appRoutes: Routes = [
 
@@ -49,21 +53,22 @@ const appRoutes: Routes = [
                 component: StudentcoursesComponent,
                 children: [
                     { path: '',
-                        component: CoursesListComponent
+                        component: StudentcourseslistComponent
                     },
                     {
                         path: 'detail/:courseid',
-                        component: CoursesDetailComponent
+                        component: StudentcoursedetailComponent
                     },
-                    {
-                        path: 'material/detail/:courseid/:materialid',
-                        component: MaterialsDetailComponent
-                    },
+
                 ],
             },
             {
+                path: 'material/detail/:courseid/:materialid',
+                component: StudentmaterialdetailComponent
+            },
+            {
                 path: 'settings',
-                component: SettingsComponent
+                component: StudentsettingsComponent
             },
 
         ]
