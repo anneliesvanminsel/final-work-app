@@ -16,10 +16,21 @@ export class StudentGuard implements CanActivate {
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot)
         : Observable<boolean> | Promise<boolean> | boolean {
+        const isLoggedIn = this.authService.isLoggedIn.subscribe(value => {
+            console.log('isLoggedIn', value);
 
-        if(this.authService.isLoggedIn && this.authService.isStudent) {
+            if (value) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+
+        if (isLoggedIn && this.authService.isStudent) {
+            console.log('gebruiker mag leerling', this.authService.account);
             return true;
         } else {
+            console.log('gebruiker mag niet leerling', this.authService.account);
             this.router.navigate(['login']);
             return false;
         }

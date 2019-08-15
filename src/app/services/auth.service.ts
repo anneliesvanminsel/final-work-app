@@ -56,7 +56,8 @@ export class AuthService {
 
   async logout(){
     await this.afAuth.auth.signOut().then(() => this.isLoggedIn.next(false));
-    this.router.navigate(['/index']);
+    console.log(this._account, this.isLoggedIn);
+    this.router.navigate(['index']);
   }
 
   async getAccountFromDb(user: User) {

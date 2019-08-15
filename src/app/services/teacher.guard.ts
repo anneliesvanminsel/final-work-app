@@ -16,10 +16,21 @@ export class TeacherGuard implements CanActivate {
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot)
         : Observable<boolean> | Promise<boolean> | boolean {
+        const isLoggedIn = this.authService.isLoggedIn.subscribe(value => {
+            console.log('isLoggedIn', value);
 
-        if(this.authService.isLoggedIn && this.authService.isTeacher) {
+            if (value) {
+                return true;
+            } else {
+                return false;
+            }
+        });
+
+        if (isLoggedIn && this.authService.isTeacher) {
+            console.log('gebruiker mag leerkracht', this.authService.account);
             return true;
         } else {
+            console.log('gebruiker mag niet leerkracht', this.authService.account);
             this.router.navigate(['login']);
             return false;
         }

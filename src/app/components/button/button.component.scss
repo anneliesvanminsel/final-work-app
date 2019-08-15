@@ -50,6 +50,11 @@
 		display: flex;
 	}
 
+	&:disabled {
+		/* Color */
+		background-color:rgba($c-purple, .5);
+	}
+
 	&.is-ghost {
 		background-color: $ui-white;
 		color: $c-purple;
@@ -58,5 +63,12 @@
 		&::before {
 			background: rgba($c-purple, .1);
 		}
+
+		&:disabled {
+			/* Color */
+			background-color:rgba($ui-light-grey, .8);
+		}
 	}
+
+
 }

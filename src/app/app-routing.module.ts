@@ -38,7 +38,7 @@ const appRoutes: Routes = [
 
     // --- TEACHER ROUTES ---
     {
-        path: 'Student',
+        path: 'student',
         component: TeacherComponent,
         canActivate: [StudentGuard],
         children: [
