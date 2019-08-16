@@ -2,7 +2,7 @@
   <div class="item__number">
     {{index + 1}}
   </div>
-  <a class="item__label is-link" [routerLink]="['/teacher/courses/material/detail', _courseid, material.id]">
+  <a class="item__label is-link" [routerLink]="_fullLink">
     {{material.title}}
   </a>
 

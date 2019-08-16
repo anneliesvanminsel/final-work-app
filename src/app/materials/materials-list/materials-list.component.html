@@ -16,6 +16,7 @@
                 *ngFor="let material of (materials$ | async); let i = index"
                 [material]="material"
                 [index]="i"
+                [link]="'/teacher/courses/material/detail/'"
         ></app-material-item>
     </div>
 </div>

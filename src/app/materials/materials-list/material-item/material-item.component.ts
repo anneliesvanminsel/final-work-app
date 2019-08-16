@@ -10,7 +10,9 @@ import {ActivatedRoute} from '@angular/router';
 export class MaterialItemComponent implements OnInit {
   @Input() material: Material;
   @Input() index: number;
+  @Input() link: string;
   private _courseid: string;
+  private _fullLink: string;
 
   constructor(private route: ActivatedRoute) { }
 
@@ -18,6 +20,7 @@ export class MaterialItemComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this._courseid = params.get("courseid")
     });
-  }
 
+    this._fullLink = this.link + this._courseid + '/' + this.material.id;
+  }
 }

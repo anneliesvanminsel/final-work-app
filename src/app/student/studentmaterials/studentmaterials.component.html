@@ -1,3 +1,22 @@
-<p>
-  studentmaterials works!
-</p>
+<div class="list">
+  <div class="list__heading row">
+    <div class="list__heading__number">
+      nr
+    </div>
+    <div class="list__heading__label">
+      naam
+    </div>
+    <div class="list__heading__actions">
+      acties
+    </div>
+  </div>
+
+  <div class="list__items">
+    <app-material-item
+            *ngFor="let material of (materials$ | async); let i = index"
+            [material]="material"
+            [index]="i"
+            [link]="'/student/material/detail/'"
+    ></app-material-item>
+  </div>
+</div>
