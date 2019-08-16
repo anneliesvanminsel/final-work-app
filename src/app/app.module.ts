@@ -7,7 +7,6 @@ import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-import { AngularFireAuth } from 'angularfire2/auth';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatSelectModule } from '@angular/material/select';
@@ -77,6 +76,12 @@ import {SpinnerComponent} from '../resources/spinner/spinner.component';
 import { NavigationStudentComponent } from './header/navigation-student/navigation-student.component';
 import {ExerciseService} from './services/exercise.service';
 import { ExerciseComponent } from './exercise/exercise.component';
+import { MultiplechoiceComponent } from './exercise/type/multiplechoice/multiplechoice.component';
+import { CrosswordComponent } from './exercise/type/crossword/crossword.component';
+import { McAnswerComponent } from './exercise/type/multiplechoice/mc-answer/mc-answer.component';
+import { McQuestionComponent } from './exercise/type/multiplechoice/mc-question/mc-question.component';
+import {QuestionService} from "./services/question.service";
+import {AnswerService} from "./services/answer.service";
 
 
 @NgModule({
@@ -144,6 +149,10 @@ import { ExerciseComponent } from './exercise/exercise.component';
         ExerciseComponent,
         MaterialItemComponent,
         CourseItemComponent,
+        MultiplechoiceComponent,
+        CrosswordComponent,
+        McAnswerComponent,
+        McQuestionComponent,
 
     ],
     imports: [
@@ -168,6 +177,8 @@ import { ExerciseComponent } from './exercise/exercise.component';
         StudentTeacherService,
         MaterialService,
         ExerciseService,
+        QuestionService,
+        AnswerService
     ],
     bootstrap: [
         AppComponent

@@ -36,8 +36,6 @@ export class MaterialsDetailComponent implements OnInit {
     this.setCourse();
     this.setMaterial();
     this.exercises$ = this.exerciseService.getExercisesByMaterial(this._matid);
-    this.exerciseService.getExercisesByMaterial(this._matid).subscribe(value => console.log(value));
-    console.log(this.exercises$);
   }
 
   async setCourse() {
