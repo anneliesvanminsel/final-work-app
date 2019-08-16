@@ -27,7 +27,7 @@ export class AnswerService {
                             const answer: TeacherAnswer = {
                                 id: doc.id,
                                 label: doc.data().label,
-                                rightorwrong: doc.data().rightorwrong,
+                                rightanswer: doc.data().rightanswer,
                                 question_id: doc.data().question_id
                             };
                             answerArray.push(answer)
