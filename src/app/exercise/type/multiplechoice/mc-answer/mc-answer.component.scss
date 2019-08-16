@@ -1,0 +1,89 @@
+@import "../../../../../resources/config/colors";
+.checkbox {
+	&__wrapper {
+		margin-top: 20px;
+	}
+
+	&__label {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		margin: 10px 0;
+
+		cursor: pointer;
+	}
+
+	&__title {
+		font-weight: 700;
+		margin-right: 20px;
+
+		font-size: 18px;
+	}
+
+	&__text {
+		font-size: 18px;
+	}
+}
+
+input[type=checkbox],
+input[type=radio] {
+	-webkit-appearance: none;
+	position: relative;
+
+	display: inline-block;
+	flex-shrink: 0;
+	width: 30px;
+	height: 30px;
+
+	margin-right: 30px;
+
+	background-color: $ui-white;
+	border: 1px solid $ui-light-grey;
+	vertical-align: middle;
+	cursor: pointer;
+	transition: background-color .2s cubic-bezier(.3, 0, .3, 1), border .2s cubic-bezier(.3, 0, .3, 1);
+
+	&:hover,
+	&:checked {
+		outline: none;
+		background-color: $c-blue;
+		border-color: 1px solid $c-blue;
+	}
+
+	&:before {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		transform: scale(0);
+		transition: transform .15s cubic-bezier(.3, 0, .3, 1);
+	}
+}
+
+input[type=radio] {
+	border-radius: 50px;
+
+	&:before {
+		background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iMTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTYgMGE2IDYgMCAxIDEgMCAxMkE2IDYgMCAxIDEgNiAweiIgZmlsbD0iI0ZGRiIgZmlsbC1ydWxlPSJldmVub2RkIi8+PC9zdmc+") 50% no-repeat;
+	}
+}
+
+input[type=checkbox]:before {
+	background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTMiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTUuMzU2IDkuMTU0TDIuNjI4IDYuNDU3YS43NjcuNzY3IDAgMCAwLTEuMDctLjAwOGwtLjAyNi4wMjVhLjczNS43MzUgMCAwIDAgLjAwMiAxLjA1NEw1IDEwLjk1NWEuNTEuNTEgMCAwIDAgLjcxMS4wMDJMMTQuMTYgMi42YS43MzkuNzM5IDAgMCAwLS4wMDMtMS4wNDlsLS4wMjUtLjAyNWEuNzU3Ljc1NyAwIDAgMC0xLjA2LS4wMDRMNS4zNTYgOS4xNTR6IiBzdHJva2U9IiNGRkYiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PC9zdmc+") 50% no-repeat;
+}
+
+input[type=checkbox]:checked:before,
+input[type=radio]:checked:before {
+	transform: scale(1);
+}
+
+input[type=checkbox]:disabled,
+input[type=radio]:disabled {
+	transform: scale(1);
+	background-color: $c-pink;
+	border-color: $c-pink;
+}
+
