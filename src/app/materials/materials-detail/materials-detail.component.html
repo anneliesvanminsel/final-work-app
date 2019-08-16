@@ -14,8 +14,9 @@
         </div>
     </div>
     <div class="component__content">
-        <div *ngFor="let exercise of (exercises$ | async)">
-            lala
+        <div *ngFor="let exercise of (exercises$ | async); let i = index">
+            {{exercise}}
+            {{i}}
         </div>
         <app-exercise
 

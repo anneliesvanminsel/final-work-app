@@ -21,7 +21,7 @@ export class ExerciseService {
     }
 
     getExercisesByMaterial(material_id: string): Observable<any> {
-        return  this.db.collection("/material", ref => ref.where("course_id", '==', material_id)).get()
+        return  this.db.collection("/exercise", ref => ref.where("material_id", '==', material_id)).get()
             .pipe(
                 map(value => {
                     const exerciseArray = [];
