@@ -4,7 +4,6 @@ import {
 } from "angularfire2/firestore";
 import { Observable } from 'RxJS';
 import { map } from "rxjs/operators";
-import { Material} from '../models/material.model';
 import {Exercise} from '../models/exercise.model';
 
 @Injectable()

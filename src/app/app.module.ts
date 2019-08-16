@@ -74,8 +74,9 @@ import { ButtonComponent } from './components/button/button.component';
 import { ButtonLinkComponent } from './components/button-link/button-link.component';
 import { IconComponent } from './components/icon/icon.component';
 import {SpinnerComponent} from '../resources/spinner/spinner.component';
-import { ExercisesComponent } from './exercises/exercises.component';
 import { NavigationStudentComponent } from './header/navigation-student/navigation-student.component';
+import {ExerciseService} from './services/exercise.service';
+import { ExerciseComponent } from './exercise/exercise.component';
 
 
 @NgModule({
@@ -101,45 +102,28 @@ import { NavigationStudentComponent } from './header/navigation-student/navigati
         FooterTeacherComponent,
         FooterStudentComponent,
 
-        // All components for materials
+        // All components for teachers
         MaterialsListComponent,
-        MaterialItemComponent,
         MaterialsDetailComponent,
         AddmaterialComponent,
-
-        // All components for teacher - courses
         CoursesListComponent,
-        CourseItemComponent,
         CoursesDetailComponent,
         AddcourseComponent,
         EditcourseComponent,
-
-        // All components for teacher - Classes
         ClassesListComponent,
         ClassItemComponent,
         ClassesDetailComponent,
         AddClassComponent,
         EditClassComponent,
-
-        //All components for teacher - student
         StudentsListComponent,
         AddstudentComponent,
         StudentItemComponent,
-
-        //All components for teacher - settings
         SettingsComponent,
-
-        // All re-usable components
-        CardComponent,
-        ColorrowComponent,
-        ButtonComponent,
-        ButtonLinkComponent,
-        IconComponent,
         TeacherComponent,
         CoursesComponent,
         ClassesComponent,
-        SpinnerComponent,
-        ExercisesComponent,
+        
+        //All components for students
         StudentComponent,
         StudentsettingsComponent,
         StudentcoursesComponent,
@@ -148,6 +132,19 @@ import { NavigationStudentComponent } from './header/navigation-student/navigati
         StudentcourseslistComponent,
         StudentcoursedetailComponent,
         NavigationStudentComponent,
+        
+
+        // All re-usable components
+        CardComponent,
+        ColorrowComponent,
+        ButtonComponent,
+        ButtonLinkComponent,
+        IconComponent,
+        SpinnerComponent,
+        ExerciseComponent,
+        MaterialItemComponent,
+        CourseItemComponent,
+
     ],
     imports: [
         BrowserModule,
@@ -170,6 +167,7 @@ import { NavigationStudentComponent } from './header/navigation-student/navigati
         AuthService,
         StudentTeacherService,
         MaterialService,
+        ExerciseService,
     ],
     bootstrap: [
         AppComponent
