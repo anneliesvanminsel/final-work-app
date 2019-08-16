@@ -1,3 +1,13 @@
-<p>
-  exercise works!
-</p>
+<div class="item">
+  <div class="item_title">
+    {{index + 1}}. {{exercise.title}}
+  </div>
+  <div class="item__content">
+    <div *ngIf="exercise.type == 'crossword'">
+      kruiswoordraadsel
+    </div>
+    <div *ngIf="exercise.type == 'multiplechoice'">
+      meer kezeee
+    </div>
+  </div>
+</div>

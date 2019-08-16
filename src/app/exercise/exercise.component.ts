@@ -8,6 +8,7 @@ import {Exercise} from '../models/exercise.model';
 })
 export class ExerciseComponent implements OnInit {
   @Input() exercise: Exercise;
+  @Input() index: number;
 
   constructor() { }
 
