@@ -1,0 +1,9 @@
+<div class="mc-question">
+  {{ question.title }}
+  <div>
+    <app-mc-answer
+        *ngFor="let answer of (answers$ | async)"
+        [answer]="answer"
+    ></app-mc-answer>
+  </div>
+</div>

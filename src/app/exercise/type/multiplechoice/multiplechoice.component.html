@@ -1,0 +1,8 @@
+<div class="multi">
+    <div>
+        <app-mc-question
+            *ngFor="let question of (questions$ | async)"
+            [question]="question"
+        ></app-mc-question>
+    </div>
+</div>
