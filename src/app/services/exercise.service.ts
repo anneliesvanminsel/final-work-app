@@ -9,10 +9,6 @@ import {Exercise} from '../models/exercise.model';
 @Injectable()
 export class ExerciseService {
     private exerciseCollection: AngularFirestoreCollection<Exercise>;
-    private exercisesList$: Observable<Exercise[]>;
-    private exercises: Exercise[] = [];
-    private exerciseDetail: Exercise;
-
 
     constructor(private db: AngularFirestore) {
         this.exerciseCollection = db.collection("/exercise", ref =>
