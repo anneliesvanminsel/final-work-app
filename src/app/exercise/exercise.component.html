@@ -4,10 +4,12 @@
   </div>
   <div class="item__content">
     <div *ngIf="exercise.type == 'crossword'">
-      kruiswoordraadsel
+      <app-crossword></app-crossword>
     </div>
     <div *ngIf="exercise.type == 'multiplechoice'">
-      meer kezeee
+      <app-multiplechoice
+          [exercise_id]="exercise.id"
+      ></app-multiplechoice>
     </div>
   </div>
 </div>
