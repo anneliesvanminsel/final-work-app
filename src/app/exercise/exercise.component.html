@@ -4,7 +4,9 @@
   </div>
   <div class="item__content">
     <div *ngIf="exercise.type == 'crossword'">
-      <app-crossword></app-crossword>
+      <app-crossword
+          [exercise_id]="exercise.id"
+      ></app-crossword>
     </div>
     <div *ngIf="exercise.type == 'multiplechoice'">
       <app-multiplechoice
