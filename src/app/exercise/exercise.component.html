@@ -1,8 +1,8 @@
-<div class="item">
-  <div class="item_title">
+<div class="exercise">
+  <div class="exercise_title">
     {{index + 1}}. {{exercise.title}}
   </div>
-  <div class="item__content">
+  <div class="exercise__content">
     <div *ngIf="exercise.type == 'crossword'">
       <app-crossword
           [exercise_id]="exercise.id"
