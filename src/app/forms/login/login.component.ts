@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
     this.authService.login(email, password);
 
     this.authService.isLoggedIn.subscribe((isLoggedIn) => {
-      console.log('account login', this.authService.account);
+      console.log('account login', !!this.authService.account); //to check the login has failed of succeeded
       this.isLoading = false;
       isLoggedIn &&  this.router.navigate(['/index']);
     });

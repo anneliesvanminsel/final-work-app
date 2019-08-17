@@ -16,7 +16,6 @@ export class McQuestionComponent implements OnInit {
 
   ngOnInit() {
     this.answers$ = this.answerService.getAnswerByQuestion(this.question.id);
-    console.log(this.answers$)
   }
 
 }

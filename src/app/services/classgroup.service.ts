@@ -29,7 +29,6 @@ export class ClassgroupService {
                 })
             )
         );
-        console.log('getting classgroups', this.classgroups);
         return this.classgroups;
     }
 

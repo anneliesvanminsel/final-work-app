@@ -24,7 +24,6 @@ export class CoursesDetailComponent implements OnInit {
   }
 
   async setCourse() {
-    console.log(this.id);
     await this.courseService.getCourseFromDb(this.id);
     this.course = this.courseService.course;
   }
