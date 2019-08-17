@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {AuthService} from './auth.service';
+import {GridService} from './crossword/grid.service';
 
 @Injectable()
 export class CrosswordsService {
@@ -9,10 +10,12 @@ export class CrosswordsService {
     private _randomizeAxis: boolean = true; //randomize the axis of the placement words (down or across)
     private _randomizeAxisList: boolean = true; //randomize the clue lists
 
-    constructor(private authService: AuthService) { }
+    constructor(
+        private authService: AuthService,
+        private gridService: GridService,
+    ) { }
 
-    //Displaying the crossword
-
+    //Generating the crossword
     createCrosswordPuzzle(puzzlewords){
         console.log(puzzlewords);
         let newPuzzlewords = [];
@@ -24,7 +27,7 @@ export class CrosswordsService {
         }
 
         if(this._randomizeWords) {
-            newPuzzlewords = this.shuffle(puzzlewords);
+            newPuzzlewords = this.shuffle(puzzlewords); //appears to do nothing..
         }
 
 
@@ -66,7 +69,7 @@ export class CrosswordsService {
 
         while (current) {
             randomIndex = Math.floor(Math.random() * current);
-            current = 1;
+            current -= 1;
             console.log(randomIndex);
 
             temporaryValue = array[current];
