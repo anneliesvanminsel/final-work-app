@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {AuthService} from './auth.service';
 import {GridService} from './crossword/grid.service';
+import {ClueService} from './crossword/clue.service';
+import {MatrixService} from './crossword/matrix.service';
 
 @Injectable()
 export class CrosswordService {
@@ -9,10 +11,15 @@ export class CrosswordService {
     private _randomizePuzzlePieace: boolean = true; //randomize the 'spine' words'
     private _randomizeAxis: boolean = true; //randomize the axis of the placement words (down or across)
     private _randomizeAxisList: boolean = true; //randomize the clue lists
+    private _fullGraph;
+
+    private _tableRow: string = '';
 
     constructor(
         private authService: AuthService,
         private gridService: GridService,
+        private clueService: ClueService,
+        private matrixService: MatrixService
     ) { }
 
     //Generating the crossword
@@ -36,27 +43,23 @@ export class CrosswordService {
         let graphs = this.gridService.buildSubBlocks(crosswordblocks);
 
         graphs = this.gridService.compactCrosswordBlockSources(graphs);
-        console.log('changed', graphs);
 
-          if(this._randomizePuzzlePieace) {
+        if(this._randomizePuzzlePieace) {
               newGraphs = this.shuffle(graphs);
-          }
+        }
 
-          if(!newGraphs || !newGraphs.length) {
+        if(!newGraphs || !newGraphs.length) {
               console.log("Developer Error : Your words could not be made into graphs.");
               return false;
-          }
+        }
 
-          var fullgraph = this.gridService.buildCrosswordBlockGraphs(graphs);
-        /*
-                    var wordlists = this.buildCrosswordLists(fullgraph['matrixpositions']);
+        this._fullGraph = this.gridService.buildCrosswordBlockGraphs(graphs);
+        console.log(this._fullGraph);
+        var wordlists = this.clueService.buildCrosswordLists(this._fullGraph['matrixpositions']);
 
-                    this.showCrossWordPuzzle(fullgraph['matrix']);
-                    this.showCrossWordLists(wordlists, crosswordclues);
-                    this.showCrossWordOptions();
-
-                    return true;
-                    */
+        //this.showCrossWordPuzzle(this._fullGraph['matrix']);
+        //this.clueService.showCrossWordLists(wordlists, crosswordclues);
+        return true;
     }
 
     //shuffle the words
@@ -74,4 +77,48 @@ export class CrosswordService {
 
         return array;
     }
+
+    get fullGraph() {
+        return this._fullGraph;
+    }
+/*
+    showCrossWordPuzzle(matrix) {
+        let widestline = this.matrixService.getWidestLine(matrix);
+        let tallestline = this.matrixService.getTallestLine(matrix);
+
+        let table = $('<table class="puzzle" border="1" cellpadding="0" cellspacing="0"></table>');
+
+        for(let i = 0; i < tallestline; i++) {
+            let tablerow = '<tr class="letter-row">';
+
+            for(let j = 0; j < widestline; j++) {
+                let cellclass = 'letter-cell';
+
+                if(!matrix[i][j] || matrix[i][j] == ' ') {
+                    cellclass += ' blank-cell';
+
+                }
+                tablerow += '<td id="cell-position-' + i + '-' + j + '" class="relative-position ' + cellclass + '">';
+
+                tablerow += '<span class="letter-text" id="letter-position-' + i + '-' + j + '">';
+
+                if(this._teacherMode && matrix[i][j] && matrix[i][j] != ' ') {
+                    tablerow += matrix[i][j];
+                }
+
+                tablerow += '</span>';
+
+                tablerow += '</td>';
+            }
+
+            tablerow += '</tr>';
+            this._tableRow = tablerow;
+            $(table).append(tablerow);
+        }
+
+        $('#root').append(table);
+
+        return true;
+    }
+    */
 }

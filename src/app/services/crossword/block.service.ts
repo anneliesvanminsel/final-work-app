@@ -29,17 +29,18 @@ export class BlockService {
 
         for(let i = 0; i < crosswordblocklength; i++) {
             let row = crosswordblock[i];
-            let trimmedrow = row.trim();
-            if(!row || !trimmedrow.length) {
-                crosswordblock.splice(i, 1);
-                crosswordblocksolutions = this.incrementCrossWordBlockHeights(crosswordblocksolutions);
-                i--;
-                crosswordblocklength--;
-            } else {
-                i = crosswordblocklength;
+            if(row) {
+                let trimmedrow = row.trim();
+                if(!row || !trimmedrow.length) {
+                    crosswordblock.splice(i, 1);
+                    crosswordblocksolutions = this.incrementCrossWordBlockHeights(crosswordblocksolutions);
+                    i--;
+                    crosswordblocklength--;
+                } else {
+                    i = crosswordblocklength;
+                }
             }
         }
-
         graph['matrix'] = crosswordblock;
         graph['matrixpositions'] = crosswordblocksolutions;
 

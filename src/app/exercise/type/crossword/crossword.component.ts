@@ -4,6 +4,7 @@ import {QuestionService} from '../../../services/question.service';
 import {AnswerService} from '../../../services/answer.service';
 import {AuthService} from '../../../services/auth.service';
 import {CrosswordService} from '../../../services/crossword.service';
+import {MatrixService} from '../../../services/crossword/matrix.service';
 /*
     The code written in this component is based on the JQuery-code of 'HoldOffHunger' as seen on Github.
     link: https://github.com/HoldOffHunger/jquery-crossword-puzzle-generator/blob/master/javascript/crossword-puzzle.js
@@ -18,20 +19,35 @@ export class CrosswordComponent implements OnInit {
     private _wordList = [];
     private _answerList = [];
     private _questionList = [];
+    private _numbersTall = [];
+    private _numbersWide = [];
+    private _matrix;
+    private _widestLine;
+    private _tallestLine;
+
 
     constructor(
         private questionService: QuestionService,
         private answerService: AnswerService,
         private authService: AuthService,
-        private crosswordService: CrosswordService
+        private crosswordService: CrosswordService,
+        private matrixService: MatrixService
     ) { }
 
     ngOnInit() {
         this.questions$ = this.questionService.getQuestionByExercise(this.exercise_id);
         this.generateWordList();
         console.log(this._answerList, this._questionList);
+
         if(this._answerList.length == this._questionList.length) {
             this.crosswordService.createCrosswordPuzzle(this._wordList);
+            this._matrix = this.crosswordService.fullGraph;
+            console.log(this._matrix);
+            this._widestLine = this.matrixService.getWidestLine(this._matrix);
+            this._tallestLine = this.matrixService.getTallestLine(this._matrix);
+            this._numbersTall = Array(this._tallestLine).fill(4);
+            this._numbersWide = Array(this._widestLine).fill(4);
+            console.log(this._numbersTall, this._numbersWide);
         }
     }
 

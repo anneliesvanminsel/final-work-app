@@ -140,7 +140,6 @@ export class GridService {
             graphs.push(graph);
         }
 
-        console.log(graphs);
         return graphs;
 
     }
@@ -184,7 +183,6 @@ export class GridService {
             let word = graph['word'];
 
             console.log("BT: BUILD BLOCK GRAPH...|" + i + "|" + word + "|");
-            console.info(matrixpositions);
 
             let widestline = this.matrixService.getWidestLine(fullmatrix);
             let tallestline = this.matrixService.getTallestLine(fullmatrix);
@@ -199,63 +197,65 @@ export class GridService {
                 let shortestlinelength = 99999999;
 
                 for(let j = 0; j < fullmatrix.length; j++) {
-                    let trimmedfullmatrixline = fullmatrix[j].trim();
-                    if(trimmedfullmatrixline.length > 0 && trimmedfullmatrixline.length < shortestlinelength) {
-                        let solutioncoordinates = [trimmedfullmatrixline.length,j + i];
-                        let newerpossiblefullmatrixsolution = this.matrixService.joinHorizontalMatrices(fullmatrix, matrix, solutioncoordinates);
-                        if(newerpossiblefullmatrixsolution) {
-                            shortestlinelength = this.matrixService.getThinnestLine(newerpossiblefullmatrixsolution);
-                            possiblefullmatrixsolution = newerpossiblefullmatrixsolution;
-                            possiblefullmatrixcoordinates = solutioncoordinates;
+                    if(fullmatrix[j]) {
+                        let trimmedfullmatrixline = fullmatrix[j].trim();
+                        if(trimmedfullmatrixline.length > 0 && trimmedfullmatrixline.length < shortestlinelength) {
+                            let solutioncoordinates = [trimmedfullmatrixline.length,j + i];
+                            let newerpossiblefullmatrixsolution = this.matrixService.joinHorizontalMatrices(fullmatrix, matrix, solutioncoordinates);
+                            if(newerpossiblefullmatrixsolution) {
+                                shortestlinelength = this.matrixService.getThinnestLine(newerpossiblefullmatrixsolution);
+                                possiblefullmatrixsolution = newerpossiblefullmatrixsolution;
+                                possiblefullmatrixcoordinates = solutioncoordinates;
 
-                            let canmutate: boolean = true;
-                            let leftpushback = 1;
+                                let canmutate: boolean = true;
+                                let leftpushback = 1;
 
-                            while(canmutate && (trimmedfullmatrixline.length - leftpushback) >= 0) {
-                                console.log("BT: Across ALPHA.");
-                                solutioncoordinates = [trimmedfullmatrixline.length - leftpushback,j + i];
-                                let newestpossiblefullmatrixsolution = this.matrixService.joinHorizontalMatrices(fullmatrix, matrix, solutioncoordinates);
-                                if(newestpossiblefullmatrixsolution) {
-                                    shortestlinelength = this.matrixService.getThinnestLine(newestpossiblefullmatrixsolution);
-                                    possiblefullmatrixsolution = newestpossiblefullmatrixsolution;
-                                    possiblefullmatrixcoordinates = solutioncoordinates;
-                                    leftpushback++;
-                                } else {
-                                    canmutate = false;
-                                    leftpushback--;
-                                }
-                            }
-
-                            let toppushback = 1;
-
-                            while((j + i) - toppushback > 0) {
-                                solutioncoordinates = [trimmedfullmatrixline.length - leftpushback,(j + i) - toppushback];
-                                let newestpossiblefullmatrixsolution = this.matrixService.joinHorizontalMatrices(fullmatrix, matrix, solutioncoordinates);
-                                if(newestpossiblefullmatrixsolution) {
-                                    shortestlinelength = this.matrixService.getThinnestLine(newestpossiblefullmatrixsolution);
-                                    possiblefullmatrixsolution = newestpossiblefullmatrixsolution;
-                                    possiblefullmatrixcoordinates = solutioncoordinates;
+                                while(canmutate && (trimmedfullmatrixline.length - leftpushback) >= 0) {
+                                    console.log("BT: Across ALPHA.");
+                                    solutioncoordinates = [trimmedfullmatrixline.length - leftpushback,j + i];
+                                    let newestpossiblefullmatrixsolution = this.matrixService.joinHorizontalMatrices(fullmatrix, matrix, solutioncoordinates);
+                                    if(newestpossiblefullmatrixsolution) {
+                                        shortestlinelength = this.matrixService.getThinnestLine(newestpossiblefullmatrixsolution);
+                                        possiblefullmatrixsolution = newestpossiblefullmatrixsolution;
+                                        possiblefullmatrixcoordinates = solutioncoordinates;
+                                        leftpushback++;
+                                    } else {
+                                        canmutate = false;
+                                        leftpushback--;
+                                    }
                                 }
 
-                                toppushback++;
-                            }
+                                let toppushback = 1;
 
-                            toppushback--;
+                                while((j + i) - toppushback > 0) {
+                                    solutioncoordinates = [trimmedfullmatrixline.length - leftpushback,(j + i) - toppushback];
+                                    let newestpossiblefullmatrixsolution = this.matrixService.joinHorizontalMatrices(fullmatrix, matrix, solutioncoordinates);
+                                    if(newestpossiblefullmatrixsolution) {
+                                        shortestlinelength = this.matrixService.getThinnestLine(newestpossiblefullmatrixsolution);
+                                        possiblefullmatrixsolution = newestpossiblefullmatrixsolution;
+                                        possiblefullmatrixcoordinates = solutioncoordinates;
+                                    }
 
-                            canmutate = true;
-                            leftpushback = 1;
+                                    toppushback++;
+                                }
 
-                            while(canmutate && (trimmedfullmatrixline.length - leftpushback) >= 0) {
-                                solutioncoordinates = [trimmedfullmatrixline.length - leftpushback,j + i - toppushback];
-                                let newestpossiblefullmatrixsolution = this.matrixService.joinHorizontalMatrices(fullmatrix, matrix, solutioncoordinates);
-                                if(newestpossiblefullmatrixsolution) {
-                                    shortestlinelength = this.matrixService.getThinnestLine(newestpossiblefullmatrixsolution);
-                                    possiblefullmatrixsolution = newestpossiblefullmatrixsolution;
-                                    possiblefullmatrixcoordinates = solutioncoordinates;
-                                    leftpushback++;
-                                } else {
-                                    canmutate = false;
-                                    leftpushback--;
+                                toppushback--;
+
+                                canmutate = true;
+                                leftpushback = 1;
+
+                                while(canmutate && (trimmedfullmatrixline.length - leftpushback) >= 0) {
+                                    solutioncoordinates = [trimmedfullmatrixline.length - leftpushback,j + i - toppushback];
+                                    let newestpossiblefullmatrixsolution = this.matrixService.joinHorizontalMatrices(fullmatrix, matrix, solutioncoordinates);
+                                    if(newestpossiblefullmatrixsolution) {
+                                        shortestlinelength = this.matrixService.getThinnestLine(newestpossiblefullmatrixsolution);
+                                        possiblefullmatrixsolution = newestpossiblefullmatrixsolution;
+                                        possiblefullmatrixcoordinates = solutioncoordinates;
+                                        leftpushback++;
+                                    } else {
+                                        canmutate = false;
+                                        leftpushback--;
+                                    }
                                 }
                             }
                         }
@@ -264,7 +264,6 @@ export class GridService {
 
                 if(possiblefullmatrixsolution) {
                     fullmatrix = possiblefullmatrixsolution;
-                    console.info(matrixpositions);
                     matrixpositions = this.matrixService.interpolateMatrixPositions(matrixpositions, [possiblefullmatrixcoordinates[1], possiblefullmatrixcoordinates[0]], word);
                     fullmatrixpositions.push({
                         'matrixpositions':matrixpositions,
@@ -308,7 +307,6 @@ export class GridService {
 
                     matrixpositions = this.matrixService.interpolateMatrixPositions(matrixpositions, solutioncoordinates, word);
 
-                    console.info(matrixpositions);
                     fullmatrixpositions.push({
                         'matrixpositions':matrixpositions,
                         'across':across,
@@ -330,12 +328,7 @@ export class GridService {
 
     //Debugging tool to view the puzzle.
     viewPuzzle(puzzle) {
-        console.log("Viewing puzzle from...|" + arguments.callee.caller.name + "|");
+        console.log("Viewing puzzle from...|" + arguments + "|");
         console.info(JSON.stringify(puzzle).replace(/,/g, ",\n"));
     }
-
-
-
-
-
 }

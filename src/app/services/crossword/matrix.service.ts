@@ -137,14 +137,14 @@ export class MatrixService {
     //Given a matrix, returns the widest line.
     getWidestLine(matrix): number {
         let widestlength = 0;
-
-        for(let i = 0; i < matrix.length; i++) {
-            let row = matrix[i];
-            if(row && row.length && row.length > widestlength) {
-                widestlength = row.length;
+        if(matrix) {
+            for(let i = 0; i < matrix.length; i++) {
+                let row = matrix[i];
+                if(row && row.length && row.length > widestlength) {
+                    widestlength = row.length;
+                }
             }
         }
-
         return widestlength;
     }
 
@@ -152,19 +152,23 @@ export class MatrixService {
     getThinnestLine(matrix): number {
         let thinnestlength = 999999;
 
-        for(let i = 0; i < matrix.length; i++) {
-            let row = matrix[i];
-            if(row && row.length < thinnestlength) {
-                thinnestlength = row.length;
+        if(matrix) {
+            for(let i = 0; i < matrix.length; i++) {
+                let row = matrix[i];
+                if(row && row.length < thinnestlength) {
+                    thinnestlength = row.length;
+                }
             }
         }
-
         return thinnestlength;
     }
 
     //Given a matrix, return the tallest line. This is the line with the least amount of blank space below it.
     getTallestLine(matrix): number {
-        return matrix.length;
+        if(matrix) {
+            return matrix.length;
+        }
+        return 0;
     }
 
     //Given two matrices of crossword puzzle graphs, join them horizontally.
@@ -254,28 +258,30 @@ export class MatrixService {
     nonConflictingRows(toprow, bottomrow): boolean {
         let rowtocheck;
         let altrowtocheck;
+        if(toprow && bottomrow) {
+            if(toprow[bottomrow.length] && toprow[bottomrow.length] == ' ') {
+                return false;
+            }
 
-        if(toprow[bottomrow.length] && toprow[bottomrow.length] == ' ') {
-            return false;
-        }
+            if(toprow.length > bottomrow.length) {
+                rowtocheck = bottomrow;
+                altrowtocheck = toprow;
+            } else {
+                rowtocheck = toprow;
+                altrowtocheck = bottomrow;
+            }
 
-        if(toprow.length > bottomrow.length) {
-            rowtocheck = bottomrow;
-            altrowtocheck = toprow;
-        } else {
-            rowtocheck = toprow;
-            altrowtocheck = bottomrow;
-        }
-
-        for(let i = 0; i < rowtocheck.length; i++) {
-            if(rowtocheck[i] && altrowtocheck[i]) {
-                if(rowtocheck[i] != ' ' && altrowtocheck[i] != ' ') {
-                    return false;
+            for(let i = 0; i < rowtocheck.length; i++) {
+                if(rowtocheck[i] && altrowtocheck[i]) {
+                    if(rowtocheck[i] != ' ' && altrowtocheck[i] != ' ') {
+                        return false;
+                    }
                 }
             }
-        }
 
-        return true;
+            return true;
+        }
+        return false;
     }
 
     //Given two matrices of crossword puzzle graphs, join them vertically.
