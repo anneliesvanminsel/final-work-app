@@ -28,7 +28,7 @@ export class AnswerService {
                                 id: doc.id,
                                 label: doc.data().label,
                                 rightanswer: doc.data().rightanswer,
-                                question_id: doc.data().question_id
+                                question_id: doc.data().question_id,
                             };
                             answerArray.push(answer)
                         }
