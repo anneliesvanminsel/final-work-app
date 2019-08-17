@@ -14,29 +14,31 @@ export class ClueService {
         let acrosslist = [];
         let downlist = [];
 
-        for(let i = 0; i < matrixpositions.length; i++) {
-            let matrixposition = matrixpositions[i];
+        if(matrixpositions){
+            for(let i = 0; i < matrixpositions.length; i++) {
+                let matrixposition = matrixpositions[i];
 
-            let across = matrixposition['across'];
-            let word = matrixposition['word'];
-            let positions = matrixposition['matrixpositions'];
+                let across = matrixposition['across'];
+                let word = matrixposition['word'];
+                let positions = matrixposition['matrixpositions'];
 
-            let primaryelement = {
-                'word':word,
-                'position':positions[word],
-            };
+                let primaryelement = {
+                    'word':word,
+                    'position':positions[word],
+                };
 
-            delete positions[word];
-            if(across) {
-                if(word != '(unmatched)') {
-                    acrosslist.push(primaryelement);
+                delete positions[word];
+                if(across) {
+                    if(word != '(unmatched)') {
+                        acrosslist.push(primaryelement);
+                    }
+                    downlist = this.buildCrosswordList(downlist, positions);
+                } else {
+                    if(word != '(unmatched)') {
+                        downlist.push(primaryelement);
+                    }
+                    acrosslist = this.buildCrosswordList(acrosslist, positions);
                 }
-                downlist = this.buildCrosswordList(downlist, positions);
-            } else {
-                if(word != '(unmatched)') {
-                    downlist.push(primaryelement);
-                }
-                acrosslist = this.buildCrosswordList(acrosslist, positions);
             }
         }
 
