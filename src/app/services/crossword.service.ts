@@ -17,8 +17,8 @@ export class CrosswordsService {
 
     //Generating the crossword
     createCrosswordPuzzle(puzzlewords){
-        console.log(puzzlewords);
         let newPuzzlewords = [];
+        let newGraphs= [];
         let wordcount = puzzlewords.length;
 
         if(!puzzlewords || !wordcount) {
@@ -30,44 +30,32 @@ export class CrosswordsService {
             newPuzzlewords = this.shuffle(puzzlewords); //appears to do nothing..
         }
 
-
-        console.log(newPuzzlewords);
-
-
-
-        let crosswords = this.gridService.findSubBlocks(puzzlewords);
-
+        let crosswords = this.gridService.findSubBlocks(newPuzzlewords);
         let crosswordblocks = crosswords['blocks'];
         let crosswordclues = crosswords['clues'];
-
-        console.log(crosswords);
-
         let graphs = this.gridService.buildSubBlocks(crosswordblocks);
-
-        console.log(graphs);
-
 
         graphs = this.gridService.compactCrosswordBlockSources(graphs);
         console.log('changed', graphs);
+
+          if(this._randomizePuzzlePieace) {
+              newGraphs = this.shuffle(graphs);
+          }
+
+          if(!newGraphs || !newGraphs.length) {
+              console.log("Developer Error : Your words could not be made into graphs.");
+              return false;
+          }
         /*
-              if(this._randomizePuzzlePieace) {
-                  graphs = CrosswordsService.shuffle(graphs);
-              }
+                      var fullgraph = this.buildCrosswordBlockGraphs(graphs);
+                      var wordlists = this.buildCrosswordLists(fullgraph['matrixpositions']);
 
-              if(!graphs || !graphs.length) {
-                  console.log("Developer Error : Your words could not be made into graphs.");
-                  return false;
-              }
+                      this.showCrossWordPuzzle(fullgraph['matrix']);
+                      this.showCrossWordLists(wordlists, crosswordclues);
+                      this.showCrossWordOptions();
 
-              var fullgraph = this.buildCrosswordBlockGraphs(graphs);
-              var wordlists = this.buildCrosswordLists(fullgraph['matrixpositions']);
-
-              this.showCrossWordPuzzle(fullgraph['matrix']);
-              this.showCrossWordLists(wordlists, crosswordclues);
-              this.showCrossWordOptions();
-
-              return true;
-              */
+                      return true;
+                      */
     }
 
     //shuffle the words
@@ -77,15 +65,12 @@ export class CrosswordsService {
         while (current) {
             randomIndex = Math.floor(Math.random() * current);
             current -= 1;
-            console.log(randomIndex);
 
             temporaryValue = array[current];
             array[current] = array[randomIndex];
             array[randomIndex] = temporaryValue;
-            console.log('t', temporaryValue);
         }
 
-        console.log(array);
         return array;
     }
 }

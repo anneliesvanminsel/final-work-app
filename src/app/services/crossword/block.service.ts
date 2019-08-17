@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {MatrixService} from './matrix.service';
-import {GridService} from './grid.service';
 
 @Injectable({
     providedIn: 'root'
@@ -8,12 +7,11 @@ import {GridService} from './grid.service';
 
 export class BlockService {
     constructor(
-        private gridService: GridService,
         private matrixService: MatrixService,
     ) { }
 
     //Compact a single crossword block source graph.
-    compactCrosswordBlockSource(graph) {
+    compactCrosswordBlockSource(graph): any[] {
         graph = this.compactCrosswordBlockBottom(graph);
         graph = this.compactCrosswordBlockTop(graph);
         graph = this.compactCrosswordBlockLeft(graph);
@@ -22,7 +20,7 @@ export class BlockService {
     }
 
     //Compact the crossword block from the top.
-    compactCrosswordBlockTop(graph) {
+    compactCrosswordBlockTop(graph): any[] {
         let crosswordblock = graph['matrix'];
         let crosswordblocksolutions = graph['matrixpositions'];
         let crosswordblockacross = graph['across'];
@@ -49,7 +47,7 @@ export class BlockService {
     }
 
 	//Compact a crossword block on the bottom.
-    compactCrosswordBlockBottom(graph) {
+    compactCrosswordBlockBottom(graph): any[] {
         let crosswordblock = graph['matrix'];
         let crosswordblocksolutions = graph['matrixpositions'];
         let crosswordblockacross = graph['across'];
@@ -72,7 +70,7 @@ export class BlockService {
     }
 
     //Compact a crossword block on the left.
-    compactCrosswordBlockLeft(graph) {
+    compactCrosswordBlockLeft(graph): any[] {
         let crosswordblock = graph['matrix'];
         let crosswordblocksolutions = graph['matrixpositions'];
         let crosswordblockacross = graph['across'];
@@ -113,7 +111,7 @@ export class BlockService {
     }
 
     //Compact a crossword block on the right.
-	compactCrosswordBlockRight(graph) {
+	compactCrosswordBlockRight(graph): any[] {
         var crosswordblock = graph['matrix'];
         var crosswordblocksolutions = graph['matrixpositions'];
         var crosswordblockacross = graph['across'];
