@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {QuestionService} from '../../../services/question.service';
 import {AnswerService} from '../../../services/answer.service';
+import {AuthService} from '../../../services/auth.service';
 /*
     The code written in this component is based on the JQuery-code of 'HoldOffHunger' as seen on Github.
     link: https://github.com/HoldOffHunger/jquery-crossword-puzzle-generator/blob/master/javascript/crossword-puzzle.js
@@ -15,7 +16,7 @@ export class CrosswordComponent implements OnInit {
     private questions$: Observable<any>;
     private _wordList = [];
 
-    private _teacherMode: boolean = true; //Show answers in grid
+    private _teacherMode: boolean = this.authService.isTeacher; //Show answers in grid
     private _randomizeWords: boolean = true; //randomize the puzzlewords
     private _randomizePuzzlePieace: boolean = true; //randomize the 'spine' words'
     private _randomizeAxis: boolean = true; //randomize the axis of the placement words (down or across)
@@ -23,7 +24,11 @@ export class CrosswordComponent implements OnInit {
 
 
 
-    constructor(private questionService: QuestionService, private answerService: AnswerService) { }
+    constructor(
+        private questionService: QuestionService,
+        private answerService: AnswerService,
+        private  authService:  AuthService,
+    ) { }
 
     ngOnInit() {
         this.questions$ = this.questionService.getQuestionByExercise(this.exercise_id);
@@ -63,14 +68,14 @@ export class CrosswordComponent implements OnInit {
         }
 
         if(this._randomizeWords) {
-            puzzlewords = this.shuffle(puzzlewords);
+            puzzlewords = CrosswordComponent.shuffle(puzzlewords);
             console.log(puzzlewords);
         }
 
     }
 
     //shuffle the words
-    shuffle(array) {
+    static shuffle(array): [] {
         let currentIndex = array.length, temporaryValue, randomIndex;
 
         while (0 !== currentIndex) {
@@ -81,7 +86,6 @@ export class CrosswordComponent implements OnInit {
             array[currentIndex] = array[randomIndex];
             array[randomIndex] = temporaryValue;
         }
-
         return array;
     }
 
