@@ -84,6 +84,9 @@ import {QuestionService} from "./services/question.service";
 import {AnswerService} from "./services/answer.service";
 import {CrosswordsService} from './services/crossword.service';
 import {GridService} from './services/crossword/grid.service';
+import {WordService} from './services/crossword/word.service';
+import {MatrixService} from './services/crossword/matrix.service';
+import {BlockService} from './services/crossword/block.service';
 
 
 @NgModule({
@@ -183,6 +186,9 @@ import {GridService} from './services/crossword/grid.service';
         AnswerService,
         CrosswordsService,
         GridService,
+        WordService,
+        MatrixService,
+        BlockService
     ],
     bootstrap: [
         AppComponent

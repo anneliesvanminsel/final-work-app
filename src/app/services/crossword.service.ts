@@ -34,33 +34,40 @@ export class CrosswordsService {
         console.log(newPuzzlewords);
 
 
-        /*
-        let crosswords = this.generateCrosswordBlockSources(puzzlewords);
+
+        let crosswords = this.gridService.findSubBlocks(puzzlewords);
 
         let crosswordblocks = crosswords['blocks'];
         let crosswordclues = crosswords['clues'];
 
-        let graphs = this.buildCrosswordBlocks(crosswordblocks);
-        graphs = this.compactCrosswordBlockSources(graphs);
+        console.log(crosswords);
 
-        if(this._randomizePuzzlePieace) {
-            graphs = CrosswordsService.shuffle(graphs);
-        }
+        let graphs = this.gridService.buildSubBlocks(crosswordblocks);
 
-        if(!graphs || !graphs.length) {
-            console.log("Developer Error : Your words could not be made into graphs.");
-            return false;
-        }
+        console.log(graphs);
 
-        var fullgraph = this.buildCrosswordBlockGraphs(graphs);
-        var wordlists = this.buildCrosswordLists(fullgraph['matrixpositions']);
 
-        this.showCrossWordPuzzle(fullgraph['matrix']);
-        this.showCrossWordLists(wordlists, crosswordclues);
-        this.showCrossWordOptions();
+        graphs = this.gridService.compactCrosswordBlockSources(graphs);
+        console.log('changed', graphs);
+        /*
+              if(this._randomizePuzzlePieace) {
+                  graphs = CrosswordsService.shuffle(graphs);
+              }
 
-        return true;
-        */
+              if(!graphs || !graphs.length) {
+                  console.log("Developer Error : Your words could not be made into graphs.");
+                  return false;
+              }
+
+              var fullgraph = this.buildCrosswordBlockGraphs(graphs);
+              var wordlists = this.buildCrosswordLists(fullgraph['matrixpositions']);
+
+              this.showCrossWordPuzzle(fullgraph['matrix']);
+              this.showCrossWordLists(wordlists, crosswordclues);
+              this.showCrossWordOptions();
+
+              return true;
+              */
     }
 
     //shuffle the words
