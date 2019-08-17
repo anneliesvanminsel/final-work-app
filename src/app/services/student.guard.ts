@@ -20,8 +20,6 @@ export class StudentGuard implements CanActivate {
         let isLoggedIn: boolean = false;
 
         this.authService.isLoggedIn.subscribe(value => {
-            console.log('isLoggedIn', value);
-
             if (value) {
                 isLoggedIn = true;
             } else {
@@ -32,10 +30,8 @@ export class StudentGuard implements CanActivate {
         console.log(isLoggedIn);
 
         if (!!isLoggedIn && this.authService.isStudent) {
-            console.log('gebruiker mag leerling', this.authService.account);
             return true;
         } else {
-            console.log('gebruiker mag niet leerling', this.authService.account);
             this.router.navigate(['login']);
             return false;
         }

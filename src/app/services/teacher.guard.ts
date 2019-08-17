@@ -28,10 +28,8 @@ export class TeacherGuard implements CanActivate {
         });
 
         if (isLoggedIn && this.authService.isTeacher) {
-            console.log('gebruiker mag leerkracht', this.authService.account);
             return true;
         } else {
-            console.log('gebruiker mag niet leerkracht', this.authService.account);
             this.router.navigate(['login']);
             return false;
         }
