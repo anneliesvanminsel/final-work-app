@@ -3,7 +3,7 @@ import {AuthService} from './auth.service';
 import {GridService} from './crossword/grid.service';
 
 @Injectable()
-export class CrosswordsService {
+export class CrosswordService {
     private _teacherMode: boolean = this.authService.isTeacher; //Show answers in grid
     private _randomizeWords: boolean = true; //randomize the puzzlewords
     private _randomizePuzzlePieace: boolean = true; //randomize the 'spine' words'
@@ -46,16 +46,17 @@ export class CrosswordsService {
               console.log("Developer Error : Your words could not be made into graphs.");
               return false;
           }
+
+          var fullgraph = this.gridService.buildCrosswordBlockGraphs(graphs);
         /*
-                      var fullgraph = this.buildCrosswordBlockGraphs(graphs);
-                      var wordlists = this.buildCrosswordLists(fullgraph['matrixpositions']);
+                    var wordlists = this.buildCrosswordLists(fullgraph['matrixpositions']);
 
-                      this.showCrossWordPuzzle(fullgraph['matrix']);
-                      this.showCrossWordLists(wordlists, crosswordclues);
-                      this.showCrossWordOptions();
+                    this.showCrossWordPuzzle(fullgraph['matrix']);
+                    this.showCrossWordLists(wordlists, crosswordclues);
+                    this.showCrossWordOptions();
 
-                      return true;
-                      */
+                    return true;
+                    */
     }
 
     //shuffle the words

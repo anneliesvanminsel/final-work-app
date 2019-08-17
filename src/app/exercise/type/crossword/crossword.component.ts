@@ -23,8 +23,8 @@ export class CrosswordComponent implements OnInit {
     constructor(
         private questionService: QuestionService,
         private answerService: AnswerService,
-        private  authService:  AuthService,
-        private crosswordService: CrosswordsService,
+        private authService: AuthService,
+        private crosswordService: CrosswordsService
     ) { }
 
     ngOnInit() {
@@ -35,7 +35,6 @@ export class CrosswordComponent implements OnInit {
             this.crosswordService.createCrosswordPuzzle(this._wordList);
         }
     }
-
 
     //We are creating the list of words with the question and answers that are stored in the database
     generateWordList() {
@@ -59,6 +58,8 @@ export class CrosswordComponent implements OnInit {
             }
         );
     }
+
+
 
 
 

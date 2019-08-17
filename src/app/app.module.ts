@@ -82,11 +82,12 @@ import { McAnswerComponent } from './exercise/type/multiplechoice/mc-answer/mc-a
 import { McQuestionComponent } from './exercise/type/multiplechoice/mc-question/mc-question.component';
 import {QuestionService} from "./services/question.service";
 import {AnswerService} from "./services/answer.service";
-import {CrosswordsService} from './services/crossword.service';
+import {CrosswordService} from './services/crossword.service';
 import {GridService} from './services/crossword/grid.service';
 import {WordService} from './services/crossword/word.service';
 import {MatrixService} from './services/crossword/matrix.service';
 import {BlockService} from './services/crossword/block.service';
+import {ClueService} from './services/crossword/clue.service';
 
 
 @NgModule({
@@ -184,11 +185,12 @@ import {BlockService} from './services/crossword/block.service';
         ExerciseService,
         QuestionService,
         AnswerService,
-        CrosswordsService,
+        CrosswordService,
         GridService,
         WordService,
         MatrixService,
-        BlockService
+        BlockService,
+        ClueService,
     ],
     bootstrap: [
         AppComponent

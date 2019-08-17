@@ -17,6 +17,8 @@
 
 </div>
 
+
+
 <div *ngIf="authService.isStudent" id="answer-form">
 
     <div class="short-margin">
@@ -27,7 +29,17 @@
 
         <p id="answer-results" class="hidden"></p>
 
-        <p><input type="button" id="cancel-button" value="Cancel"> <input type="button" id="answer-button" value="Answer"> <input type="button" id="reveal-answer-button" value="Reveal Answer"></p>
+        <div class="row">
+            <app-button
+                    [label]="'Annuleren'"
+                    (onClick)="cancelSolve()"
+                    [class]="'is-ghost'"
+            ></app-button>
+            <app-button
+                    [label]="'Antwoord'"
+                    (onClick)="answerClue()"
+            ></app-button>
+        </div>
 
     </div>
 
