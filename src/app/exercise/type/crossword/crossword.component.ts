@@ -12,6 +12,7 @@ import {MatrixService} from '../../../services/crossword/matrix.service';
 @Component({
     selector: 'app-crossword',
     templateUrl: './crossword.component.html',
+    styleUrls: ['./crossword.component.scss']
 })
 export class CrosswordComponent implements OnInit {
     @Input() exercise_id: string;
@@ -41,13 +42,16 @@ export class CrosswordComponent implements OnInit {
 
         if(this._answerList.length == this._questionList.length) {
             this.crosswordService.createCrosswordPuzzle(this._wordList);
-            this._matrix = this.crosswordService.fullGraph;
-            console.log(this._matrix);
-            this._widestLine = this.matrixService.getWidestLine(this._matrix);
-            this._tallestLine = this.matrixService.getTallestLine(this._matrix);
-            this._numbersTall = Array(this._tallestLine).fill(4);
-            this._numbersWide = Array(this._widestLine).fill(4);
-            console.log(this._numbersTall, this._numbersWide);
+
+            if(this.crosswordService.fullGraph){
+                this._matrix = this.crosswordService.fullGraph;
+                console.log(this._matrix);
+                this._widestLine = this.matrixService.getWidestLine(this._matrix);
+                this._tallestLine = this.matrixService.getTallestLine(this._matrix);
+                this._numbersTall = Array(this._tallestLine).fill('tall');
+                this._numbersWide = Array(this._widestLine).fill('wide');
+                console.log(this._matrix['matrix']);
+            }
         }
     }
 
