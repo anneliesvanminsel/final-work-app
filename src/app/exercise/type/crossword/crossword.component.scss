@@ -1,0 +1,19 @@
+.crossword {
+	&__puzzle {
+		margin-top: 25px;
+		margin-bottom: 25px;
+	}
+	&__letter-row {
+
+	}
+
+	&__letter-cell {
+		width: 25px;
+		height: 25px;
+		text-align: center;
+
+		&.is-empty {
+			background-color: purple;
+		}
+	}
+}
