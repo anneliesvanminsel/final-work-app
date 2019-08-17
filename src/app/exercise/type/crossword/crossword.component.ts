@@ -3,8 +3,7 @@ import {Observable} from 'rxjs';
 import {QuestionService} from '../../../services/question.service';
 import {AnswerService} from '../../../services/answer.service';
 import {AuthService} from '../../../services/auth.service';
-import {$} from 'protractor';
-import {CrosswordsService} from '../../../services/crossword.service';
+import {CrosswordService} from '../../../services/crossword.service';
 /*
     The code written in this component is based on the JQuery-code of 'HoldOffHunger' as seen on Github.
     link: https://github.com/HoldOffHunger/jquery-crossword-puzzle-generator/blob/master/javascript/crossword-puzzle.js
@@ -24,7 +23,7 @@ export class CrosswordComponent implements OnInit {
         private questionService: QuestionService,
         private answerService: AnswerService,
         private authService: AuthService,
-        private crosswordService: CrosswordsService
+        private crosswordService: CrosswordService
     ) { }
 
     ngOnInit() {
