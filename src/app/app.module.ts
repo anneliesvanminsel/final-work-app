@@ -82,6 +82,8 @@ import { McAnswerComponent } from './exercise/type/multiplechoice/mc-answer/mc-a
 import { McQuestionComponent } from './exercise/type/multiplechoice/mc-question/mc-question.component';
 import {QuestionService} from "./services/question.service";
 import {AnswerService} from "./services/answer.service";
+import {CrosswordsService} from './services/crossword.service';
+import {GridService} from './services/crossword/grid.service';
 
 
 @NgModule({
@@ -178,7 +180,9 @@ import {AnswerService} from "./services/answer.service";
         MaterialService,
         ExerciseService,
         QuestionService,
-        AnswerService
+        AnswerService,
+        CrosswordsService,
+        GridService,
     ],
     bootstrap: [
         AppComponent
