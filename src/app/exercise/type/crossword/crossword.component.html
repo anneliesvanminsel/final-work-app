@@ -1,0 +1,34 @@
+<div id="lists" class="lists">
+
+    <table>
+
+        <tr>
+            <td width="50%" id="left-list" valign="top" class="list-text">
+
+                    <p>Across</p>
+
+            </td>
+            <td width="50%" id="right-list" valign="top" class="list-text">
+                   <p>Down</p>
+            </td>
+        </tr>
+
+    </table>
+
+</div>
+
+<div *ngIf="authService.isStudent" id="answer-form">
+
+    <div class="short-margin">
+
+        <p id="position-and-clue"></p>
+
+        <p>Answer : <input id="solution-answer" type="text" size="40"></p>
+
+        <p id="answer-results" class="hidden"></p>
+
+        <p><input type="button" id="cancel-button" value="Cancel"> <input type="button" id="answer-button" value="Answer"> <input type="button" id="reveal-answer-button" value="Reveal Answer"></p>
+
+    </div>
+
+</div>
