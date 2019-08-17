@@ -53,9 +53,10 @@ export class CrosswordService {
               return false;
         }
 
-        this._fullGraph = this.gridService.buildCrosswordBlockGraphs(graphs);
+        let fullGraph = this.gridService.buildCrosswordBlockGraphs(graphs);
+        this._fullGraph = fullGraph['matrix'];
         console.log(this._fullGraph);
-        var wordlists = this.clueService.buildCrosswordLists(this._fullGraph['matrixpositions']);
+        let wordlists = this.clueService.buildCrosswordLists(this._fullGraph['matrixpositions']);
 
         //this.showCrossWordPuzzle(this._fullGraph['matrix']);
         //this.clueService.showCrossWordLists(wordlists, crosswordclues);
