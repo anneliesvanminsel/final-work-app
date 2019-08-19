@@ -14,17 +14,17 @@
     </table>
 </div>
 
-<div id="lists" class="crossword__lists">
+<div class="crossword__lists">
 
     <table>
 
         <tr>
-            <td width="50%" id="left-list" valign="top" class="list-text">
+            <td class="crossword__liststext">
 
                     <p>Across</p>
 
             </td>
-            <td width="50%" id="right-list" valign="top" class="list-text">
+            <td class="list-text">
                    <p>Down</p>
             </td>
         </tr>
@@ -35,13 +35,15 @@
 
 
 
-<div *ngIf="authService.isStudent" id="answer-form" class="crossword__form">
+<div *ngIf="authService.isStudent" class="crossword__form">
 
     <div class="short-margin">
 
         <p id="position-and-clue"></p>
 
-        <p>Answer : <input id="solution-answer" type="text" size="40"></p>
+        <div>Answer :
+            <input id="solution-answer" type="text" size="40">
+        </div>
 
         <p id="answer-results" class="hidden"></p>
 

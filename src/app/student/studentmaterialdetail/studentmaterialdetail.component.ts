@@ -4,6 +4,8 @@ import {MaterialService} from '../../services/material.service';
 import {CourseService} from '../../services/course.service';
 import {Material} from '../../models/material.model';
 import {Course} from '../../models/course.model';
+import {Observable} from 'rxjs';
+import {ExerciseService} from '../../services/exercise.service';
 
 @Component({
   selector: 'app-studentmaterialdetail',
@@ -15,8 +17,14 @@ export class StudentmaterialdetailComponent implements OnInit {
   private _courseid: string;
   private _material: Material;
   private _course: Course;
+  private exercises$: Observable<any>;
 
-  constructor(private route: ActivatedRoute, private materialService: MaterialService, private courseService: CourseService) { }
+  constructor(
+      private route: ActivatedRoute,
+      private materialService: MaterialService,
+      private courseService: CourseService,
+      private exerciseService: ExerciseService
+  ) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
@@ -25,6 +33,7 @@ export class StudentmaterialdetailComponent implements OnInit {
     });
     this.setCourse();
     this.setMaterial();
+    this.exercises$ = this.exerciseService.getExercisesByMaterial(this._matid);
   }
 
   async setCourse() {
