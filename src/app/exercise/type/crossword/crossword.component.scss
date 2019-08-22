@@ -15,5 +15,10 @@
 		&.is-empty {
 			background-color: purple;
 		}
+
+		&.fillable {
+			background-color: white;
+		}
 	}
 }
+
