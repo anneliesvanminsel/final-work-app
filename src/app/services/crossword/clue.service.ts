@@ -7,10 +7,7 @@ import { Injectable } from '@angular/core';
 export class ClueService {
     leftList = '';
     rightList= '';
-    /* buildCrosswordLists(matrixpositions)
 
-
-	*/
     //From the crossword puzzle, build the lists of across and down.
     buildCrosswordLists(matrixpositions) {
         let acrosslist = [];
@@ -64,16 +61,19 @@ export class ClueService {
 
         return list;
     }
-/*
-    showCrossWordLists(wordlists, clues) {
+
+    showCrossWordLists(wordlists, clues, fullMatrix) {
         let acrosslist = wordlists['across'];
         let downlist = wordlists['down'];
 
 
-        //let acrosslistordered = this.fillInCrossWordNumbers(acrosslist);
-        //let downlistordered = this.fillInCrossWordNumbers(downlist, acrosslist, acrosslistordered);
+        let acrosslistordered = this.fillInCrossWordNumbers(acrosslist, fullMatrix);
+        let downlistordered = this.fillInCrossWordNumbers(downlist, fullMatrix);
 
-        //let acrosslistorderedelement = this.getViewableCrossWordList(acrosslistordered, clues, true);
+        console.log('across', acrosslistordered);
+        console.log('down', downlistordered);
+
+        let acrosslistorderedelement = this.getViewableCrossWordList(acrosslistordered, clues, true);
         let downlistorderedelement = this.getViewableCrossWordList(downlistordered, clues, false);
 
         this.leftList = acrosslistorderedelement;
@@ -126,8 +126,9 @@ export class ClueService {
         Fill in the numbers in the crossword puzzle boxes that are each individually associated with a particular clue from the across or down lists.
     
     */
-/*
+
     fillInCrossWordNumbers(listitems, blockitems, blockitemsordered) {
+        console.log(listitems, blockitems, blockitemsordered);
         let orderedlist = [];
         let listnumber = 0;
         for(let i = 0; i < listitems.length; i++) {
@@ -141,11 +142,11 @@ export class ClueService {
 
             let fillnumber = listnumber;
             if(blockingitemnumber) {
-                fillnumber = <string> blockingitemnumber;
+                fillnumber = <any> blockingitemnumber;
             }
 
             orderedlist[listnumber] = {
-                'word':word,
+                'word': word,
                 'coordinates':coordinates,
             };
         }
@@ -183,5 +184,5 @@ export class ClueService {
             }
         }
     }
-*/
+
 }

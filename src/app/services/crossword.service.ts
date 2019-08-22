@@ -61,7 +61,7 @@ export class CrosswordService {
         this._wordLists = this.clueService.buildCrosswordLists(fullGraph['matrixpositions']);
         console.log(this._wordLists);
 
-        //this.clueService.showCrossWordLists(wordlists, crosswordclues);
+        this.clueService.showCrossWordLists(this._wordLists, crosswordclues, this._fullGraph);
         return true;
     }
 
@@ -84,44 +84,8 @@ export class CrosswordService {
     get fullGraph() {
         return this._fullGraph;
     }
-/*
-    showCrossWordPuzzle(matrix) {
-        let widestline = this.matrixService.getWidestLine(matrix);
-        let tallestline = this.matrixService.getTallestLine(matrix);
 
-        let table = $('<table class="puzzle" border="1" cellpadding="0" cellspacing="0"></table>');
-
-        for(let i = 0; i < tallestline; i++) {
-            let tablerow = '<tr class="letter-row">';
-
-            for(let j = 0; j < widestline; j++) {
-                let cellclass = 'letter-cell';
-
-                if(!matrix[i][j] || matrix[i][j] == ' ') {
-                    cellclass += ' blank-cell';
-
-                }
-                tablerow += '<td id="cell-position-' + i + '-' + j + '" class="relative-position ' + cellclass + '">';
-
-                tablerow += '<span class="letter-text" id="letter-position-' + i + '-' + j + '">';
-
-                if(this._teacherMode && matrix[i][j] && matrix[i][j] != ' ') {
-                    tablerow += matrix[i][j];
-                }
-
-                tablerow += '</span>';
-
-                tablerow += '</td>';
-            }
-
-            tablerow += '</tr>';
-            this._tableRow = tablerow;
-            $(table).append(tablerow);
-        }
-
-        $('#root').append(table);
-
-        return true;
+    get wordLists() {
+        return this._wordLists;
     }
-    */
 }
