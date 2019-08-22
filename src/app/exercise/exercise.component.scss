@@ -3,10 +3,11 @@
 
 .exercise {
 	padding: 50px;
-	background-color: rgba($c-purple,.5);
+	margin: 15px 0;
+	background-color: rgba($c-blue,.4);
 
 	&__title {
-
+		margin-bottom: 15px;
 	}
 
 	&__content {
