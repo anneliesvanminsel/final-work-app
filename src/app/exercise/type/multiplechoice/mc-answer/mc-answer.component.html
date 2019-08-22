@@ -1,3 +1,8 @@
 <div class="mc-answer">
-  <input type="checkbox" name="{{this.answer.label}}" value="{{this.answer.id}}" [checked]="answer.rightanswer"> {{this.answer.label}} <br/>
+    <div *ngIf="authService.isTeacher">
+        <input type="checkbox" name="{{this.answer.label}}" value="{{this.answer.id}}" [checked]="answer.rightanswer" disabled> {{this.answer.label}} <br/>
+    </div>
+    <div *ngIf="authService.isStudent">
+        <input type="checkbox" name="{{this.answer.label}}" value="{{this.answer.id}}"> {{this.answer.label}} <br/>
+    </div>
 </div>

@@ -1,4 +1,5 @@
 @import "../../../../../resources/config/colors";
+
 .checkbox {
 	&__wrapper {
 		margin-top: 20px;
@@ -83,7 +84,8 @@ input[type=radio]:checked:before {
 input[type=checkbox]:disabled,
 input[type=radio]:disabled {
 	transform: scale(1);
-	background-color: $c-pink;
-	border-color: $c-pink;
+	background-color: $ui-light-grey;
+	border-color: $ui-black;
+	cursor: none;
 }
 

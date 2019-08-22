@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {TeacherAnswer} from "../../../../models/teacheranswer.model";
+import {AuthService} from '../../../../services/auth.service';
 
 @Component({
   selector: 'app-mc-answer',
@@ -9,7 +10,7 @@ import {TeacherAnswer} from "../../../../models/teacheranswer.model";
 export class McAnswerComponent implements OnInit {
   @Input() answer: TeacherAnswer;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit() {
   }
