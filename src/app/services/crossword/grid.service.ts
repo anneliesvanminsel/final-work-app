@@ -182,8 +182,6 @@ export class GridService {
             let across = graph['across'];
             let word = graph['word'];
 
-            console.log("BT: BUILD BLOCK GRAPH...|" + i + "|" + word + "|");
-
             let widestline = this.matrixService.getWidestLine(fullmatrix);
             let tallestline = this.matrixService.getTallestLine(fullmatrix);
 
@@ -211,7 +209,6 @@ export class GridService {
                                 let leftpushback = 1;
 
                                 while(canmutate && (trimmedfullmatrixline.length - leftpushback) >= 0) {
-                                    console.log("BT: Across ALPHA.");
                                     solutioncoordinates = [trimmedfullmatrixline.length - leftpushback,j + i];
                                     let newestpossiblefullmatrixsolution = this.matrixService.joinHorizontalMatrices(fullmatrix, matrix, solutioncoordinates);
                                     if(newestpossiblefullmatrixsolution) {
@@ -275,7 +272,6 @@ export class GridService {
             }
 
             if(buildvertically || !built) {
-                console.log("BT: Vertical ALPHA.");
                 // AND I AM TWIG!!!
                 let oldlength = fullmatrix.length;
                 let fullmatrixbottom = fullmatrix[fullmatrix.length - 1];

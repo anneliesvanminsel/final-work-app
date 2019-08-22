@@ -12,6 +12,7 @@ export class CrosswordService {
     private _randomizeAxis: boolean = true; //randomize the axis of the placement words (down or across)
     private _randomizeAxisList: boolean = true; //randomize the clue lists
     private _fullGraph;
+    private _wordLists;
 
     private _tableRow: string = '';
 
@@ -55,10 +56,12 @@ export class CrosswordService {
 
         let fullGraph = this.gridService.buildCrosswordBlockGraphs(graphs);
         this._fullGraph = fullGraph['matrix'];
-        console.log(this._fullGraph);
-        let wordlists = this.clueService.buildCrosswordLists(this._fullGraph['matrixpositions']);
+        console.log(fullGraph);
+        console.log(fullGraph['matrixpositions']);
+        this._wordLists = this.clueService.buildCrosswordLists(fullGraph['matrixpositions']);
+        console.log(this._wordLists);
 
-        this.clueService.showCrossWordLists(wordlists, crosswordclues);
+        //this.clueService.showCrossWordLists(wordlists, crosswordclues);
         return true;
     }
 

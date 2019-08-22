@@ -53,11 +53,9 @@ export class ClueService {
     //Build a single crossword list, either for across or down.
     buildCrosswordList(list, positions) {
         let matrixpositionwords = Object.keys(positions);
-
         for(let i = 0; i < matrixpositionwords.length; i++) {
             let matrixpositionword = matrixpositionwords[i];
             let coordinates = positions[matrixpositionword];
-
             list.push({
                 'word':matrixpositionword,
                 'position':coordinates,
@@ -66,16 +64,16 @@ export class ClueService {
 
         return list;
     }
-
+/*
     showCrossWordLists(wordlists, clues) {
         let acrosslist = wordlists['across'];
         let downlist = wordlists['down'];
 
 
-        let acrosslistordered = this.fillInCrossWordNumbers(acrosslist);
-        let downlistordered = this.fillInCrossWordNumbers(downlist, acrosslist, acrosslistordered);
+        //let acrosslistordered = this.fillInCrossWordNumbers(acrosslist);
+        //let downlistordered = this.fillInCrossWordNumbers(downlist, acrosslist, acrosslistordered);
 
-        let acrosslistorderedelement = this.getViewableCrossWordList(acrosslistordered, clues, true);
+        //let acrosslistorderedelement = this.getViewableCrossWordList(acrosslistordered, clues, true);
         let downlistorderedelement = this.getViewableCrossWordList(downlistordered, clues, false);
 
         this.leftList = acrosslistorderedelement;
@@ -128,7 +126,7 @@ export class ClueService {
         Fill in the numbers in the crossword puzzle boxes that are each individually associated with a particular clue from the across or down lists.
     
     */
-
+/*
     fillInCrossWordNumbers(listitems, blockitems, blockitemsordered) {
         let orderedlist = [];
         let listnumber = 0;
@@ -143,7 +141,7 @@ export class ClueService {
 
             let fillnumber = listnumber;
             if(blockingitemnumber) {
-                fillnumber = blockingitemnumber;
+                fillnumber = <string> blockingitemnumber;
             }
 
             orderedlist[listnumber] = {
@@ -185,5 +183,5 @@ export class ClueService {
             }
         }
     }
-
+*/
 }
