@@ -1,3 +1,5 @@
+@import "../../../../resources/config/colors";
+
 .crossword {
 	&__puzzle {
 		margin-top: 25px;
@@ -11,13 +13,15 @@
 		width: 25px;
 		height: 25px;
 		text-align: center;
+		border: 1px solid rgba($c-purple, .5);
 
-		&.is-empty {
-			background-color: purple;
+		&.empty,
+		&.empty-fill {
+			background-color: rgba($c-purple, .5);
 		}
 
 		&.fillable {
-			background-color: white;
+			background-color: $ui-white;
 		}
 	}
 }

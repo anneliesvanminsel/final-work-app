@@ -25,6 +25,7 @@ export class CrosswordComponent implements OnInit {
     private _matrix;
     private _widestLine;
     private _tallestLine;
+    private _clueList = [];
 
 
     constructor(

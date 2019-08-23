@@ -4,7 +4,7 @@
     </div>
     <table *ngIf="_matrix" border="1" cellpadding="0" cellspacing="0">
         <tr *ngFor="let nT of _numbersTall; let i = index" class="crossword__letter-row">
-            <td *ngFor="let nW of _numbersWide; let j = index" class="crossword__letter-cell" [ngClass]="{'fillable': _matrix[i][j] &&_matrix[i][j] !=''} ">
+            <td *ngFor="let nW of _numbersWide; let j = index" class="crossword__letter-cell" [ngClass]="{'fillable': _matrix[i][j] && _matrix[i][j] != ' ', 'empty-fill': _matrix[i][j] === ' ', 'empty': !_matrix[i][j]}">
                 <span *ngIf="_matrix[i][j] && authService.isTeacher">
                      {{_matrix[i][j]}}
                 </span>
@@ -14,25 +14,23 @@
     </table>
 </div>
 
-<div class="crossword__lists">
-
-    <table>
-
-        <tr>
-            <td class="crossword__liststext">
-
-                    <p>Across</p>
-
-            </td>
-            <td class="list-text">
-                   <p>Down</p>
-            </td>
-        </tr>
-
-    </table>
-
+<div *ngIf="_matrix" class="crossword__lists">
+    <div class="row">
+        <div>
+            <p>Verticaal</p>
+            <div *ngFor="let word of _clueList['across']; let i = index">
+                <p> {{i}}. word</p>
+            </div>
+        </div>
+        <div>
+            <p>Horizontaal</p>
+            <div *ngFor="let word of _clueList['down']; let i = index">
+                <p> {{i}}. word</p>
+            </div>
+        </div>
+    </div>
 </div>
-
+ 
 
 
 <div *ngIf="authService.isStudent" class="crossword__form">
