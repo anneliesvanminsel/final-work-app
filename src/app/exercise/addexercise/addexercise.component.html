@@ -1,0 +1,60 @@
+<div class="component">
+    <div class="row">
+        <div class="component__heading row">
+            <h1 class="component__title">
+                <a class="component__breadcrumb" routerLink="/teacher/classes">
+                    {{ _material.title }}
+                </a>
+            </h1>
+            <app-icon
+                    [class]="'chevron-right'"
+            ></app-icon>
+            <h2 class="component__subtitle">
+                nieuwe opdracht toevoegen
+            </h2>
+        </div>
+    </div>
+
+    <div class="component__content">
+        <form #authForm="ngForm" class="form panel__body" (ngSubmit)="onSubmit(authForm)">
+            <div class="form__group">
+                <label for="email" class="form__label">Email</label>
+                <input
+                        ngModel
+                        type="email"
+                        id="email"
+                        name="email"
+                        class="form__input"
+                        autofocus
+                        required
+                >
+            </div>
+
+            <div class="form__group">
+                <label for="password" class="form__label">Wachtwoord</label>
+                <input
+                        ngModel
+                        type="password"
+                        id="password"
+                        name="password"
+                        class="form__input"
+                        required
+                        minlength="6"
+                >
+            </div>
+
+            <div class="form__actions row">
+                <app-button-link
+                        [label]="'annuleer'"
+                        [link]="_link"
+                        [class]="'is-ghost'"
+                ></app-button-link>
+
+                <app-button
+                        [label]="'Maak de opdracht aan'"
+                        [type]="'submit'"
+                ></app-button>
+            </div>
+        </form>
+    </div>
+</div>
