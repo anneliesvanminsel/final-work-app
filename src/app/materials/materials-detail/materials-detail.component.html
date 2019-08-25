@@ -12,6 +12,13 @@
                  {{_material.title}}
             </h2>
         </div>
+        <div>
+            <app-button-link
+                    [label]="'nieuwe opdracht'"
+                    [link]="_link"
+                    [class]="'is-ghost'"
+            ></app-button-link>
+        </div>
     </div>
     <div class="component__content">
         <app-exercise *ngFor="let exercise of (exercises$ | async); let i = index"

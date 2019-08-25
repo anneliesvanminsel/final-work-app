@@ -20,6 +20,7 @@ export class MaterialsDetailComponent implements OnInit {
   private _material: Material;
   private _course: Course;
   private exercises$: Observable<any>;
+  private _link: string = '/teacher/courses/material/addexercise/';
 
   constructor(
       private route: ActivatedRoute,
@@ -36,6 +37,7 @@ export class MaterialsDetailComponent implements OnInit {
     this.setCourse();
     this.setMaterial();
     this.exercises$ = this.exerciseService.getExercisesByMaterial(this._matid);
+    this._link += this._courseid + '/' + this._matid;
   }
 
   async setCourse() {
