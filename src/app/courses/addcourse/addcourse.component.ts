@@ -13,6 +13,7 @@ import {ClassgroupService} from '../../services/classgroup.service';
 export class AddcourseComponent implements OnInit {
     @ViewChild('nameInput') nameInputRef: ElementRef;
     @ViewChild('yearInput') yearInputRef: ElementRef;
+    @ViewChild('classesInput') classesInputRef: ElementRef;
 
     course: Course ={
         id: '',
@@ -38,6 +39,7 @@ export class AddcourseComponent implements OnInit {
     onAddCourse() {
         this.course.name = this.nameInputRef.nativeElement.value;
         this.course.year = this.yearInputRef.nativeElement.value;
+        this.course.allowedClasses = this.classesInputRef.value;
         this.courseService.addCourse(this.course);
         this.router.navigate(['/teacher/courses']);
     }

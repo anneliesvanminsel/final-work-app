@@ -41,13 +41,14 @@
                 <mat-select
                     class=""
                     id="classgroups"
+                    name="classgroups"
                     multiple
-                    #classInput
+                    #classesInput
                 >
                     <mat-option
                             class=""
                             *ngFor="let classGroupItem of classgroups"
-                            [value]="classGroupItem.id"
+                            [value]="classGroupItem.name"
                     >
                         {{classGroupItem.name}}
                     </mat-option>
