@@ -11,7 +11,8 @@ import {NgForm} from "@angular/forms";
 export class AddexerciseComponent implements OnInit {
     private _matid;
     private _courseid;
-    private _material;
+    material;
+    link: string = '/teacher/courses/material/detail/';
 
     constructor(
         private materialService: MaterialService,
@@ -26,11 +27,12 @@ export class AddexerciseComponent implements OnInit {
         });
 
         this.setMaterial();
+        this.link += this._courseid + '/' + this._matid;
     }
 
     async setMaterial() {
         await this.materialService.getMaterialFromDb(this._matid);
-        this._material = this.materialService.material;
+        this.material = this.materialService.material;
     }
 
     onSubmit(form: NgForm) {

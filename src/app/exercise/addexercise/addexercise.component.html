@@ -3,7 +3,7 @@
         <div class="component__heading row">
             <h1 class="component__title">
                 <a class="component__breadcrumb" routerLink="/teacher/classes">
-                    {{ _material.title }}
+                    {{ material.title }}
                 </a>
             </h1>
             <app-icon
@@ -46,7 +46,7 @@
             <div class="form__actions row">
                 <app-button-link
                         [label]="'annuleer'"
-                        [link]="_link"
+                        [link]="link"
                         [class]="'is-ghost'"
                 ></app-button-link>
 

@@ -24,6 +24,7 @@ export class AddClassComponent implements OnInit {
     name: '',
     date: '',
   };
+
   constructor(private router: Router, private classgroupService: ClassgroupService) { }
 
   ngOnInit() {}

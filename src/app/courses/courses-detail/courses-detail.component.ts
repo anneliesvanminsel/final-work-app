@@ -9,7 +9,7 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./courses-detail.component.scss']
 })
 export class CoursesDetailComponent implements OnInit {
-  private id: string;
+  private _id: string;
   link: string ="/teacher/courses/addmaterial/";
   course: Course;
 
@@ -17,14 +17,14 @@ export class CoursesDetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.id = params.get("courseid")
+      this._id = params.get("courseid")
     });
-    this.link += this.id;
+    this.link += this._id;
     this.setCourse();
   }
 
   async setCourse() {
-    await this.courseService.getCourseFromDb(this.id);
+    await this.courseService.getCourseFromDb(this._id);
     this.course = this.courseService.course;
   }
 

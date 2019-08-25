@@ -6,13 +6,13 @@
             </h1>
             <app-icon
                     [class]="'chevron-right'"></app-icon>
-            <h2 *ngIf="_class" class="component__subtitle">
-                klas {{_class.name}} - {{_class.date}}
+            <h2 *ngIf="class" class="component__subtitle">
+                klas {{class.name}} - {{class.date}}
             </h2>
         </div>
         <app-button-link
                 [label]="'voeg een leerling toe'"
-                [link]="_link"
+                [link]="link"
                 [class]="'is-ghost'"
         ></app-button-link>
     </div>

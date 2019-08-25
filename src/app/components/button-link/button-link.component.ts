@@ -11,7 +11,7 @@ export class ButtonLinkComponent implements OnInit {
   @Input() class: string;
   @Input() icon: boolean;
 
-  private classList: string = 'button';
+  classList: string = 'button';
 
   constructor() { }
 

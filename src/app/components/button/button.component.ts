@@ -10,7 +10,7 @@ export class ButtonComponent implements OnInit {
   @Input() type: string;
   @Input() class: string;
   @Output() onClick = new EventEmitter<any>();
-  private classList: string = 'button';
+  classList: string = 'button';
 
   constructor() { }
 

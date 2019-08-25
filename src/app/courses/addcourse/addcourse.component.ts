@@ -6,34 +6,39 @@ import {Classgroup} from '../../models/classgroup.model';
 import {ClassgroupService} from '../../services/classgroup.service';
 
 @Component({
-  selector: 'app-addcourse',
-  templateUrl: './addcourse.component.html',
-  styleUrls: ['./addcourse.component.scss']
+    selector: 'app-addcourse',
+    templateUrl: './addcourse.component.html',
+    styleUrls: ['./addcourse.component.scss']
 })
 export class AddcourseComponent implements OnInit {
-  @ViewChild('nameInput') nameInputRef: ElementRef;
-  @ViewChild('yearInput') yearInputRef: ElementRef;
+    @ViewChild('nameInput') nameInputRef: ElementRef;
+    @ViewChild('yearInput') yearInputRef: ElementRef;
 
-  course: Course ={
-    id: '',
-    name: '',
-    year: '',
-    allowedClasses: [Classgroup],
-  };
+    course: Course ={
+        id: '',
+        name: '',
+        year: '',
+        allowedClasses: [''],
+    };
 
-  classgroups: Classgroup[];
-  constructor(private router: Router, private coureService: CourseService, private classgroupService: ClassgroupService) { }
+    classgroups: Classgroup[];
 
-  ngOnInit() {
-    this.classgroupService.getClassgroups().subscribe(classes => {
-      this.classgroups = classes;
-    });
-  }
+    constructor(
+        private router: Router,
+        private courseService: CourseService,
+        private classgroupService: ClassgroupService
+    ) { }
 
-  onAddCourse() {
-    this.course.name = this.nameInputRef.nativeElement.value;
-    this.course.year = this.yearInputRef.nativeElement.value;
-    this.coureService.addCourse(this.course);
-    this.router.navigate(['/teacher/courses']);
-  }
+    ngOnInit() {
+        this.classgroupService.getClassgroups().subscribe(classes => {
+            this.classgroups = classes;
+        });
+    }
+
+    onAddCourse() {
+        this.course.name = this.nameInputRef.nativeElement.value;
+        this.course.year = this.yearInputRef.nativeElement.value;
+        this.courseService.addCourse(this.course);
+        this.router.navigate(['/teacher/courses']);
+    }
 }

@@ -12,7 +12,7 @@ export class MaterialItemComponent implements OnInit {
   @Input() index: number;
   @Input() link: string;
   private _courseid: string;
-  private _fullLink: string;
+  fullLink: string = '';
 
   constructor(private route: ActivatedRoute) { }
 
@@ -21,6 +21,6 @@ export class MaterialItemComponent implements OnInit {
       this._courseid = params.get("courseid")
     });
 
-    this._fullLink = this.link + this._courseid + '/' + this.material.id;
+    this.fullLink = this.link + this._courseid + '/' + this.material.id;
   }
 }

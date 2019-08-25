@@ -10,8 +10,8 @@ import { ClassgroupService } from "../../services/classgroup.service";
 })
 export class ClassesDetailComponent implements OnInit {
     private _classid: string;
-    private _link: string ="/teacher/classes/addstudent/";
-    private _class: Classgroup;
+    link: string ="/teacher/classes/addstudent/";
+    class: Classgroup;
 
     constructor(private classgroupService: ClassgroupService, private route: ActivatedRoute) { }
 
@@ -20,14 +20,14 @@ export class ClassesDetailComponent implements OnInit {
             this._classid = params.get("classid")
         });
 
-        this._link += this._classid;
+        this.link += this._classid;
 
         this.setClass();
     }
 
     async setClass() {
         await this.classgroupService.getClassgroupFromDb(this._classid);
-        this._class = this.classgroupService.class;
+        this.class = this.classgroupService.class;
     }
 
 }
