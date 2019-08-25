@@ -5,8 +5,17 @@ import { Injectable } from '@angular/core';
 })
 
 export class ClueService {
-    leftList = '';
-    rightList= '';
+    acrossClueList = [];
+    downClueList = [];
+
+    get acrossClues() {
+        return this.acrossClueList;
+    }
+
+    get downClues() {
+        return this.downClueList;
+    }
+
 
     //From the crossword puzzle, build the lists of across and down.
     buildCrosswordLists(matrixpositions) {
@@ -62,22 +71,23 @@ export class ClueService {
         return list;
     }
 
-    showCrossWordLists(wordlists, clues, fullMatrix) {
+    showCrossWordLists(wordlists, clues) {
+
         let acrosslist = wordlists['across'];
         let downlist = wordlists['down'];
 
-
-        let acrosslistordered = this.fillInCrossWordNumbers(acrosslist, fullMatrix);
-        let downlistordered = this.fillInCrossWordNumbers(downlist, fullMatrix);
+/*
+        let acrosslistordered = this.fillInCrossWordNumbers(acrosslist);
+        let downlistordered = this.fillInCrossWordNumbers(downlist);
 
         console.log('across', acrosslistordered);
         console.log('down', downlistordered);
+*/
+        let acrosslistorderedelement = this.getViewableCrossWordList(acrosslist, clues, true);
+        let downlistorderedelement = this.getViewableCrossWordList(downlist, clues, false);
 
-        let acrosslistorderedelement = this.getViewableCrossWordList(acrosslistordered, clues, true);
-        let downlistorderedelement = this.getViewableCrossWordList(downlistordered, clues, false);
-
-        this.leftList = acrosslistorderedelement;
-        this.rightList = downlistorderedelement;
+        this.acrossClueList = acrosslistorderedelement;
+        this.downClueList = downlistorderedelement;
     }
 
     /* getViewableCrossWordList(listitems, clues, across)
@@ -89,36 +99,28 @@ export class ClueService {
     getViewableCrossWordList(listitems, clues, across) {
         let numbers = Object.keys(listitems);
 
-        let element = '<ul>';
+        let newList = [];
 
         for(let i = 0; i < numbers.length; i++) {
             let number = numbers[i];
             let wordinfo = listitems[number];
             let word = wordinfo['word'];
-            let coordinates = wordinfo['coordinates'];
+            let coordinates = wordinfo['position'];
             let clue = clues[word];
 
-            element += '<li ';
-            element += 'data-word="' + word.replace(/"/g, '&quot;') + '" ';
-            element += 'data-clue="' + clue.replace(/"/g, '&quot;') + '" ';
-            element += 'data-x="' + coordinates[0] + '" ';
-            element += 'data-y="' + coordinates[1] + '" ';
-            element += 'data-across="' + across + '" ';
-            element += 'class="word-clue clickable" ';
-            element += '>';
-            element += number + ' : ' ;
-            element += '<span id="';
-            element += word + '-listing';
-            element += '" ';
-            element += 'class="linkable">';
-            element += clue;
-            element += '</span>';
-            element += '</li>';
+            let newClue = {
+                word:  word.replace(/"/g, '&quot;'),
+                clue: clue.replace(/"/g, '&quot;'),
+                posX: coordinates[0],
+                posY: coordinates[1],
+                posAcross: across,
+                number: number,
+            };
+
+            newList.push(newClue);
+
         }
-
-        element += '</ul>';
-
-        return element;
+        return newList;
     }
 
     /* fillInCrossWordNumbers(listitems, blockitems, blockitemsordered)
@@ -147,7 +149,7 @@ export class ClueService {
 
             orderedlist[listnumber] = {
                 'word': word,
-                'coordinates':coordinates,
+                'position':coordinates,
             };
         }
 

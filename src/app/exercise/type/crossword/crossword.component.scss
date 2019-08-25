@@ -2,27 +2,34 @@
 
 .crossword {
 	&__puzzle {
-		margin-top: 25px;
-		margin-bottom: 25px;
+		display: flex;
+		justify-content: center;
+		margin: 25px auto;
 	}
+
 	&__letter-row {
 
 	}
 
 	&__letter-cell {
-		width: 25px;
-		height: 25px;
+		width: 30px;
+		height: 30px;
 		text-align: center;
-		border: 1px solid rgba($c-purple, .5);
+		border: 1px solid $c-purple;
 
 		&.empty,
 		&.empty-fill {
-			background-color: rgba($c-purple, .5);
+			background-color: $c-purple;
 		}
 
 		&.fillable {
 			background-color: $ui-white;
 		}
 	}
+}
+
+.row-of-two {
+	align-items: flex-start;
+	justify-content: flex-start;
 }
 

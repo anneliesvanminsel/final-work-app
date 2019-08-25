@@ -14,8 +14,6 @@ export class CrosswordService {
     private _fullGraph;
     private _wordLists;
 
-    private _tableRow: string = '';
-
     constructor(
         private authService: AuthService,
         private gridService: GridService,
@@ -61,7 +59,7 @@ export class CrosswordService {
         this._wordLists = this.clueService.buildCrosswordLists(fullGraph['matrixpositions']);
         console.log(this._wordLists);
 
-        this.clueService.showCrossWordLists(this._wordLists, crosswordclues, this._fullGraph);
+        this.clueService.showCrossWordLists(this._wordLists, crosswordclues);
         return true;
     }
 

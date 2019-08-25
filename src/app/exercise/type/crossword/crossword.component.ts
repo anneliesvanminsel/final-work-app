@@ -5,6 +5,7 @@ import {AnswerService} from '../../../services/answer.service';
 import {AuthService} from '../../../services/auth.service';
 import {CrosswordService} from '../../../services/crossword.service';
 import {MatrixService} from '../../../services/crossword/matrix.service';
+import {ClueService} from "../../../services/crossword/clue.service";
 /*
     The code written in this component is based on the JQuery-code of 'HoldOffHunger' as seen on Github.
     link: https://github.com/HoldOffHunger/jquery-crossword-puzzle-generator/blob/master/javascript/crossword-puzzle.js
@@ -25,7 +26,8 @@ export class CrosswordComponent implements OnInit {
     private _matrix;
     private _widestLine;
     private _tallestLine;
-    private _clueList = [];
+    private _clueListAcross = [];
+    private _clueListDown = [];
 
 
     constructor(
@@ -33,7 +35,8 @@ export class CrosswordComponent implements OnInit {
         private answerService: AnswerService,
         private authService: AuthService,
         private crosswordService: CrosswordService,
-        private matrixService: MatrixService
+        private matrixService: MatrixService,
+        private clueService: ClueService
     ) { }
 
     ngOnInit() {
@@ -51,7 +54,8 @@ export class CrosswordComponent implements OnInit {
                 this._tallestLine = this.matrixService.getTallestLine(this._matrix);
                 this._numbersTall = Array(this._tallestLine).fill('tall');
                 this._numbersWide = Array(this._widestLine).fill('wide');
-                console.log(this._matrix['matrix']);
+                this._clueListDown = this.clueService.downClues;
+                this._clueListAcross = this.clueService.acrossClues;
             }
         }
     }
