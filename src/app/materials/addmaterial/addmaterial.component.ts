@@ -15,6 +15,7 @@ export class AddmaterialComponent implements OnInit {
   private id: string;
   course: Course;
   link: string ="/teacher/courses/detail/";
+
   newMaterial: Material = {
     id: '',
     title: '',

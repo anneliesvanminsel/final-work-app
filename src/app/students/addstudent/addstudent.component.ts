@@ -12,13 +12,13 @@ import {Student} from '../../models/student.model';
 })
 export class AddstudentComponent implements OnInit {
   private id: string;
-  private link: string = "/teacher/classes/detail/" ;
-  private class: Classgroup;
+  link: string = "/teacher/classes/detail/" ;
+  class: Classgroup;
 
   @ViewChild('nameInput') nameInputRef: ElementRef;
   @ViewChild('mailInput') mailInputRef: ElementRef;
 
-  newStudent: Student ={
+  newStudent: Student = {
     id: '',
     name: '',
     email: '',

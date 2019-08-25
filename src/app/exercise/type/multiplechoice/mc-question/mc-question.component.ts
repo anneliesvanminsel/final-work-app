@@ -10,7 +10,7 @@ import {Observable} from "rxjs";
 })
 export class McQuestionComponent implements OnInit {
   @Input() question: Question;
-  private answers$: Observable<any>;
+  answers$: Observable<any>;
 
   constructor(private answerService: AnswerService) { }
 

@@ -9,7 +9,7 @@ import {Observable} from "rxjs";
 })
 export class MultiplechoiceComponent implements OnInit {
   @Input() exercise_id: string;
-  private questions$: Observable<any>;
+  questions$: Observable<any>;
 
   constructor(private questionService: QuestionService) { }
 

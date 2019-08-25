@@ -9,7 +9,7 @@ import {Course} from "../../models/course.model";
   styleUrls: ['./studentcoursedetail.component.scss']
 })
 export class StudentcoursedetailComponent implements OnInit {
-  private id: string;
+  private _id: string;
   link: string ="/teacher/courses/addmaterial/";
   course: Course;
 
@@ -17,15 +17,15 @@ export class StudentcoursedetailComponent implements OnInit {
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.id = params.get("courseid")
+      this._id = params.get("courseid")
     });
-    this.link += this.id;
+    this.link += this._id;
     this.setCourse();
   }
 
   async setCourse() {
-    console.log(this.id);
-    await this.courseService.getCourseFromDb(this.id);
+    console.log(this._id);
+    await this.courseService.getCourseFromDb(this._id);
     this.course = this.courseService.course;
   }
 }

@@ -1,21 +1,21 @@
 <div class="component">
     <div class="row">
         <div class="component__heading row">
-            <h1 class="component__title" *ngIf="_course">
-                <a class="component__breadcrumb" [routerLink]="['/teacher/courses/detail', _courseid]">
-                    {{_course.name}}
+            <h1 class="component__title" *ngIf="course">
+                <a class="component__breadcrumb" [routerLink]="['/teacher/courses/detail', courseid]">
+                    {{course.name}}
                 </a>
             </h1>
             <app-icon
                     [class]="'chevron-right'"></app-icon>
-            <h2 *ngIf="_material" class="component__subtitle">
-                 {{_material.title}}
+            <h2 *ngIf="material" class="component__subtitle">
+                 {{material.title}}
             </h2>
         </div>
         <div>
             <app-button-link
                     [label]="'nieuwe opdracht'"
-                    [link]="_link"
+                    [link]="link"
                     [class]="'is-ghost'"
             ></app-button-link>
         </div>

@@ -14,10 +14,10 @@ import {ExerciseService} from '../../services/exercise.service';
 })
 export class StudentmaterialdetailComponent implements OnInit {
   private _matid: string;
-  private _courseid: string;
-  private _material: Material;
-  private _course: Course;
-  private exercises$: Observable<any>;
+  courseid: string;
+  material: Material;
+  course: Course;
+  exercises$: Observable<any>;
 
   constructor(
       private route: ActivatedRoute,
@@ -29,7 +29,7 @@ export class StudentmaterialdetailComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this._matid = params.get("materialid");
-      this._courseid = params.get("courseid");
+      this.courseid = params.get("courseid");
     });
     this.setCourse();
     this.setMaterial();
@@ -37,13 +37,13 @@ export class StudentmaterialdetailComponent implements OnInit {
   }
 
   async setCourse() {
-    await this.courseService.getCourseFromDb(this._courseid);
-    this._course = this.courseService.course;
+    await this.courseService.getCourseFromDb(this.courseid);
+    this.course = this.courseService.course;
   }
 
   async setMaterial() {
     await this.materialService.getMaterialFromDb(this._matid);
-    this._material = this.materialService.material;
+    this.material = this.materialService.material;
   }
 
 }

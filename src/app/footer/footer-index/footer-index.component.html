@@ -7,12 +7,12 @@
     </div>
     <div class="footer__column">
       <div>
-        leerkracht
+        Voor de leerkracht
       </div>
       <ul class="footer__nav__list">
         <li *ngIf="user" class="footer__nav__item">
           <a *ngIf="authService.isTeacher" class="footer__nav__link" routerLink="/teacher/classes">
-            overzicht
+            naar mijn klassen
           </a>
         </li>
         <li class="footer__nav__item">
@@ -20,22 +20,17 @@
             aanmelden
           </a>
         </li>
-        <li class="footer__nav__item">
-          <a class="footer__nav__link" routerLink="/register">
-            registreer
-          </a>
-        </li>
       </ul>
     </div>
 
     <div class="footer__column">
       <div>
-        leerling
+        Voor de leerling
       </div>
       <ul class="footer__nav__list">
         <li *ngIf="user" class="footer__nav__item">
           <a *ngIf="authService.isStudent" class="footer__nav__link" routerLink="/student">
-            overzicht
+            naar mijn vakken
           </a>
         </li>
         <li class="footer__nav__item">
@@ -52,11 +47,5 @@
     <div class="footer__primary">
       &copy; Van Minsel Annelies (2019)
     </div>
-    <a class="footer__secondary link" routerLink="/privacybeleid">
-      privacybeleid
-    </a>
-    <a class="footer__secondary link" routerLink="/cookiebeleid">
-      cookiebeleid
-    </a>
   </div>
 </footer>

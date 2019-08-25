@@ -2,7 +2,7 @@
 @import "../../../resources/config/colors";
 @import "../../../resources/config/typography";
 
-footer {
+.footer {
 	display: none;
 
 	@media screen and (min-width: $breakpoint-tablet) {
@@ -11,5 +11,15 @@ footer {
 		bottom: 10px;
 		left: 0;
 		right: 0;
+	}
+
+	&__logo {
+		width: 100px;
+		margin: 10px;
+
+		svg {
+			width: 100%;
+			height: auto;
+		}
 	}
 }

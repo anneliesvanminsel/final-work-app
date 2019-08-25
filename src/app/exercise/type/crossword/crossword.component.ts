@@ -21,13 +21,15 @@ export class CrosswordComponent implements OnInit {
     private _wordList = [];
     private _answerList = [];
     private _questionList = [];
-    private _numbersTall = [];
-    private _numbersWide = [];
-    private _matrix;
     private _widestLine;
     private _tallestLine;
-    private _clueListAcross = [];
-    private _clueListDown = [];
+    
+    numbersTall = [];
+    numbersWide = [];
+    matrix;
+    
+    clueListAcross = [];
+    clueListDown = [];
 
 
     constructor(
@@ -48,14 +50,14 @@ export class CrosswordComponent implements OnInit {
             this.crosswordService.createCrosswordPuzzle(this._wordList);
 
             if(this.crosswordService.fullGraph){
-                this._matrix = this.crosswordService.fullGraph;
-                console.log(this._matrix);
-                this._widestLine = this.matrixService.getWidestLine(this._matrix);
-                this._tallestLine = this.matrixService.getTallestLine(this._matrix);
-                this._numbersTall = Array(this._tallestLine).fill('tall');
-                this._numbersWide = Array(this._widestLine).fill('wide');
-                this._clueListDown = this.clueService.downClues;
-                this._clueListAcross = this.clueService.acrossClues;
+                this.matrix = this.crosswordService.fullGraph;
+                console.log(this.matrix);
+                this._widestLine = this.matrixService.getWidestLine(this.matrix);
+                this._tallestLine = this.matrixService.getTallestLine(this.matrix);
+                this.numbersTall = Array(this._tallestLine).fill('tall');
+                this.numbersWide = Array(this._widestLine).fill('wide');
+                this.clueListDown = this.clueService.downClues;
+                this.clueListDown = this.clueService.acrossClues;
             }
         }
     }

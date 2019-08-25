@@ -1,12 +1,12 @@
 <div class="crossword__puzzle">
-    <div *ngIf="!_matrix">
+    <div *ngIf="!matrix">
         <app-loading-spinner></app-loading-spinner>
     </div>
-    <table *ngIf="_matrix && _numbersTall && _numbersWide">
-        <tr *ngFor="let nT of _numbersTall; let i = index" class="crossword__letter-row">
-            <td *ngFor="let nW of _numbersWide; let j = index" class="crossword__letter-cell" [ngClass]="{'fillable': _matrix[i][j] && _matrix[i][j] != ' ', 'empty-fill': _matrix[i][j] === ' ', 'empty': !_matrix[i][j]}">
-                <span *ngIf="_matrix[i][j] && authService.isTeacher">
-                     {{_matrix[i][j]}}
+    <table *ngIf="matrix && numbersTall && numbersWide">
+        <tr *ngFor="let nT of numbersTall; let i = index" class="crossword__letter-row">
+            <td *ngFor="let nW of numbersWide; let j = index" class="crossword__letter-cell" [ngClass]="{'fillable': matrix[i][j] && matrix[i][j] != ' ', 'empty-fill': matrix[i][j] === ' ', 'empty': !matrix[i][j]}">
+                <span *ngIf="matrix[i][j] && authService.isTeacher">
+                     {{matrix[i][j]}}
                 </span>
 
             </td>
@@ -14,17 +14,17 @@
     </table>
 </div>
 
-<div *ngIf="_matrix" class="crossword__lists">
+<div *ngIf="matrix" class="crossword__lists">
     <div class="row row-of-two">
-        <div *ngIf="_clueListAcross">
+        <div *ngIf="clueListAcross">
             <p>Horizontaal</p>
-            <div *ngFor="let item of _clueListAcross; let i = index">
+            <div *ngFor="let item of clueListAcross; let i = index">
                 <p> {{i + 1}}. {{item.clue}}</p>
             </div>
         </div>
-        <div *ngIf="_clueListDown">
+        <div *ngIf="clueListDown">
             <p>Verticaal</p>
-            <div *ngFor="let item of _clueListDown; let i = index">
+            <div *ngFor="let item of clueListDown; let i = index">
                 <p> {{i + 1}}. {{item.clue}}</p>
             </div>
         </div>

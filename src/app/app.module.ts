@@ -25,7 +25,6 @@ import { HeaderStudentComponent } from './header/header-student/header-student.c
 import { NavigationTeacherComponent } from './header/navigation-teacher/navigation-teacher.component';
 //footers
 import { FooterTeacherComponent } from './footer/footer-teacher/footer-teacher.component';
-import { FooterStudentComponent } from './footer/footer-student/footer-student.component';
 import { FooterIndexComponent } from './footer/footer-index/footer-index.component';
 //index
 import { IndexComponent } from './index/index.component';
@@ -112,7 +111,6 @@ import { AddexerciseComponent } from './exercise/addexercise/addexercise.compone
 
         // All Footer Components
         FooterTeacherComponent,
-        FooterStudentComponent,
 
         // All components for teachers
         MaterialsListComponent,
