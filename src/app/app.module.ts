@@ -88,6 +88,7 @@ import {WordService} from './services/crossword/word.service';
 import {MatrixService} from './services/crossword/matrix.service';
 import {BlockService} from './services/crossword/block.service';
 import {ClueService} from './services/crossword/clue.service';
+import { AddexerciseComponent } from './exercise/addexercise/addexercise.component';
 
 
 @NgModule({
@@ -159,6 +160,7 @@ import {ClueService} from './services/crossword/clue.service';
         CrosswordComponent,
         McAnswerComponent,
         McQuestionComponent,
+        AddexerciseComponent,
 
     ],
     imports: [

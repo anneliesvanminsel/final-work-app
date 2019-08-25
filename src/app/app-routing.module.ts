@@ -27,6 +27,7 @@ import {StudentmaterialdetailComponent} from './student/studentmaterialdetail/st
 import {StudentcourseslistComponent} from './student/studentcourses/studentcourseslist/studentcourseslist.component';
 import {StudentcoursedetailComponent} from './student/studentcoursedetail/studentcoursedetail.component';
 import {StudentsettingsComponent} from './student/studentsettings/studentsettings.component';
+import {AddexerciseComponent} from "./exercise/addexercise/addexercise.component";
 
 const appRoutes: Routes = [
 
@@ -135,6 +136,10 @@ const appRoutes: Routes = [
                     {
                         path: 'material/detail/:courseid/:materialid',
                         component: MaterialsDetailComponent
+                    },
+                    {
+                        path: 'material/addexercise/:courseid/:materialid',
+                        component: AddexerciseComponent
                     },
                 ],
             },
