@@ -2,11 +2,11 @@
     <div *ngIf="!matrix">
         <app-loading-spinner></app-loading-spinner>
     </div>
-    <table *ngIf="matrix && numbersTall && numbersWide">
-        <tr *ngFor="let nT of numbersTall; let i = index" class="crossword__letter-row">
-            <td *ngFor="let nW of numbersWide; let j = index" class="crossword__letter-cell" [ngClass]="{'fillable': matrix[i][j] && matrix[i][j] != ' ', 'empty-fill': matrix[i][j] === ' ', 'empty': !matrix[i][j]}">
-                <span *ngIf="matrix[i][j] && authService.isTeacher">
-                     {{matrix[i][j]}}
+    <table *ngIf="matrix">
+        <tr *ngFor="let matrixRow of matrix" class="crossword__letter-row">
+            <td *ngFor="let matrixCell of matrixRow" class="crossword__letter-cell" [ngClass]="{'fillable': matrixCell && matrixCell != ' ', 'empty-fill': matrixCell === ' ', 'empty': !matrixCell}">
+                <span *ngIf="matrixCell && authService.isTeacher">
+                     {{matrixCell}}
                 </span>
 
             </td>

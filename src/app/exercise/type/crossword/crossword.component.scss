@@ -19,7 +19,8 @@
 
 		&.empty,
 		&.empty-fill {
-			background-color: $c-purple;
+			background-color: transparent;
+			border: none;
 		}
 
 		&.fillable {

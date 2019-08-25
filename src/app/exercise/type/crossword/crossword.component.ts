@@ -50,7 +50,7 @@ export class CrosswordComponent implements OnInit {
             this.crosswordService.createCrosswordPuzzle(this._wordList);
 
             if(this.crosswordService.fullGraph){
-                this.matrix = this.crosswordService.fullGraph;
+                this.matrix = this.crosswordService.fullGraph.map((stringValue: string) => stringValue.split(''));;
                 console.log(this.matrix);
                 this._widestLine = this.matrixService.getWidestLine(this.matrix);
                 this._tallestLine = this.matrixService.getTallestLine(this.matrix);
@@ -58,6 +58,7 @@ export class CrosswordComponent implements OnInit {
                 this.numbersWide = Array(this._widestLine).fill('wide');
                 this.clueListDown = this.clueService.downClues;
                 this.clueListDown = this.clueService.acrossClues;
+                console.log(this.matrix);
             }
         }
     }
