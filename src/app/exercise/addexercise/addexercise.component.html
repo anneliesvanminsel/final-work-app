@@ -1,7 +1,7 @@
 <div class="component">
     <div class="row">
         <div class="component__heading row">
-            <h1 class="component__title">
+            <h1 class="component__title" *ngIf="material">
                 <a class="component__breadcrumb" routerLink="/teacher/classes">
                     {{ material.title }}
                 </a>
@@ -18,28 +18,53 @@
     <div class="component__content">
         <form #authForm="ngForm" class="form panel__body" (ngSubmit)="onSubmit(authForm)">
             <div class="form__group">
-                <label for="email" class="form__label">Email</label>
+                <label for="title" class="form__label">
+                    Titel van de opdracht <br>
+                    <span class="accent"><i>Dit is de hoofdvraag van de opdracht.</i></span>
+                </label>
+
                 <input
                         ngModel
-                        type="email"
-                        id="email"
-                        name="email"
+                        type="text"
+                        id="title"
+                        name="title"
                         class="form__input"
                         autofocus
                         required
+                        minLength="3"
                 >
             </div>
 
+            <mat-form-field class="form__group select-group">
+                <label class="form__label">Welke soort opdracht wilt u aanmaken?</label>
+                <mat-select
+                        ngModel
+                        class="form__select"
+                        id="type"
+                        name="type"
+                >
+                    <mat-option
+                            value="crossword"
+                    >
+                        Kruiswoordraadsel
+                    </mat-option>
+
+                    <mat-option
+                            value="multiplechoice"
+                    >
+                        Meerkeuze vraag
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
             <div class="form__group">
-                <label for="password" class="form__label">Wachtwoord</label>
+                <label for="description" class="form__label">Beschrijving van de opdracht</label> <br>
                 <input
                         ngModel
-                        type="password"
-                        id="password"
-                        name="password"
+                        type="text"
+                        id="description"
+                        name="description"
                         class="form__input"
-                        required
-                        minlength="6"
                 >
             </div>
 
@@ -55,6 +80,7 @@
                         [type]="'submit'"
                 ></app-button>
             </div>
+
         </form>
     </div>
 </div>
