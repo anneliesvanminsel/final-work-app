@@ -1,5 +1,5 @@
 <div class="multi">
-    <div>
+    <div *ngIf="questions$">
         <app-mc-question
             *ngFor="let question of (questions$ | async)"
             [question]="question"
