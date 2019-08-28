@@ -13,37 +13,37 @@
 
     <div class="component__content">
 
-        <form (ngSubmit)="onAddCourse()" class="form">
+        <form #addForm="ngForm" class="form panel__body" (ngSubmit)="onAddCourse(addForm)" class="form">
             <div class="form__group">
                 <label class="form__label" for="name">Naam</label>
                 <input
+                        ngModel
                         type="text"
                         id="name"
                         name="name"
                         class="form__input"
-                        #nameInput
                 >
             </div>
 
             <div class="form__group">
                 <label class="form__label" for="year">Academiejaar</label>
                 <input
+                        ngModel
                         type="text"
                         id="year"
                         name="year"
                         class="form__input"
-                        #yearInput
                 >
             </div>
 
             <mat-form-field class="form__group">
                 <label class="form__label">Klassen die dit vak volgen</label>
                 <mat-select
+                    ngModel
                     class=""
                     id="classgroups"
                     name="classgroups"
                     multiple
-                    #classesInput
                 >
                     <mat-option
                             class=""

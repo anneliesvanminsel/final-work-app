@@ -4,6 +4,7 @@ import {CourseService} from '../../services/course.service';
 import {Course} from '../../models/course.model';
 import {Classgroup} from '../../models/classgroup.model';
 import {ClassgroupService} from '../../services/classgroup.service';
+import {NgForm} from "@angular/forms";
 
 @Component({
     selector: 'app-addcourse',
@@ -36,11 +37,16 @@ export class AddcourseComponent implements OnInit {
         });
     }
 
-    onAddCourse() {
-        this.course.name = this.nameInputRef.nativeElement.value;
-        this.course.year = this.yearInputRef.nativeElement.value;
-        this.course.allowedClasses = this.classesInputRef.value;
+    onAddCourse(form: NgForm) {
+        if (!form.valid) {
+            return;
+        }
+
+        this.course.name = form.value.name;
+        this.course.year = form.value.year;
+        this.course.allowedClasses = form.value.classgroups;
         this.courseService.addCourse(this.course);
+        form.reset();
         this.router.navigate(['/teacher/courses']);
     }
 }
