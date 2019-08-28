@@ -88,6 +88,8 @@ import {MatrixService} from './services/crossword/matrix.service';
 import {BlockService} from './services/crossword/block.service';
 import {ClueService} from './services/crossword/clue.service';
 import { AddexerciseComponent } from './exercise/addexercise/addexercise.component';
+import { AddquestionComponent } from './exercise/addexercise/addquestion/addquestion.component';
+import { AddanswerComponent } from './exercise/addexercise/addanswer/addanswer.component';
 
 
 @NgModule({
@@ -159,6 +161,8 @@ import { AddexerciseComponent } from './exercise/addexercise/addexercise.compone
         McAnswerComponent,
         McQuestionComponent,
         AddexerciseComponent,
+        AddquestionComponent,
+        AddanswerComponent,
 
     ],
     imports: [
