@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import * as $ from 'jquery';
 
 @Injectable({
     providedIn: 'root'
@@ -76,26 +77,23 @@ export class ClueService {
         let acrosslist = wordlists['across'];
         let downlist = wordlists['down'];
 
-/*
-        let acrosslistordered = this.fillInCrossWordNumbers(acrosslist);
-        let downlistordered = this.fillInCrossWordNumbers(downlist);
+        console.log('across 1', acrosslist);
+        console.log('down 1', downlist);
+
+        let acrosslistordered = this.fillInCrossWordNumbers(acrosslist, acrosslist, acrosslist);
+        let downlistordered = this.fillInCrossWordNumbers(downlist, acrosslist, acrosslistordered);
 
         console.log('across', acrosslistordered);
         console.log('down', downlistordered);
-*/
-        let acrosslistorderedelement = this.getViewableCrossWordList(acrosslist, clues, true);
-        let downlistorderedelement = this.getViewableCrossWordList(downlist, clues, false);
+
+        let acrosslistorderedelement = this.getViewableCrossWordList(acrosslistordered, clues, true);
+        let downlistorderedelement = this.getViewableCrossWordList(downlistordered, clues, false);
 
         this.acrossClueList = acrosslistorderedelement;
         this.downClueList = downlistorderedelement;
     }
 
-    /* getViewableCrossWordList(listitems, clues, across)
-    
-        Get a single crossword list, which may be used for either across or down lists.
-    
-    */
-
+    //Get a single crossword list, which may be used for either across or down lists.
     getViewableCrossWordList(listitems, clues, across) {
         let numbers = Object.keys(listitems);
 
@@ -123,14 +121,8 @@ export class ClueService {
         return newList;
     }
 
-    /* fillInCrossWordNumbers(listitems, blockitems, blockitemsordered)
-    
-        Fill in the numbers in the crossword puzzle boxes that are each individually associated with a particular clue from the across or down lists.
-    
-    */
-
+    //Fill in the numbers in the crossword puzzle boxes that are each individually associated with a particular clue from the across or down lists.
     fillInCrossWordNumbers(listitems, blockitems, blockitemsordered) {
-        console.log(listitems, blockitems, blockitemsordered);
         let orderedlist = [];
         let listnumber = 0;
         for(let i = 0; i < listitems.length; i++) {
@@ -147,11 +139,23 @@ export class ClueService {
                 fillnumber = <any> blockingitemnumber;
             }
 
+            var element = '<div class="background-text"><span class="crossword-grid-cell-number">' + fillnumber + '</span></div>';
+
+            var parentelement;
+
+            parentelement = $('#cell-position-' + coordinates[0] + '-' + coordinates[1]);
+
+            if(parentelement && $(parentelement).attr('id')) {
+                $(parentelement).prepend(element);
+            }
+
+
             orderedlist[listnumber] = {
                 'word': word,
                 'position':coordinates,
             };
         }
+        console.log(orderedlist);
 
         return orderedlist;
     }

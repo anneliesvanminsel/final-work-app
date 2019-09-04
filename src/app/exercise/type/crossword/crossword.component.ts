@@ -21,11 +21,6 @@ export class CrosswordComponent implements OnInit {
     private _wordList = [];
     private _answerList = [];
     private _questionList = [];
-    private _widestLine;
-    private _tallestLine;
-    
-    numbersTall = [];
-    numbersWide = [];
     matrix;
     
     clueListAcross = [];
@@ -51,14 +46,8 @@ export class CrosswordComponent implements OnInit {
 
             if(this.crosswordService.fullGraph){
                 this.matrix = this.crosswordService.fullGraph.map((stringValue: string) => stringValue.split(''));;
-                console.log(this.matrix);
-                this._widestLine = this.matrixService.getWidestLine(this.matrix);
-                this._tallestLine = this.matrixService.getTallestLine(this.matrix);
-                this.numbersTall = Array(this._tallestLine).fill('tall');
-                this.numbersWide = Array(this._widestLine).fill('wide');
                 this.clueListDown = this.clueService.downClues;
-                this.clueListDown = this.clueService.acrossClues;
-                console.log(this.matrix);
+                this.clueListAcross = this.clueService.acrossClues;
             }
         }
     }

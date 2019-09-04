@@ -54,10 +54,7 @@ export class CrosswordService {
 
         let fullGraph = this.gridService.buildCrosswordBlockGraphs(graphs);
         this._fullGraph = fullGraph['matrix'];
-        console.log(fullGraph);
-        console.log(fullGraph['matrixpositions']);
         this._wordLists = this.clueService.buildCrosswordLists(fullGraph['matrixpositions']);
-        console.log(this._wordLists);
 
         this.clueService.showCrossWordLists(this._wordLists, crosswordclues);
         return true;
